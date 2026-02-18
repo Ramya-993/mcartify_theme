@@ -8,10 +8,10 @@
   /* Global CSS for Swiper pagination classes */
   /* ===== TYPOGRAPHY ===== */
   /* Font Families */
-  --font-price: "Space Mono", monospace;
-  --font-sans: "Quicksand", sans-serif;
-  --font-serif: "Playfair Display", serif;
-  --font-mono: "Fira Code", monospace;
+  --font-price: Space Mono;
+  --font-sans: Montserrat;
+  --font-serif: Raleway;
+  --font-mono: Fira Code;
 
   /* Font Sizes */
   --fs-xs: 0.75rem; /* 12px */
@@ -39,111 +39,111 @@
   /* Base Colors with direct OKLCH values */
 
   /* Main Theme Colors */
-  --background: oklch(1 0 0);
-  --on-background: oklch(0.26 0.04 268.07);
-  --foreground: oklch(0.1 0 0);
+  --background: oklch(100% 0 0);
+  --on-background: oklch(10% 0 0);
+  --foreground: oklch(10% 0 0);
 
   /* Card Colors */
-  --card: oklch(1 0 0);
-  --on-card: oklch(0.26 0.04 268.07);
-  --card-foreground: oklch(0.1 0 0);
+  --card: oklch(100% 0 0);
+  --on-card: oklch(10% 0 0);
+  --card-foreground: oklch(10% 0 0);
 
   /* Stock Status Colors */
-  --in-stock-text: oklch(0.44 0.15 142.5);
-  --in-stock-bg: oklch(0.97 0.06 142.5);
-  --in-stock-border: oklch(0.85 0.1 142.5);
+  --in-stock-text: oklch(44% 0.15 143);
+  --in-stock-bg: oklch(97% 0.06 143);
+  --in-stock-border: oklch(85% 0.1 143);
 
-  --limited-stock-text: oklch(0.55 0.15 75.31);
-  --limited-stock-bg: oklch(0.97 0.06 75.31);
-  --limited-stock-border: oklch(0.85 0.1 75.31);
+  --limited-stock-text: oklch(55% 0.15 75);
+  --limited-stock-bg: oklch(97% 0.06 75);
+  --limited-stock-border: oklch(85% 0.1 75);
 
-  --very-low-stock-text: oklch(0.55 0.15 45.11);
-  --very-low-stock-bg: oklch(0.97 0.06 45.11);
-  --very-low-stock-border: oklch(0.85 0.1 45.11);
+  --very-low-stock-text: oklch(55% 0.15 45);
+  --very-low-stock-bg: oklch(97% 0.06 45);
+  --very-low-stock-border: oklch(85% 0.1 45);
 
-  --out-of-stock-text: oklch(0.55 0.15 15.5);
-  --out-of-stock-bg: oklch(0.97 0.06 15.5);
-  --out-of-stock-border: oklch(0.85 0.1 15.5);
+  --out-of-stock-text: oklch(55% 0.15 16);
+  --out-of-stock-bg: oklch(97% 0.06 16);
+  --out-of-stock-border: oklch(85% 0.1 16);
 
   /* Popover Colors */
-  --popover: oklch(1 0 0);
-  --on-popover: oklch(0.26 0.04 268.07);
-  --popover-foreground: oklch(0.1 0 0);
+  --popover: oklch(100% 0 0);
+  --on-popover: oklch(10% 0 0);
+  --popover-foreground: oklch(10% 0 0);
 
   /* Primary Colors - Grocery Green */
-  --primary: oklch(62.05% 0.138 154.99);
-  --primary-hover: oklch(58% 0.15 154.99);
-  --primary-active: oklch(55% 0.16 154.99);
-  --on-primary: oklch(1 0 0);
-  --primary-foreground: oklch(1 0 0);
+  --primary: oklch(65% 0.30 340);
+  --primary-hover: oklch(60% 0.32 340);
+  --primary-active: oklch(55% 0.34 340);
+  --on-primary: oklch(100% 0 0);
+  --primary-foreground: oklch(100% 0 0);
 
   /* Secondary Colors */
-  --secondary: oklch(0.95 0 0);
-  --secondary-hover: oklch(0.9 0 0);
-  --secondary-active: oklch(0.85 0 0);
-  --on-secondary: oklch(0.26 0.04 268.07);
-  --secondary-foreground: oklch(0.1 0 0);
+  --secondary: oklch(15% 0.01 0);
+  --secondary-hover: oklch(20% 0.01 0);
+  --secondary-active: oklch(25% 0.01 0);
+  --on-secondary: oklch(100% 0 0);
+  --secondary-foreground: oklch(100% 0 0);
 
   /* Muted Colors */
-  --muted: oklch(0.7 0 0);
-  --on-muted: oklch(0.26 0.04 268.07);
-  --muted-foreground: oklch(0.56 0 0);
+  --muted: oklch(70% 0 0);
+  --on-muted: oklch(10% 0 0);
+  --muted-foreground: oklch(56% 0 0);
 
   /* Accent Colors */
-  --accent: oklch(0.37 0.03 259.73);
-  --accent-hover: oklch(0.34 0.04 259.73);
-  --accent-active: oklch(0.31 0.05 259.73);
-  --accent-foreground: oklch(1 0 0);
+  --accent: oklch(80% 0.15 350);
+  --accent-hover: oklch(75% 0.16 350);
+  --accent-active: oklch(70% 0.17 350);
+  --accent-foreground: oklch(100% 0 0);
 
   /* Destructive Colors */
-  --destructive: oklch(0.64 0.22 28.81);
-  --destructive-hover: oklch(0.6 0.24 28.81);
-  --destructive-active: oklch(0.56 0.26 28.81);
-  --on-destructive: oklch(1 0 0);
-  --destructive-foreground: oklch(1 0 0);
+  --destructive: oklch(64% 0.22 29);
+  --destructive-hover: oklch(60% 0.24 29);
+  --destructive-active: oklch(56% 0.26 29);
+  --on-destructive: oklch(100% 0 0);
+  --destructive-foreground: oklch(100% 0 0);
 
   /* UI Element Colors */
-  --border: oklch(0.85 0 0);
-  --on-border: oklch(0.26 0.04 268.07);
-  --input: oklch(0.91 0 0);
-  --on-input: oklch(0.26 0.04 268.07);
-  --ring: oklch(0.75 0.16 130.5);
-  --shadow-color: oklch(0.26 0.04 268.07);
+  --border: oklch(85% 0 0);
+  --on-border: oklch(10% 0 0);
+  --input: oklch(91% 0 0);
+  --on-input: oklch(10% 0 0);
+  --ring: oklch(75% 0.16 131);
+  --shadow-color: oklch(10% 0 0);
 
   /* Sidebar Colors - direct OKLCH values */
-  --sidebar: oklch(1 0 0);
-  --sidebar-foreground: oklch(0.1 0 0);
-  --sidebar-primary: oklch(0.67 0.16 144.21);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.67 0.16 144.21);
-  --sidebar-accent-foreground: oklch(1 0 0);
-  --sidebar-border: oklch(0.85 0 0);
-  --sidebar-ring: oklch(0.75 0.16 130.5);
+  --sidebar: oklch(100% 0 0);
+  --sidebar-foreground: oklch(10% 0 0);
+  --sidebar-primary: oklch(65% 0.30 340);
+  --sidebar-primary-foreground: oklch(100% 0 0);
+  --sidebar-accent: oklch(80% 0.15 350);
+  --sidebar-accent-foreground: oklch(100% 0 0);
+  --sidebar-border: oklch(85% 0 0);
+  --sidebar-ring: oklch(75% 0.16 131);
 
   /* Semantic Colors - direct OKLCH values */
-  --success: oklch(0.65 0.2 162);
-  --success-hover: oklch(0.6 0.22 162);
-  --success-active: oklch(0.55 0.24 162);
-  --success-light: oklch(0.9 0.05 162);
-  --on-success: oklch(1 0 0);
+  --success: oklch(65% 0.2 162);
+  --success-hover: oklch(60% 0.22 162);
+  --success-active: oklch(55% 0.24 162);
+  --success-light: oklch(90% 0.05 162);
+  --on-success: oklch(100% 0 0);
 
-  --warning: oklch(0.8 0.2 80);
-  --warning-hover: oklch(0.75 0.22 80);
-  --warning-active: oklch(0.7 0.24 80);
-  --warning-light: oklch(0.95 0.05 80);
-  --on-warning: oklch(0.1 0 0);
+  --warning: oklch(80% 0.2 80);
+  --warning-hover: oklch(75% 0.22 80);
+  --warning-active: oklch(70% 0.24 80);
+  --warning-light: oklch(95% 0.05 80);
+  --on-warning: oklch(10% 0 0);
 
-  --error: oklch(0.65 0.24 7.17);
-  --error-hover: oklch(0.6 0.26 7.17);
-  --error-active: oklch(0.55 0.28 7.17);
-  --error-light: oklch(0.9 0.05 15);
-  --on-error: oklch(1 0 0);
+  --error: oklch(65% 0.24 7);
+  --error-hover: oklch(60% 0.26 7);
+  --error-active: oklch(55% 0.28 7);
+  --error-light: oklch(90% 0.05 15);
+  --on-error: oklch(100% 0 0);
 
-  --info: oklch(0.6 0.2 250);
-  --info-hover: oklch(0.55 0.22 250);
-  --info-active: oklch(0.5 0.24 250);
-  --info-light: oklch(0.9 0.05 250);
-  --on-info: oklch(1 0 0);
+  --info: oklch(60% 0.2 250);
+  --info-hover: oklch(55% 0.22 250);
+  --info-active: oklch(50% 0.24 250);
+  --info-light: oklch(90% 0.05 250);
+  --on-info: oklch(100% 0 0);
 
   /* ===== SPACING ===== */
   --spacing-xs: 0.25rem; /* 4px */
@@ -693,22 +693,22 @@
 
   /* Footer Component */
   --footer-height: 320px;
-  --footer-bg: var(--secondary);
-  --footer-text: oklch(1 0.0099 120.71);
-  --footer-border: var(--border);
+  --footer-bg: oklch(95% 0.01 0);
+  --footer-text: oklch(40% 0.02 0);
+  --footer-border: oklch(85% 0 0);
   --footer-border-width: 1px;
   --footer-padding-x: 1rem;
-  --footer-padding-y: 3rem;
-  --footer-grid-gap: 2rem;
+  --footer-padding-y: 4rem;
+  --footer-grid-gap: 3rem;
   --footer-logo-height: 40px;
   --footer-logo-text: oklch(1 0.0099 120.71);
   --footer-description-color: oklch(1 0.0099 120.71);
   --footer-heading-color: oklch(1 0.0099 120.71);
   --footer-heading-weight: 600;
   --footer-icon-color: var(--primary);
-  --footer-link-color: oklch(1 0.0099 120.71);
+  --footer-link-color: oklch(40% 0.02 0);
   --footer-link-hover-color: var(--primary);
-  --footer-separator-color: var(--border);
+  --footer-separator-color: oklch(85% 0 0);
   --footer-copyright-color: var(--muted-foreground);
   --footer-logo-card-shadow: none;
 
@@ -868,8 +868,8 @@
   --navbar-skeleton-banner-to: #0d9488;
 
   /* Category Card */
-  --category-card-image-size-mobile: 120px;
-  --category-card-image-size-desktop: 150px;
+  --category-card-image-size-mobile: 80px;
+  --category-card-image-size-desktop: 100px;
   --category-card-image-border-color: var(--green-100);
   --category-card-image-bg-from: var(--green-50);
   --category-card-image-bg-to: var(--green-100);
@@ -1208,7 +1208,7 @@
   --mobile-nav-bg: var(--background);
   --mobile-nav-border-color: var(--border);
   --mobile-nav-shadow: var(--shadow-lg);
-  --mobile-nav-z-index: 100;
+  --mobile-nav-z-index: 9000;
 
   --mobile-menu-header-padding: 1rem;
   --mobile-menu-header-border-bottom: 1px solid var(--border);
@@ -1370,7 +1370,7 @@
   --mobile-location-btn-text: var(--on-background);
 
   /* Mobile Category Dropdown */
-  --mobile-category-container-z-index: 40;
+  --mobile-category-container-z-index: 10000;
   --mobile-category-item-height: 3.5rem;
   --mobile-category-item-padding-x: 1rem;
   --mobile-category-item-gap: 0.625rem;
@@ -1515,9 +1515,9 @@
 
   /* Top Selling Products Section */
   --top-selling-section-padding-y: 3rem;
-  --top-selling-section-bg: oklch(0.97 0 0);
+  --top-selling-section-bg: oklch(100% 0 0);
   --top-selling-card-border: oklch(0.9 0 0);
-  --top-selling-card-bg: oklch(1 0 0);
+  --top-selling-card-bg: transparent;
   --top-selling-card-shadow:
     0 4px 10px -2px oklch(0.2 0.03 154.99 / 0.1),
     0 2px 4px -1px oklch(0.2 0.03 154.99 / 0.05);
@@ -1527,9 +1527,9 @@
   --top-selling-title-size: 1.25rem;
   --top-selling-title-weight: 600;
   --top-selling-grid-gap: 1rem;
-  --top-selling-empty-border: oklch(0.85 0 0);
-  --top-selling-empty-bg: oklch(0.95 0.02 154.99 / 0.1);
-  --top-selling-empty-text: oklch(0.45 0.08 154.99);
+  --top-selling-empty-border: oklch(70% 0.05 155);
+  --top-selling-empty-bg: oklch(95% 0.02 155);
+  --top-selling-empty-text: oklch(60% 0 0);
 
   /* Add to Cart Button */
   --add-to-cart-bg: var(--primary);
@@ -1621,9 +1621,9 @@
     0 20px 25px -5px oklch(0.2 0.03 154.99 / 0.1),
     0 8px 10px -6px oklch(0.2 0.03 154.99 / 0.1);
   --category-card-padding: 1.25rem;
-  --category-card-image-size-mobile: 140px;
-  --category-card-image-size-desktop: 180px;
-  --category-card-image-border-width: 4px;
+  --category-card-image-size-mobile: 80px;
+  --category-card-image-size-desktop: 100px;
+  --category-card-image-border-width: 2px;
   --category-card-image-border-color: white;
   --category-card-image-bg-from: oklch(0.97 0.04 145);
   --category-card-image-bg-to: oklch(0.94 0.06 150);
@@ -1631,9 +1631,9 @@
   --category-card-image-overlay-to: oklch(0.94 0.06 150 / 0.6);
   --category-card-image-pattern-opacity: 0.05;
   --category-card-image-pattern-color: oklch(0.9 0 0);
-  --category-card-hover-y-translate: -8px;
-  --category-card-hover-scale: 1.03;
-  --category-card-transition-duration: 400ms;
+  --category-card-hover-y-translate: -4px;
+  --category-card-hover-scale: 1.05;
+  --category-card-transition-duration: 300ms;
   --category-card-name-color: oklch(0.25 0.01 270);
   --category-card-name-hover-color: oklch(0.52 0.16 150);
   --category-card-name-font-size-mobile: 1rem;
@@ -1686,14 +1686,14 @@
   --featured-categories-gap: 1.5rem;
 
   /* Explore Categories */
-  --explore-categories-bg: var(--primary);
+  --explore-categories-bg: oklch(100% 0 0);
   --explore-categories-text: var(--on-primary);
   --explore-categories-border: var(--border);
   --explore-categories-radius: 0.75rem;
   --explore-categories-padding: 1.5rem;
   --explore-categories-shadow:
     0 4px 6px -1px var(--shadow-color), 0 2px 4px -1px var(--shadow-color);
-  --explore-categories-title-size: 1.5rem;
+  --explore-categories-title-size: 1.25rem;
   --explore-categories-title-weight: 700;
   --explore-categories-gap: 1rem;
 
@@ -2007,7 +2007,7 @@
 
   /* Banners */
   --banner-padding: 2rem;
-  --banner-radius: 0.75rem;
+  --banner-radius: 12px;
   --banner-title-size: 2.5rem;
   --banner-title-weight: 700;
   --banner-subtitle-size: 1.25rem;
@@ -2428,7 +2428,7 @@
   --product-image-hover-scale: 1.03;
   --product-title-color: var(--foreground);
   --product-title-font-family: var(--font-primary);
-  --product-title-font-size: var(--fs-sm);
+  --product-title-font-size: 0.875rem;
   --product-title-font-weight: var(--fw-medium);
   --product-title-line-height: 1.3;
   --product-title-hover-color: var(
