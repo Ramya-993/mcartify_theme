@@ -1,0 +1,112 @@
+name: Deploy to EC2
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/themes/**'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Next.js application
+        run: npm run build
+        env:
+          NODE_ENV: production
+
+      - name: Create deployment package
+        run: |
+          mkdir -p deployment-package
+          cp -r .next deployment-package/
+          cp -r public deployment-package/
+          cp -r src deployment-package/
+          cp package.json deployment-package/
+          cp package-lock.json deployment-package/
+          cp next.config.js deployment-package/ 2>/dev/null || :
+          tar -czf deployment.tar.gz -C deployment-package .
+
+      - name: Deploy to EC2
+        env:
+          PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+          HOSTNAME: ${{ secrets.EC2_HOST }}
+          USER_NAME: ${{ secrets.EC2_USER }}
+          EC2_PATH: /var/www/store-dev
+        run: |
+          echo "$PRIVATE_KEY" > private_key.pem
+          chmod 600 private_key.pem
+          
+          # Copy deployment package to EC2
+          scp -i private_key.pem -o StrictHostKeyChecking=no \
+            deployment.tar.gz ${USER_NAME}@${HOSTNAME}:/tmp/
+          
+          # Extract and deploy on EC2
+          ssh -i private_key.pem -o StrictHostKeyChecking=no \
+            ${USER_NAME}@${HOSTNAME} << 'ENDSSH'
+            set -e
+            
+            # Stop the application
+            pm2 stop mcartify-store || true
+            
+            # Backup current deployment
+            if [ -d ${EC2_PATH}/backup ]; then
+              rm -rf ${EC2_PATH}/backup
+            fi
+            mkdir -p ${EC2_PATH}/backup
+            cp -r ${EC2_PATH}/.next ${EC2_PATH}/backup/ 2>/dev/null || :
+            cp -r ${EC2_PATH}/src ${EC2_PATH}/backup/ 2>/dev/null || :
+            
+            # Extract new deployment
+            cd ${EC2_PATH}
+            tar -xzf /tmp/deployment.tar.gz
+            rm /tmp/deployment.tar.gz
+            
+            # Install production dependencies (if needed)
+            npm ci --production
+            
+            # Start the application
+            pm2 start ecosystem.config.js || pm2 start npm --name "mcartify-store" -- start
+            pm2 save
+            
+            echo "Deployment completed successfully!"
+          ENDSSH
+          
+          # Clean up
+          rm -f private_key.pem
+
+      - name: Verify deployment
+        env:
+          HOSTNAME: ${{ secrets.EC2_HOST }}
+        run: |
+          echo "Waiting for application to start..."
+          sleep 10
+          
+          # Check if the application is responding
+          curl -f http://${HOSTNAME}:3000 || curl -f https://${HOSTNAME} || echo "Warning: Could not verify deployment"
+
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "Deployment failed! Please check the logs."
+          # You can add Slack/Discord/Email notification here
+
+      - name: Notify on success
+        if: success()
+        run: |
+          echo "Deployment successful!"
+          # You can add Slack/Discord/Email notification here
