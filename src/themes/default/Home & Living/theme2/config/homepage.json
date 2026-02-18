@@ -1,0 +1,97 @@
+{
+  "layout": {
+    "sections": [
+      {
+        "id": "secondary-nav",
+        "type": "secondaryNav",
+        "component": "DynamicSecondaryNavWrapper",
+        "enabled": true,
+        "order": 1,
+        "config": {
+          "sticky": true
+        }
+      },
+      {
+        "id": "banner-slider",
+        "type": "banners",
+        "component": "DynamicBannersWrapper",
+        "enabled": true,
+        "order": 2,
+        "config": {
+          "autoPlay": true,
+          "autoPlaySpeed": 5000
+        }
+      },
+      {
+        "id": "featured-categories",
+        "type": "featuredCategories",
+        "component": "DynamicFeaturedCategoriesWrapper",
+        "enabled": true,
+        "order": 3,
+        "config": {
+          "title": "Shop by Category",
+          "maxItems": 8,
+          "viewAllLink": "/categories"
+        }
+      },
+      {
+        "id": "top-selling-products",
+        "type": "topSellingProducts",
+        "component": "DynamicTopSellingProductsWrapper",
+        "enabled": true,
+        "order": 4,
+        "config": {
+          "title": "Popular Products",
+          "maxItems": 8,
+          "viewAllLink": "/products"
+        }
+      },
+      {
+        "id": "testimonials-1751461890881",
+        "type": "testimonials",
+        "component": "DynamicTestimonialsWrapper",
+        "enabled": true,
+        "order": 5,
+        "config": {
+          "title": "What Our Customers Say",
+          "auto_play": true,
+          "auto_play_speed": 4000,
+          "showDots": true,
+          "showArrows": true,
+          "layout": "carousel",
+          "columns": 3,
+          "testimonials": [
+            {
+              "id": 1,
+              "rating": 5,
+              "review": "Amazing service and great products!",
+              "customer_name": "John Doe"
+            },
+            {
+              "id": 2,
+              "rating": 5,
+              "review": "Fast delivery and excellent quality.",
+              "customer_name": "Jane Smith"
+            },
+            {
+              "id": 3,
+              "rating": 5,
+              "review": "Highly recommend this store!",
+              "customer_name": "Mike Johnson"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "theme": {
+    "spacing": {
+      "sectionGap": "py-6 md:py-10",
+      "containerPadding": "px-4 md:px-6"
+    },
+    "layout": {
+      "maxWidth": "max-w-7xl",
+      "centerContent": true
+    }
+  }
+}

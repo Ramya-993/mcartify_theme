@@ -1,0 +1,1138 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Lora:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Hand+Pre:wght@400..700&family=Edu+VIC+WA+NT+Hand+Pre:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Savate:ital,wght@0,200..900;1,200..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Theme flicker prevention */
+.theme-loading {
+  opacity: 0;
+  transition: opacity 0.1s ease-in;
+}
+
+.theme-loaded {
+  opacity: 1;
+  transition: opacity 0.1s ease-in;
+}
+
+/* Ensure smooth theme transitions */
+.theme-loading * {
+  visibility: hidden;
+}
+
+.theme-loaded * {
+  visibility: visible;
+}
+
+@custom-variant dark (&:is(.dark *));
+
+/* Base theme variables */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-serif: var(--font-serif);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius: var(--radius);
+  --tracking-tighter: calc(var(--tracking-normal) - 0.05em);
+  --tracking-tight: calc(var(--tracking-normal) - 0.025em);
+  --tracking-wide: calc(var(--tracking-normal) + 0.025em);
+  --tracking-wider: calc(var(--tracking-normal) + 0.05em);
+  --tracking-widest: calc(var(--tracking-normal) + 0.1em);
+  --tracking-normal: var(--tracking-normal);
+  --shadow-2xl: var(--shadow-2xl);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-md: var(--shadow-md);
+  --shadow: var(--shadow);
+  --shadow-sm: var(--shadow-sm);
+  --shadow-xs: var(--shadow-xs);
+  --shadow-2xs: var(--shadow-2xs);
+  --spacing: var(--spacing);
+  --letter-spacing: var(--letter-spacing);
+  --shadow-offset-y: var(--shadow-offset-y);
+  --shadow-offset-x: var(--shadow-offset-x);
+  --shadow-spread: var(--shadow-spread);
+  --shadow-blur: var(--shadow-blur);
+  --shadow-opacity: var(--shadow-opacity);
+  --color-shadow-color: var(--shadow-color);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-brand-primary: var(--brand-primary);
+}
+
+/* Default theme */
+:root {
+  /* ===== TYPOGRAPHY ===== */
+  /* Font Families */
+  --font-primary: Quicksand, sans-serif;
+  --font-secondary: "Playfair Display", serif;
+  --font-price: Space Mono, monospace;
+  --font-sans: Quicksand, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-mono: Space Mono, monospace;
+
+  /* Font Sizes */
+  --fs-xs: 0.75rem; /* 12px */
+  --fs-sm: 0.875rem; /* 14px */
+  --fs-base: 1rem; /* 16px */
+  --fs-md: 1.125rem; /* 18px */
+  --fs-lg: 1.25rem; /* 20px */
+  --fs-xl: 1.5rem; /* 24px */
+  --fs-2xl: 1.75rem; /* 28px */
+  --fs-3xl: 2rem; /* 32px */
+  --fs-4xl: 2.5rem; /* 40px */
+
+  /* Font Weights */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* Line Heights */
+  --lh-tight: 1.2;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.75;
+  /* ===== COLOR SYSTEM ===== */
+  /* Base Colors with direct OKLCH values */
+
+  --background: oklch(0.98 0.01 244.25);
+  --on-background: oklch(0.26 0.04 268.07);
+  --foreground: oklch(0.37 0.03 259.73);
+  --card: oklch(1 0 0);
+  --on-card: oklch(0.26 0.04 268.07);
+  --card-foreground: oklch(0.37 0.03 259.73);
+  --popover: oklch(1 0 0);
+  --on-popover: oklch(0.26 0.04 268.07);
+  --popover-foreground: oklch(0.37 0.03 259.73);
+  --primary: oklch(0.72 0.19 149.58);
+  --on-primary: oklch(0.26 0.04 268.07);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.95 0.03 236.82);
+  --on-secondary: oklch(0.26 0.04 268.07);
+  --secondary-foreground: oklch(0.45 0.03 256.8);
+  --muted: oklch(0.97 0 264.54);
+  --on-muted: oklch(0.26 0.04 268.07);
+  --muted-foreground: oklch(0.55 0.02 264.36);
+  --accent: oklch(0.95 0.05 163.05);
+  --accent: oklch(0.95 0.05 163.05);
+  --destructive: oklch(0.64 0.21 25.33);
+  --on-destructive: oklch(0.26 0.04 268.07);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.93 0.01 264.53);
+  --on-border: oklch(0.26 0.04 268.07);
+  --input: oklch(0.93 0.01 264.53);
+  --on-input: oklch(0.26 0.04 268.07);
+  --ring: oklch(0.72 0.19 149.58);
+  --shadow-color: oklch(0.26 0.04 268.07);
+
+  --chart-1: oklch(0.73 0.06 130.85);
+  --chart-2: oklch(0.68 0.06 132.45);
+  --chart-3: oklch(0.82 0.03 136.65);
+  --chart-4: oklch(0.59 0.05 137.62);
+  --chart-5: oklch(0.52 0.04 137.19);
+  /* Sidebar Colors - direct OKLCH values */
+  --sidebar: var(--background);
+  --sidebar-foreground: var(--on-primary);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--on-primary);
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: var(--on-primary);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+  --destructive-foreground: oklch(0.98 0.01 91.48);
+  --font-sans: Merriweather, serif;
+  --font-serif: Source Serif 4, serif;
+  --font-mono: JetBrains Mono, monospace;
+  --shadow-color: hsl(88 22% 35% / 0.15);
+  --shadow-opacity: 0.15;
+  --shadow-blur: 2px;
+  --shadow-spread: 0px;
+  --shadow-offset-x: 3px;
+  --shadow-offset-y: 3px;
+  --letter-spacing: 0em;
+  --spacing: 0.25rem;
+  /* ===== SHADOWS ===== */
+  --shadow-2xs: 0px 4px 8px -1px hsl(0 0% 0% / 0.05);
+  --shadow-xs: 0px 4px 8px -1px hsl(0 0% 0% / 0.05);
+  --shadow-sm: 0px 4px 8px -1px hsl(0 0% 0% / 0.1),
+    0px 1px 2px -2px hsl(0 0% 0% / 0.1);
+  --shadow: 0px 4px 8px -1px hsl(0 0% 0% / 0.1),
+    0px 1px 2px -2px hsl(0 0% 0% / 0.1);
+  --shadow-md: 0px 4px 8px -1px hsl(0 0% 0% / 0.1),
+    0px 2px 4px -2px hsl(0 0% 0% / 0.1);
+  --shadow-lg: 0px 4px 8px -1px hsl(0 0% 0% / 0.1),
+    0px 4px 6px -2px hsl(0 0% 0% / 0.1);
+  --shadow-xl: 0px 4px 8px -1px hsl(0 0% 0% / 0.1),
+    0px 8px 10px -2px hsl(0 0% 0% / 0.1);
+  --shadow-2xl: 0px 4px 8px -1px hsl(0 0% 0% / 0.25);
+  --tracking-normal: 0em;
+  /* ===== SPACING ===== */
+  --spacing-xs: 0.25rem; /* 4px */
+  --spacing-sm: 0.5rem; /* 8px */
+  --spacing-md: 1rem; /* 16px */
+  --spacing-lg: 1.5rem; /* 24px */
+  --spacing-xl: 2rem; /* 32px */
+  --spacing-2xl: 3rem; /* 48px */
+
+  /* ===== BORDERS & RADII ===== */
+  --border-width-thin: 1px;
+  --border-width-medium: 2px;
+  --border-width-thick: 3px;
+
+  --radius-sm: 0.25rem; /* 4px */
+  --radius-md: 0.5rem; /* 8px */
+  --radius-lg: 0.75rem; /* 12px */
+  --radius-xl: 1rem; /* 16px */
+  --radius-full: 9999px;
+  --radius: 0.5rem;
+
+  /* Semantic Colors - direct OKLCH values */
+  --success: oklch(0.65 0.2 162);
+  --success-light: oklch(0.9 0.05 162);
+  --warning: oklch(0.8 0.2 80);
+  --warning-light: oklch(0.95 0.05 80);
+  --error: oklch(0.65 0.24 7.17);
+  --error-light: oklch(0.9 0.05 15);
+  --info: oklch(0.6 0.2 250);
+  --info-light: oklch(0.9 0.05 250);
+
+  /* ===== SPACING ===== */
+  --spacing-xs: 0.25rem; /* 4px */
+  --spacing-sm: 0.5rem; /* 8px */
+  --spacing-md: 1rem; /* 16px */
+  --spacing-lg: 1.5rem; /* 24px */
+  --spacing-xl: 2rem; /* 32px */
+  --spacing-2xl: 3rem; /* 48px */
+
+  /* ===== BORDERS & RADII ===== */
+  --border-width-thin: 1px;
+  --border-width-medium: 2px;
+  --border-width-thick: 3px;
+
+  --radius-sm: 0.25rem; /* 4px */
+  --radius-md: 0.5rem; /* 8px */
+  --radius-lg: 0.75rem; /* 12px */
+  --radius-xl: 1rem; /* 16px */
+  --radius-full: 9999px;
+  --radius: 0.5rem;
+
+  /* ===== TRANSITIONS ===== */
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow: 500ms ease;
+
+  /* ===== LAYOUT ===== */
+  --container-max-width: 1280px;
+  --header-height: 72px;
+  --footer-height: 320px;
+
+  /* ===== COMPONENT VARIABLES ===== */
+
+  /* ===== Navbar & Navigation ===== */
+  --navbar-bg: var(--primary);
+  --navbar-text: var(--on-primary);
+  --navbar-border: var(--border);
+  --navbar-height: 72px;
+  --navbar-padding-x: 1rem;
+  --navbar-padding-y: 0.5rem;
+  --navbar-logo-height: 2.5rem;
+  --navbar-shadow: 0 4px 6px -1px var(--shadow-color),
+    0 2px 4px -1px var(--shadow-color);
+
+  --nav-item-color: var(--on-background);
+  --nav-item-hover-color: var(--on-background);
+  --nav-item-active-color: var(--foreground);
+  --nav-item-spacing: 1rem;
+  --nav-dropdown-bg: var(--background);
+  --nav-dropdown-text: var(--on-background);
+  --nav-dropdown-border: var(--border);
+  --nav-dropdown-shadow: 0 10px 15px -3px var(--shadow-color),
+    0 4px 6px -2px var(--shadow-color);
+  --nav-dropdown-radius: 0.5rem;
+
+  /* Secondary Navigation */
+  --secondary-nav-bg: var(--background);
+  --secondary-nav-text: var(--on-background);
+  --secondary-nav-border: var(--border);
+  --secondary-nav-height: 2.5rem;
+  --secondary-nav-padding-x: 1rem;
+  --secondary-nav-padding-y: 0.25rem;
+
+  /* Mobile Navigation */
+  --mobile-nav-bg: var(--background);
+  --mobile-nav-text: var(--on-background);
+  --mobile-nav-border: var(--border);
+  --mobile-nav-icon-size: 1.5rem;
+  --mobile-nav-icon-color: var(--on-background);
+  --mobile-nav-active-bg: var(--background);
+  --mobile-nav-active-text: var(--on-background);
+  --mobile-nav-width: 280px;
+  --mobile-nav-shadow: 0 10px 15px -3px var(--shadow-color),
+    0 4px 6px -2px var(--shadow-color);
+
+  /* Mobile Menu */
+  --mobile-menu-bg: var(--background);
+  --mobile-menu-title-color: var(--on-background);
+  --mobile-menu-text: var(--on-background);
+  --mobile-menu-overlay: var(--background);
+  --mobile-nav-item-hover: var(--background);
+  --mobile-nav-icon-color: var(--on-background);
+  --mobile-nav-icon-size: 1.25rem;
+  --mobile-nav-separator: var(--background);
+  --mobile-location-title-color: var(--on-background);
+  --mobile-location-title-weight: 500;
+  --mobile-location-btn-border: var(--border);
+  --mobile-location-btn-bg: transparent;
+  --mobile-location-btn-text: var(--on-background);
+
+  /* Search */
+  --search-bg: var(--background);
+  --search-text: var(--on-background);
+  --search-placeholder: var(--on-background);
+  --search-border: var(--border);
+  --search-focus-border: var(--border);
+  --search-radius: 0.5rem;
+  --search-padding-x: 1rem;
+  --search-padding-y: 0.5rem;
+  --search-height: 2.5rem;
+  --search-icon-color: var(--on-background);
+  --search-button-bg: var(--background);
+  --search-button-text: var(--on-background);
+
+  /* ===== Product Components ===== */
+  /* Product Card */
+  --product-card-bg: var(--primary);
+  --product-card-text: var(--on-primary);
+  --product-card-border: var(--border);
+  --product-card-border-radius: 0.5rem;
+  --product-card-shadow: 0 1px 2px 0 var(--shadow-color);
+  --product-card-hover-shadow: 0 4px 6px -1px var(--shadow-color),
+    0 2px 4px -1px var(--shadow-color);
+  --product-card-padding: 1rem;
+  --product-card-gap: 0.5rem;
+  --product-card-transition: 300ms ease;
+
+  /* Product Image */
+  --product-image-aspect: 1/1;
+  --product-image-bg: var(--background);
+  --product-image-radius: 0.25rem;
+  --product-image-padding: 0.25rem;
+  --product-image-border: var(--border);
+  --product-image-hover-scale: 1.05;
+
+  /* Product Title */
+  --product-title-color: var(--primary);
+  --product-title-font: "Playfair Display", serif;
+  --product-title-size: 1.125rem;
+  --product-title-weight: 600;
+  --product-title-line-height: 1.2;
+  --product-title-hover-color: var(--on-background);
+
+  /* Product Price */
+  --product-price-color: var(--on-background);
+  --product-price-font: Space Mono, monospace;
+  --product-price-size: 1.25rem;
+  --product-price-weight: 700;
+  --product-compare-price-color: var(--foreground);
+  --product-compare-price-decoration: line-through;
+  --product-sale-price-color: var(--foreground);
+
+  /* Product Rating */
+  --product-rating-star-filled: var(--on-background);
+  --product-rating-star-empty: var(--on-background);
+  --product-rating-text-color: var(--on-background);
+  --product-rating-text-size: 0.875rem;
+  --product-rating-icon-size: 1rem;
+
+  /* Product Description */
+  --product-desc-color: var(--foreground);
+  --product-desc-font: Quicksand, sans-serif;
+  --product-desc-size: 0.875rem;
+  --product-desc-line-height: 1.5;
+
+  /* Product Details */
+  --product-details-bg: var(--background);
+  --product-details-text: var(--foreground);
+  --product-details-border: var(--border);
+  --product-details-padding: 1.5rem;
+  --product-details-radius: 0.75rem;
+  --product-details-shadow: 0 4px 6px -1px var(--shadow-color),
+    0 2px 4px -1px var(--shadow-color);
+  --product-details-gap: 2rem;
+
+  /* Product Badges */
+  --product-badge-bg: var(--primary);
+  --product-badge-text: var(--on-primary);
+  --product-badge-radius: 0.25rem;
+  --product-badge-padding: 0.25rem 0.5rem;
+  --product-badge-font-size: 0.75rem;
+  --product-badge-font-weight: 500;
+  --product-badge-sale-bg: var(--background);
+  --product-badge-sale-text: var(--on-background);
+  --product-badge-new-bg: var(--background);
+  --product-badge-new-text: var(--on-background);
+  --product-badge-featured-bg: var(--background);
+  --product-badge-featured-text: var(--on-background);
+
+  /* Product Actions */
+  --product-action-bg: var(--background);
+  --product-action-text: var(--on-background);
+  --product-action-border: var(--border);
+  --product-action-hover-bg: var(--background);
+  --product-action-hover-text: var(--on-background);
+  --product-action-radius: 9999px;
+  --product-action-size: 2.5rem;
+  --product-action-shadow: 0 1px 2px 0 var(--shadow-color);
+  --product-action-spacing: 0.25rem;
+
+  /* Add to Cart Button */
+  --add-to-cart-bg: var(--primary);
+  --add-to-cart-text: var(--on-primary);
+  --add-to-cart-border: var(--border);
+  --add-to-cart-hover-bg: var(--background);
+  --add-to-cart-hover-text: var(--on-background);
+  --add-to-cart-focus-ring: 0 0 0 2px var(--shadow-color);
+  --add-to-cart-padding-x: 1rem;
+  --add-to-cart-padding-y: 0.5rem;
+  --add-to-cart-radius: 0.5rem;
+  --add-to-cart-font-size: 1rem;
+  --add-to-cart-font-weight: 500;
+  --add-to-cart-shadow: 0 1px 2px 0 var(--shadow-color);
+  --add-to-cart-disabled-bg: var(--background);
+  --add-to-cart-disabled-text: var(--on-background);
+
+  /* ===== Form Components ===== */
+  /* Input */
+  --input-bg: var(--background);
+  --input-text: var(--on-background);
+  --input-placeholder: var(--on-background);
+  --input-border: var(--border);
+  --input-focus-border: var(--border);
+  --input-focus-ring: 0 0 0 2px var(--shadow-color);
+  --input-error-border: var(--border);
+  --input-error-text: var(--on-background);
+  --input-disabled-bg: var(--background);
+  --input-disabled-text: var(--on-background);
+  --input-radius: 0.5rem;
+  --input-padding-x: 1rem;
+  --input-padding-y: 0.5rem;
+  --input-font-size: 1rem;
+  --input-height: 2.5rem;
+
+  /* Select */
+  --select-bg: var(--primary);
+  --select-text: var(--on-background);
+  --select-placeholder: var(--on-background);
+  --select-border: var(--border);
+  --select-focus-border: var(--border);
+  --select-focus-ring: 0 0 0 2px var(--shadow-color);
+  --select-disabled-bg: var(--background);
+  --select-disabled-text: var(--on-background);
+  --select-indicator-color: var(--on-background);
+  --select-radius: 0.5rem;
+  --select-padding-x: 1rem;
+  --select-padding-y: 0.5rem;
+  --select-font-size: 1rem;
+  --select-height: 2.5rem;
+  --select-option-active-bg: var(--background);
+  --select-option-active-text: var(--on-background);
+  --select-option-hover-bg: var(--background);
+  --select-option-hover-text: var(--on-background);
+  --category-count-size: 0.875rem;
+
+  /* Product Grid */
+  --product-grid-columns-mobile: 2;
+  --product-grid-columns-tablet: 3;
+  --product-grid-columns-desktop: 4;
+  --product-grid-gap: 1.5rem;
+
+  /* Product Slider */
+  --slider-arrow-color: var(--on-background);
+  --slider-arrow-bg: var(--primary);
+  --slider-arrow-hover-color: var(--on-background);
+  --slider-arrow-hover-bg: var(--primary);
+  --slider-arrow-size: 2rem;
+  --slider-arrow-radius: 9999px;
+  --slider-arrow-shadow: 0 4px 6px -1px var(--shadow-color),
+    0 2px 4px -1px var(--shadow-color);
+  --slider-pagination-color: var(--on-background);
+  --slider-pagination-inactive-color: var(--on-background);
+  --slider-pagination-size: 0.5rem;
+  --slider-pagination-spacing: 0.25rem;
+
+  /* Category Components */
+  --category-card-bg: var(--primary);
+  --category-card-text: var(--on-primary);
+  --category-card-border: var(--border);
+  --category-card-radius: 0.5rem;
+  --category-card-shadow: 0 1px 2px 0 var(--shadow-color);
+  --category-card-hover-shadow: 0 4px 6px -1px var(--shadow-color),
+    0 2px 4px -1px var(--shadow-color);
+  --category-card-padding: 1rem;
+  --category-title-size: 1.25rem;
+  --category-title-weight: 600;
+  --category-image-aspect: 1/1;
+  --category-image-radius: 0.5rem;
+  --category-count-color: var(--on-primary);
+
+  /* Featured Categories */
+  --featured-categories-title-size: 2rem;
+  --featured-categories-title-weight: 700;
+  --featured-categories-title-color: var(--on-primary);
+  --featured-categories-subtitle-color: var(--on-primary);
+  --featured-categories-subtitle-size: 1rem;
+  --featured-categories-gap: 1.5rem;
+
+  /* Explore Categories */
+  --explore-categories-bg: var(--primary);
+  --explore-categories-text: var(--on-primary);
+  --explore-categories-border: var(--border);
+  --explore-categories-radius: 0.75rem;
+  --explore-categories-padding: 1.5rem;
+  --explore-categories-shadow: 0 4px 6px -1px var(--shadow-color),
+    0 2px 4px -1px var(--shadow-color);
+  --explore-categories-title-size: 1.5rem;
+  --explore-categories-title-weight: 700;
+  --explore-categories-gap: 1rem;
+
+  /* ===== UI Elements ===== */
+  /* Buttons */
+  --btn-primary-bg: var(--primary);
+  --btn-primary-text: var(--on-primary);
+  --btn-primary-border: var(--border);
+  --btn-primary-hover-bg: var(--primary);
+  --btn-primary-hover-text: var(--on-primary);
+  --btn-primary-active-bg: var(--primary);
+
+  --btn-secondary-bg: var(--background);
+  --btn-secondary-text: var(--on-primary);
+  --btn-secondary-border: var(--border);
+  --btn-secondary-hover-bg: var(--primary);
+  --btn-secondary-hover-text: var(--on-primary);
+  --btn-secondary-active-bg: var(--primary);
+
+  --btn-outline-bg: var(--background);
+  --btn-outline-text: var(--on-primary);
+  --btn-outline-border: var(--border);
+  --btn-outline-hover-bg: var(--primary);
+  --btn-outline-hover-text: var(--on-primary);
+  --btn-outline-active-bg: var(--primary);
+
+  --btn-ghost-bg: var(--background);
+  --btn-ghost-text: var(--on-primary);
+  --btn-ghost-border: var(--border);
+  --btn-ghost-hover-bg: var(--background);
+  --btn-ghost-hover-text: var(--foreground);
+  --btn-ghost-active-bg: var(--background);
+
+  --btn-destructive-bg: var(--destructive);
+  --btn-destructive-text: var(--on-primary);
+  --btn-destructive-border: var(--border);
+  --btn-destructive-hover-bg: var(--destructive);
+  --btn-destructive-hover-text: var(--on-primary);
+  --btn-destructive-active-bg: var(--destructive);
+
+  --btn-radius: 0.5rem;
+  --btn-padding-x: 1rem;
+  --btn-padding-y: 0.5rem;
+  --btn-font-weight: 500;
+  --btn-transition: 150ms ease;
+  /* Form Labels */
+  --label-text: var(--on-primary);
+  --label-required-color: var(--destructive);
+  --label-font-weight: 500;
+  --label-font-size: 0.875rem;
+  --label-margin-bottom: 0.25rem;
+
+  /* Checkbox & Radio */
+  --checkbox-size: 1.25rem;
+  --checkbox-bg: var(--background);
+  --checkbox-border: var(--border);
+  --checkbox-radius: 0.25rem;
+  --checkbox-checked-bg: var(--primary);
+  --checkbox-checked-border: var(--primary);
+  --checkbox-focus-shadow: 0 0 0 2px var(--primary);
+
+  --radio-size: 1.25rem;
+  --radio-bg: var(--background);
+  --radio-border: var(--border);
+  --radio-checked-bg: var(--primary);
+  --radio-checked-border: var(--primary);
+  --radio-focus-shadow: 0 0 0 2px var(--primary);
+
+  /* Tabs */
+  --tabs-border: var(--border);
+  --tab-text: var(--on-primary);
+  --tab-hover-text: var(--on-primary);
+  --tab-active-text: var(--on-primary);
+  --tab-active-border: var(--border);
+  --tab-active-bg: var(--background);
+  --tab-padding-x: 1rem;
+  --tab-padding-y: 0.5rem;
+  --tab-font-weight: 500;
+  --tab-content-padding: 1rem;
+  --tab-content-bg: var(--background);
+  --tab-content-text: var(--on-primary);
+
+  /* Pagination */
+  --pagination-bg: var(--background);
+  --pagination-text: var(--on-primary);
+  --pagination-border: var(--border);
+  --pagination-hover-bg: var(--background);
+  --pagination-hover-text: var(--on-primary);
+  --pagination-active-bg: var(--primary);
+  --pagination-active-text: var(--on-primary);
+  --pagination-radius: 0.5rem;
+  --pagination-size: 2.25rem;
+  --pagination-spacing: 0.25rem;
+  --pagination-font-size: 0.875rem;
+
+  /* Alerts */
+  --alert-radius: 0.5rem;
+  --alert-padding: 0.5rem 1rem;
+  --alert-margin-bottom: 1rem;
+  --alert-border-width: 2px;
+
+  --alert-success-bg: var(--success);
+  --alert-success-border: var(--success);
+  --alert-success-text: var(--success);
+
+  --alert-warning-bg: var(--warning);
+  --alert-warning-border: var(--warning);
+  --alert-warning-text: var(--warning);
+
+  --alert-error-bg: var(--destructive);
+  --alert-error-border: var(--destructive);
+  --alert-error-text: var(--destructive);
+
+  --alert-info-bg: var(--info);
+  --alert-info-border: var(--info);
+  --alert-info-text: var(--info);
+
+  /* Loaders */
+  --loader-color: var(--primary);
+  --loader-size: 1.5rem;
+  --loader-width: 0.2rem;
+  --loader-bg: var(--background);
+
+  /* ===== E-commerce Features ===== */
+  /* Cart */
+  --cart-bg: var(--background);
+  --cart-text: var(--on-primary);
+  --cart-border: var(--border);
+  --cart-shadow: 0 10px 15px -3px var(--shadow-color),
+    0 4px 6px -2px var(--shadow-color);
+  --cart-radius: 0.75rem;
+  --cart-header-bg: var(--background);
+  --cart-header-text: var(--on-primary);
+  --cart-item-border: var(--border);
+  --cart-item-padding: 1rem;
+  --cart-item-gap: 1rem;
+  --cart-item-radius: 0.5rem;
+  --cart-thumbnail-size: 80px;
+  --cart-thumbnail-radius: 0.25rem;
+  --cart-remove-color: var(--on-primary);
+  --cart-remove-hover-color: var(--on-primary);
+  --cart-empty-title-size: 1.5rem;
+  --cart-empty-text-color: var(--on-primary);
+  --checkout-btn-bg: var(--primary);
+  --empty-cart-btn-bg: var(--primary);
+  --empty-cart-btn-text: var(--on-primary);
+  --checkout-btn-text: var(--on-primary);
+  --checkout-btn-hover-bg: var(--primary);
+  --remove-all-btn-bg: var(--destructive);
+  --remove-all-btn-text: var(--on-primary);
+  --remove-all-btn-hover-bg: var(--destructive);
+
+  /* Order Summary */
+  --order-summary-bg: var(--background);
+  --order-summary-border: var(--border);
+  --order-summary-radius: 0.5rem;
+  --order-summary-padding: 1.5rem;
+  --order-summary-shadow: 0 1px 2px 0 var(--shadow-color);
+  --order-summary-title-size: 1.25rem;
+  --order-summary-title-weight: 600;
+  --order-summary-row-padding: 0.25rem 0;
+  --order-summary-total-border: var(--border);
+  --order-summary-total-font-size: 1.25rem;
+  --order-summary-total-font-weight: 700;
+
+  /* Checkout */
+  --checkout-bg: var(--background);
+  --checkout-text: var(--on-primary);
+  --checkout-border: var(--border);
+  --checkout-header-bg: var(--background);
+  --checkout-header-height: 72px;
+  --checkout-header-shadow: 0 1px 2px 0 var(--shadow-color);
+  --checkout-section-gap: 2rem;
+  --checkout-section-title-size: 1.5rem;
+  --checkout-section-title-weight: 600;
+  --checkout-form-gap: 1rem;
+  --checkout-step-inactive-color: oklch(0.71 0.16 327.11);
+  --checkout-step-active-color: oklch(0.75 0.23 332.02);
+  --checkout-step-completed-color: oklch(0.65 0.2 162);
+
+  /* Order Success */
+  --order-success-bg: var(--success);
+  --order-success-border: var(--border);
+  --order-success-radius: 0.75rem;
+  --order-success-padding: 2rem;
+  --order-success-shadow: 0 4px 6px -1px var(--shadow-color),
+    0 2px 4px -1px var(--shadow-color);
+  --order-success-icon-size: 4rem;
+  --order-success-icon-color: var(--success-foreground);
+  --order-success-title-size: 2rem;
+  --order-success-title-weight: 700;
+
+  /* Order History */
+  --order-history-bg: var(--background);
+  --order-history-border: var(--border);
+  --order-history-radius: 0.5rem;
+  --order-history-padding: 1rem;
+  --order-history-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --order-history-item-border: var(--border);
+  --order-history-item-padding: 1rem;
+  --order-history-item-hover-bg: var(--background);
+
+  /* Banners */
+  --banner-padding: 2rem;
+  --banner-radius: 0.75rem;
+  --banner-title-size: 2.5rem;
+  --banner-title-weight: 700;
+  --banner-subtitle-size: 1.25rem;
+  --banner-button-size: 1rem;
+  --banner-overlay-color: var(--background);
+  --banner-text-shadow: 0 2px 4px var(--shadow-color);
+  --banner-content-gap: 1rem;
+
+  /* Contact Form */
+  --contact-form-bg: var(--background);
+  --contact-form-border: var(--border);
+  --contact-form-radius: 0.75rem;
+  --contact-form-padding: 2rem;
+  --contact-form-shadow: 0 4px 6px -1px var(--shadow-color),
+    0 2px 4px -1px var(--shadow-color);
+  --contact-form-gap: 1.5rem;
+  --contact-form-title-size: 2rem;
+  --contact-form-title-weight: 700;
+
+  /* App Engage Section */
+  --app-engage-bg: var(--background);
+  --app-engage-text: var(--foreground);
+  --app-engage-padding: 2rem;
+  --app-engage-radius: 0.75rem;
+  --app-engage-title-size: 2rem;
+  --app-engage-title-weight: 700;
+  --app-engage-image-width: 120px;
+
+  /* Footer */
+  --footer-bg: var(--background);
+  --footer-text: var(--foreground);
+  --footer-border: var(--border);
+  --footer-padding-y: 2rem;
+  --footer-padding-x: 1.5rem;
+  --footer-logo-height: 2.5rem;
+  --footer-heading-size: 1.25rem;
+  --footer-heading-weight: 600;
+  --footer-heading-margin: 1rem;
+  --footer-link-color: var(--foreground);
+  --footer-link-hover-color: var(--foreground);
+  --footer-link-spacing: 0.5rem;
+  --footer-grid-gap: 2rem;
+
+  /* Authentication */
+  --auth-form-width: 400px;
+  --auth-form-bg: var(--background);
+  --auth-form-border: var(--border);
+  --auth-form-radius: 0.75rem;
+
+  /* Order Success Page */
+  --order-success-card-border: var(--border);
+  --order-success-card-bg: var(--background);
+  --order-success-card-radius: 0.75rem;
+  --order-success-header-bg: var(--background);
+  --order-success-header-border: var(--border);
+  --order-success-icon-bg: var(--background);
+  --order-success-icon-color: var(--foreground);
+  --order-success-title-color: var(--foreground);
+  --order-success-description-color: var(--foreground);
+  --order-id-badge-border: var(--border);
+  --order-id-badge-text: var(--foreground);
+  --stepper-active-color: var(--foreground);
+  --stepper-completed-color: var(--foreground);
+  --stepper-disabled-color: var(--background);
+  --stepper-active-bg-color: var(--background);
+  --stepper-completed-bg-color: var(--background);
+  --stepper-active-text-color: var(--foreground);
+  --stepper-completed-text-color: var(--foreground);
+  --stepper-inactive-bg-color: var(--background);
+  --stepper-inactive-text-color: var(--foreground);
+  --order-footer-bg: var(--background);
+  --order-footer-border: var(--border);
+  --continue-shopping-btn-bg: var(--background);
+  --continue-shopping-btn-hover-bg: var(--background);
+  --continue-shopping-btn-text: var(--foreground);
+  --view-orders-btn-border: var(--border);
+  --view-orders-btn-hover-bg: var(--background);
+  --view-orders-btn-text: var(--foreground);
+  --btn-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+
+  /* Order Details Page */
+  --order-loading-card-border: var(--border);
+  --loading-skeleton-bg: var(--background);
+  --order-card-shadow: 0 1px 3px var(--shadow-color);
+  --order-card-border: var(--border);
+  --order-card-bg: var(--background);
+  --order-card-radius: 0.75rem;
+  --order-header-bg: linear-gradient(
+    to right,
+    var(--background),
+    var(--background)
+  );
+  --order-title-color: var(--foreground);
+  --order-badge-bg: var(--background);
+  --order-badge-text: var(--foreground);
+  --order-badge-border: var(--border);
+  --order-date-color: var(--foreground);
+  --order-step-completed-bg: var(--background);
+  --order-step-pending-bg: var(--background);
+  --order-step-completed-icon: var(--foreground);
+  --order-step-text-color: var(--foreground);
+  --order-section-title: var(--foreground);
+  --order-table-border: var(--border);
+  --order-table-header-bg: oklch(0.96 0.01 0);
+  --order-table-header-text: oklch(0.45 0.04 0);
+  --order-table-text: var(--foreground);
+  --order-table-row-hover: var(--background);
+  --order-address-card-border: var(--border);
+  --order-address-card-bg: var(--background);
+  --order-address-card-radius: 0.75rem;
+  --order-address-name: var(--foreground);
+  --order-address-text: var(--foreground);
+  --order-address-divider: var(--border);
+  --order-address-label: var(--foreground);
+  --order-address-value: var(--foreground);
+  --order-summary-card-border: var(--border);
+  --order-summary-card-bg: var(--background);
+  --order-summary-card-radius: 0.75rem;
+  --order-summary-divider: var(--border);
+  --order-summary-label: var(--foreground);
+  --order-summary-value: var(--foreground);
+  --order-summary-total-bg: var(--background);
+  --order-summary-total-label: var(--foreground);
+  --order-summary-total-value: var(--foreground);
+
+  /* Contact Us Page */
+  --contact-page-bg: var(--background);
+  --contact-card-border: transparent;
+  --contact-card-bg: var(--background);
+  --contact-card-shadow: none;
+  --contact-card-radius: 0.75rem;
+  --contact-title-color: var(--foreground);
+  --contact-description-color: var(--foreground);
+  --contact-inner-card-border: var(--border);
+  --contact-inner-card-bg: oklch(1 0 0);
+  --contact-inner-card-radius: 0.75rem;
+  --loading-spinner-color: var(--foreground);
+  --loading-text-color: var(--foreground);
+  --error-border-color: var(--border);
+  --error-bg-color: var(--background);
+  --error-icon-color: var(--foreground);
+  --error-text-color: var(--foreground);
+  --error-description-color: var(--foreground);
+  --error-button-bg: var(--background);
+  --error-button-hover-bg: var(--background);
+  --error-button-text: var(--foreground);
+  --contact-card-item-border: var(--border);
+  --contact-card-item-bg: var(--background);
+  --contact-card-item-radius: 0.75rem;
+  --contact-icon-bg: var(--background);
+  --contact-icon-color: var(--foreground);
+  --contact-item-title: var(--foreground);
+  --contact-item-text: var(--foreground);
+  --contact-link-hover: oklch(0.32 0.16 327.75);
+
+  /* Product Description */
+  --loading-bg: transparent;
+  --error-bg: transparent;
+  --error-text: var(--foreground);
+  --product-separator: var(--border);
+  --product-category-label: var(--foreground);
+  --product-category-link: var(--foreground);
+  --product-category-link-hover: var(--foreground);
+  --add-cart-btn-bg: var(--foreground);
+  --add-cart-btn-hover-bg: var(--success);
+  --add-cart-btn-text: var(--on-primary);
+  --auth-form-padding: 2rem;
+  --auth-form-shadow: 0 4px 6px -1px var(--shadow-color),
+    0 2px 4px -1px var(--shadow-color);
+  --auth-form-title-size: 2rem;
+  --auth-form-title-weight: 700;
+  --auth-form-gap: 1rem;
+  --auth-social-button-gap: 0.5rem;
+
+  /* Profile */
+  --profile-sidebar-width: 240px;
+  --profile-sidebar-bg: var(--background);
+  --profile-sidebar-border: var(--border);
+  --profile-sidebar-radius: 0.5rem;
+  --profile-sidebar-padding: 1rem;
+  --profile-menu-item-padding: 0.5rem 1rem;
+  --profile-menu-item-hover-bg: var(--background);
+  --profile-menu-item-active-bg: var(--background);
+  --profile-menu-item-active-text: var(--foreground);
+  --profile-content-bg: var(--background);
+  --profile-content-border: var(--border);
+  --profile-content-radius: 0.5rem;
+  --profile-content-padding: 1.5rem;
+  --profile-content-shadow: 0 1px 2px 0 var(--shadow-color);
+
+  /* Profile Card & Form Components */
+  --profile-bg: var(--card);
+  --profile-border: var(--border);
+  --profile-title: var(--primary);
+  --profile-title-weight: var(--fw-semibold);
+  --profile-text: var(--foreground);
+  --profile-label: var(--muted-foreground);
+  --profile-error: var(--destructive);
+
+  /* Profile Buttons */
+  --profile-button-bg: var(--primary);
+  --profile-button-text: var(--primary-foreground);
+  --profile-button-hover: var(--brand-primary-hover);
+  --profile-cancel: var(--muted-foreground);
+  --profile-cancel-hover: var(--foreground);
+
+  /* Profile Form Inputs */
+  --profile-input-bg: var(--input);
+  --profile-input-text: var(--foreground);
+  --profile-input-border: var(--border);
+  --profile-input-disabled: var(--muted);
+
+  /* Modals & Drawers */
+  --modal-bg: var(--background);
+  --modal-border: var(--border);
+  --modal-radius: 0.75rem;
+  --modal-shadow: 0 10px 15px -3px var(--shadow-color),
+    0 4px 6px -2px var(--shadow-color);
+  --modal-padding: 1.5rem;
+  --modal-header-padding: 1rem 1.5rem;
+  --modal-footer-padding: 1rem 1.5rem;
+  --modal-title-size: 1.5rem;
+  --modal-title-weight: 600;
+  --modal-close-size: 1.5rem;
+  --modal-close-color: var(--foreground);
+  --modal-close-hover-color: var(--foreground);
+  --modal-overlay-bg: var(--background);
+  --modal-z-index: 1000;
+
+  --drawer-width-sm: 320px;
+  --drawer-width-md: 400px;
+  --drawer-width-lg: 480px;
+  --drawer-bg: var(--background);
+  --drawer-border: var(--border);
+  --drawer-shadow: 0 10px 15px -3px var(--shadow-color),
+    0 4px 6px -2px var(--shadow-color);
+  --drawer-padding: 1.5rem;
+  --drawer-header-height: 60px;
+  --drawer-header-border: var(--border);
+  --drawer-title-size: 1.5rem;
+  --drawer-title-weight: 600;
+  --drawer-close-size: 1.5rem;
+  --drawer-close-color: var(--foreground);
+  --drawer-close-hover-color: var(--foreground);
+  --drawer-z-index: 1000;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    letter-spacing: var(--tracking-normal);
+  }
+}
+
+/* Base/Default Theme - Always loaded */
+@import "../themes/default/Grocery/theme1/styles/theme.css";
+@import "../themes/default/Home & Living/theme1/styles/theme.css";
+
+/* Store-Specific Theme Imports */
+/* These will only be loaded if the matching data-store-id and data-theme-id attributes are present */
+
+/* Example of how to add more themes:
+[data-store-id="103165"][data-theme-id="dazzletwo"] {
+  @import "../themes/103165/dazzletwo/styles/theme.css";
+}
+*/
+/* Product Description Content Styles */
+.product-description-content {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--muted-foreground);
+}
+
+.product-description-content p {
+  margin-bottom: 1rem;
+}
+
+.product-description-content h1,
+.product-description-content h2,
+.product-description-content h3,
+.product-description-content h4,
+.product-description-content h5,
+.product-description-content h6 {
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--foreground);
+}
+
+.product-description-content h1 {
+  font-size: 1.5rem;
+}
+
+.product-description-content h2 {
+  font-size: 1.25rem;
+}
+
+.product-description-content h3 {
+  font-size: 1.125rem;
+}
+
+.product-description-content ul,
+.product-description-content ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.product-description-content ul {
+  list-style-type: disc;
+}
+
+.product-description-content ol {
+  list-style-type: decimal;
+}
+
+.product-description-content li {
+  margin-bottom: 0.25rem;
+  color: var(--foreground);
+}
+
+.product-description-content strong,
+.product-description-content b {
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.product-description-content em,
+.product-description-content i {
+  font-style: italic;
+}
+
+.product-description-content u {
+  text-decoration: underline;
+}
+
+.product-description-content a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.product-description-content a:hover {
+  color: var(--primary-hover);
+}
+
+.product-description-content blockquote {
+  border-left: 4px solid var(--border);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+  color: var(--muted-foreground);
+}
+
+.product-description-content code {
+  background-color: var(--muted);
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+}
+
+.product-description-content pre {
+  background-color: var(--muted);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.product-description-content pre code {
+  background: none;
+  padding: 0;
+}
+
+.product-description-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.product-description-content th,
+.product-description-content td {
+  border: 1px solid var(--border);
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.product-description-content th {
+  background-color: var(--muted);
+  font-weight: 600;
+}
+
+.product-description-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+/* Remove any cursor elements that might be added by rich text editors */
+.product-description-content .ql-cursor {
+  display: none;
+}
