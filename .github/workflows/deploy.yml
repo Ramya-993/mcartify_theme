@@ -48,16 +48,25 @@ jobs:
           USER_NAME: ${{ secrets.EC2_USER }}
           EC2_PATH: /var/www/store-dev
         run: |
-          # Write private key with proper formatting
-          echo "$PRIVATE_KEY" > private_key.pem
+          # Write private key - handle both regular and base64 encoded keys
+          if echo "$PRIVATE_KEY" | grep -q "BEGIN.*PRIVATE KEY"; then
+            # Key is in PEM format
+            echo "$PRIVATE_KEY" > private_key.pem
+          else
+            # Try to decode as base64
+            echo "$PRIVATE_KEY" | base64 -d > private_key.pem
+          fi
+          
           chmod 600 private_key.pem
           
           # Verify key format
           if ! grep -q "BEGIN.*PRIVATE KEY" private_key.pem; then
             echo "ERROR: Private key is not properly formatted"
-            echo "First line should be: -----BEGIN RSA PRIVATE KEY-----"
+            cat private_key.pem
             exit 1
           fi
+          
+          echo "✅ Private key loaded successfully"
           
           # Copy deployment package to EC2
           scp -i private_key.pem -o StrictHostKeyChecking=no \
