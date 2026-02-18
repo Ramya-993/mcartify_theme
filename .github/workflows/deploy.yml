@@ -45,7 +45,7 @@ jobs:
         env:
           PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
           HOSTNAME: ${{ secrets.EC2_HOST }}
-          USER_NAME: ${{ secrets.EC2_USER }}
+          USER_NAME: ${{ secrets.EC2_USERNAME }}
           EC2_PATH: /var/www/store-dev
         run: |
           # Write private key - handle both regular and base64 encoded keys
