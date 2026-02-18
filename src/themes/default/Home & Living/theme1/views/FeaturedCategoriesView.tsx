@@ -7,7 +7,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import CategoryCard from "../components/CategoryCard";
-// Import types from the Container
 import type { FeaturedCategoriesViewProps } from "../components/FeaturedCategories";
 
 const FeaturedCategoriesView: React.FC<FeaturedCategoriesViewProps> = ({
@@ -17,15 +16,16 @@ const FeaturedCategoriesView: React.FC<FeaturedCategoriesViewProps> = ({
 }) => {
     return (
         <section
-            className="py-8 md:py-12 px-4 md:px-8 lg:px-28"
+            className="py-[var(--section-padding-y)] md:py-12 px-4 md:px-8 lg:px-28"
             aria-labelledby="featured-categories-heading"
+            style={{ background: "var(--section-bg)" }}
         >
             <div className="container mx-auto max-w-full">
                 {/* Section Header - Centered Title */}
                 <div className="mb-8 px-0 flex flex-col items-center justify-center">
                     <h2
                         id="featured-categories-heading"
-                        className="text-2xl md:text-3xl font-bold text-gray-900 text-center"
+                        className="text-2xl md:text-3xl font-bold text-(color:--foreground) text-center"
                     >
                         {title}
                     </h2>
@@ -63,7 +63,7 @@ const FeaturedCategoriesView: React.FC<FeaturedCategoriesViewProps> = ({
                 {/* View All Button at Bottom Center */}
                 <div className="flex justify-center mt-10">
                     <Link href="/categories" aria-label="View all product categories">
-                        <button className="px-8 py-2 border border-yellow-500 text-yellow-600 bg-white rounded-md font-medium text-base hover:bg-yellow-50 transition-colors shadow-sm">
+                        <button className="px-8 py-2 border border-(color:--primary) text-(color:--primary) bg-white rounded-md font-medium text-base hover:bg-(color:--primary-hover) transition-colors shadow-sm">
                             View All
                         </button>
                     </Link>
