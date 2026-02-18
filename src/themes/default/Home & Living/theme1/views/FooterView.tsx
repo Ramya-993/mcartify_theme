@@ -4,21 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardHeader,
-} from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
-import type {
-    FooterProps,
-    StoreFooter,
-    Social,
-    FooterSection,
-    FooterMenuItem,
-} from "../components/Footer";
+import type { FooterProps, StoreFooter, Social, FooterSection, FooterMenuItem } from "../components/Footer";
 
 export interface FooterViewProps {
     name: string;
@@ -30,7 +19,6 @@ export interface FooterViewProps {
 
 // Social links section component
 const SocialLinks = memo(({ socials }: { socials: Social[] }) => {
-    // Animation variants for social icons
     const containerVariants = useMemo(
         () => ({
             hidden: { opacity: 0 },
@@ -62,7 +50,6 @@ const SocialLinks = memo(({ socials }: { socials: Social[] }) => {
         []
     );
 
-    // Filter out duplicates and limit to maximum 5 icons
     const uniqueSocials = socials
         .filter(
             (item, index, self) =>
@@ -202,7 +189,6 @@ FooterSections.displayName = "FooterSections";
 
 const FooterView: React.FC<FooterViewProps> = memo(
     ({ name, image, year, store, socials }) => {
-        // Main container animation
         const containerVariants = useMemo(
             () => ({
                 hidden: { opacity: 0 },
