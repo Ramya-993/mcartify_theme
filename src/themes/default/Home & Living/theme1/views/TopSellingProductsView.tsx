@@ -25,7 +25,7 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
 }) => {
     if (error) {
         return (
-            <section className="py-(spacing:--top-selling-section-padding-y) bg-(color:--top-selling-section-bg)">
+            <section className="py-(spacing:--section-padding-y) bg-(color:--section-bg)">
                 <div className="container mx-auto px-4">
                     <Card className="border-none shadow-(--top-selling-card-shadow) rounded-(--top-selling-card-radius) bg-(color:--top-selling-card-bg) p-8 text-center">
                         <CardTitle className="text-lg text-(color:--destructive) mb-2">
@@ -55,7 +55,7 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
                         {/* Section Title */}
                         <h2
                             id="top-selling-title"
-                            className="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-900"
+                            className="text-3xl md:text-4xl font-bold text-center mb-8 text-(color:--foreground)"
                         >
                             {title}
                         </h2>

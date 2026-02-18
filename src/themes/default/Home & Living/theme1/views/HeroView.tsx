@@ -6,20 +6,20 @@ import type { HeroProps } from "../components/Hero";
 
 const HeroView: React.FC<HeroProps> = ({ config = {} }) => {
     const {
-        title = "Welcome to Our Store",
-        subtitle = "Discover amazing products at great prices",
-        button_text = "Shop Now",
-        button_link = "/products",
-        background_image = "https://images.pexels.com/photos/1005638/pexels-photo-1005638.jpeg",
+        title = "Unleash Your Bold Style",
+        subtitle = "Discover the Latest Trends in Fashion",
+        button_text = "Shop the Collection",
+        button_link = "/shop",
+        background_image = "/hero-bg.jpg",
     } = config;
 
     return (
         <section
             className="relative w-full overflow-hidden"
             style={{
-                height: "var(--hero-section-height)",
-                minHeight: "var(--hero-section-min-height)",
-                maxHeight: "var(--hero-section-max-height)",
+                height: "var(--hero-height)",
+                minHeight: "var(--hero-min-height)",
+                maxHeight: "var(--hero-max-height)",
             }}
         >
             {/* Background Image */}
@@ -35,7 +35,7 @@ const HeroView: React.FC<HeroProps> = ({ config = {} }) => {
             {/* Dark overlay for better text readability */}
             <div
                 className="absolute inset-0 z-10"
-                style={{ backgroundColor: "var(--hero-overlay-bg)" }}
+                style={{ backgroundColor: "rgba(0, 0, 0, var(--hero-overlay-opacity))" }}
             ></div>
 
             {/* Fade effect at the bottom */}
@@ -55,10 +55,10 @@ const HeroView: React.FC<HeroProps> = ({ config = {} }) => {
                         className="text-4xl md:text-6xl mb-6 leading-tight drop-shadow-lg"
                         style={{
                             color: "var(--hero-title-color)",
-                            fontSize: "var(--hero-title-size)",
+                            fontSize: "var(--hero-title-font-size)",
                             fontWeight: "var(--hero-title-weight)",
                             lineHeight: "var(--hero-title-line-height)",
-                            textShadow: "var(--hero-title-shadow)",
+                            textShadow: "var(--hero-text-shadow)",
                             marginBottom: "1.5rem",
                         }}
                     >
@@ -68,7 +68,7 @@ const HeroView: React.FC<HeroProps> = ({ config = {} }) => {
                         className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed drop-shadow-lg"
                         style={{
                             color: "var(--hero-subtitle-color)",
-                            fontSize: "var(--hero-subtitle-size)",
+                            fontSize: "var(--hero-subtitle-font-size)",
                             lineHeight: "var(--hero-subtitle-line-height)",
                             textShadow: "var(--hero-subtitle-shadow)",
                             margin: "0 auto 2rem auto",
