@@ -48,8 +48,16 @@ jobs:
           USER_NAME: ${{ secrets.EC2_USER }}
           EC2_PATH: /var/www/store-dev
         run: |
+          # Write private key with proper formatting
           echo "$PRIVATE_KEY" > private_key.pem
           chmod 600 private_key.pem
+          
+          # Verify key format
+          if ! grep -q "BEGIN.*PRIVATE KEY" private_key.pem; then
+            echo "ERROR: Private key is not properly formatted"
+            echo "First line should be: -----BEGIN RSA PRIVATE KEY-----"
+            exit 1
+          fi
           
           # Copy deployment package to EC2
           scp -i private_key.pem -o StrictHostKeyChecking=no \
