@@ -74,34 +74,44 @@ jobs:
           
           # Extract and deploy on EC2
           ssh -i private_key.pem -o StrictHostKeyChecking=no \
-            ${USER_NAME}@${HOSTNAME} << 'ENDSSH'
+            ${USER_NAME}@${HOSTNAME} "
             set -e
+            EC2_PATH='${EC2_PATH}'
             
-            # Stop the application
-            pm2 stop mcartify-store || true
+            # Stop the application (check if PM2 exists)
+            if command -v pm2 &> /dev/null; then
+              pm2 stop mcartify-store || true
+            fi
             
             # Backup current deployment
-            if [ -d ${EC2_PATH}/backup ]; then
-              rm -rf ${EC2_PATH}/backup
+            if [ -d \${EC2_PATH}/backup ]; then
+              sudo rm -rf \${EC2_PATH}/backup
             fi
-            mkdir -p ${EC2_PATH}/backup
-            cp -r ${EC2_PATH}/.next ${EC2_PATH}/backup/ 2>/dev/null || :
-            cp -r ${EC2_PATH}/src ${EC2_PATH}/backup/ 2>/dev/null || :
+            sudo mkdir -p \${EC2_PATH}/backup
+            sudo cp -r \${EC2_PATH}/.next \${EC2_PATH}/backup/ 2>/dev/null || :
+            sudo cp -r \${EC2_PATH}/src \${EC2_PATH}/backup/ 2>/dev/null || :
             
             # Extract new deployment
-            cd ${EC2_PATH}
-            tar -xzf /tmp/deployment.tar.gz
-            rm /tmp/deployment.tar.gz
+            cd \${EC2_PATH}
+            sudo tar -xzf /tmp/deployment.tar.gz
+            sudo rm /tmp/deployment.tar.gz
+            
+            # Set proper ownership
+            sudo chown -R ubuntu:ubuntu \${EC2_PATH}
             
             # Install production dependencies (if needed)
             npm ci --production
             
             # Start the application
-            pm2 start ecosystem.config.js || pm2 start npm --name "mcartify-store" -- start
-            pm2 save
+            if command -v pm2 &> /dev/null; then
+              pm2 start ecosystem.config.js 2>/dev/null || pm2 start npm --name 'mcartify-store' -- start
+              pm2 save
+            else
+              echo 'PM2 not found. Please start the application manually.'
+            fi
             
-            echo "Deployment completed successfully!"
-          ENDSSH
+            echo 'Deployment completed successfully!'
+          "
           
           # Clean up
           rm -f private_key.pem
