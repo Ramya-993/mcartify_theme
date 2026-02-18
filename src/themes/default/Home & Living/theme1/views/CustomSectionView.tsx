@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useState, useEffect } from "react";
-import { WidthProvider, Responsive, Layouts, Layout } from "react-grid-layout";
+import { WidthProvider, Responsive } from "react-grid-layout";
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
 import Image from "next/image";
@@ -11,8 +11,8 @@ import type { CustomSectionViewProps, CustomSectionImage } from "../components/C
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 const CustomSectionView: React.FC<CustomSectionViewProps> = ({
-    title,
-    sub_title,
+    title = "Curated Fashion Picks",
+    sub_title = "Handpicked Styles Just for You",
     images,
     layouts,
 }) => {
@@ -26,9 +26,8 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
         const updateRowHeight = () => {
             if (gridRef.current) {
                 const containerWidth = gridRef.current.offsetWidth;
-                // Use the same formula as admin
                 const newRowHeight = (containerWidth / 12) * 0.5;
-                setRowHeight(Math.max(newRowHeight, 40)); // Minimum row height
+                setRowHeight(Math.max(newRowHeight, 40));
             }
         };
 
@@ -37,12 +36,10 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
         return () => window.removeEventListener("resize", updateRowHeight);
     }, []);
 
-    // Handle image load errors
     const handleImageError = (imageId: string) => {
         setImageLoadErrors((prev) => new Set(prev).add(imageId));
     };
 
-    // Render image content
     const renderImageContent = (image: CustomSectionImage) => {
         const hasError = imageLoadErrors.has(String(image.id));
         const imageUrl = image.image_url || image.image;
@@ -51,19 +48,19 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
             return (
                 <div
                     className="w-full h-full flex items-center justify-center"
-                    style={{ backgroundColor: "var(--custom-section-error-bg)" }}
+                    style={{ backgroundColor: "var(--background)" }}
                 >
                     <div className="text-center">
                         <div
                             className="mb-2"
                             style={{
-                                color: "var(--custom-section-error-text)",
-                                fontSize: "var(--custom-section-error-icon-size)",
+                                color: "var(--foreground)",
+                                fontSize: "var(--section-padding-y)",
                             }}
                         >
                             📷
                         </div>
-                        <p style={{ color: "var(--custom-section-error-text)", fontSize: "0.75rem" }}>
+                        <p style={{ color: "var(--foreground)", fontSize: "0.75rem" }}>
                             Image not available
                         </p>
                     </div>
@@ -79,7 +76,7 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                     fill
                     style={{
                         objectFit: "cover",
-                        borderRadius: "var(--custom-section-card-radius)",
+                        borderRadius: "var(--section-padding-y)",
                         width: "100%",
                         height: "100%",
                     }}
@@ -91,10 +88,10 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                     <Button
                         className="absolute left-1/2 -translate-x-1/2 bottom-6 rounded-none shadow-none text-base"
                         style={{
-                            backgroundColor: "var(--custom-section-button-bg)",
-                            color: "var(--custom-section-button-text)",
-                            fontWeight: "var(--custom-section-button-font-weight)",
-                            padding: `var(--custom-section-button-padding-y) var(--custom-section-button-padding-x)`,
+                            backgroundColor: "var(--primary)",
+                            color: "var(--primary-foreground)",
+                            fontWeight: "var(--font-sans)",
+                            padding: `var(--section-padding-y) var(--section-padding-y)`,
                             borderRadius: 0,
                         }}
                     >
@@ -109,8 +106,8 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
         <section
             className="w-full"
             style={{
-                paddingLeft: "var(--custom-section-padding-x)",
-                paddingRight: "var(--custom-section-padding-x)",
+                paddingLeft: "var(--section-padding-y)",
+                paddingRight: "var(--section-padding-y)",
             }}
         >
             {(title || sub_title) && (
@@ -118,10 +115,10 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                     {title && (
                         <h2
                             style={{
-                                color: "var(--custom-section-title-color)",
-                                fontSize: "var(--custom-section-title-size)",
-                                fontWeight: "var(--custom-section-title-weight)",
-                                marginBottom: "var(--custom-section-title-margin-bottom)",
+                                color: "var(--primary)",
+                                fontSize: "var(--section-padding-y)",
+                                fontWeight: "var(--font-sans)",
+                                marginBottom: "var(--section-padding-y)",
                             }}
                         >
                             {title}
@@ -131,9 +128,9 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                         <p
                             className="mx-auto"
                             style={{
-                                color: "var(--custom-section-subtitle-color)",
-                                fontSize: "var(--custom-section-subtitle-size)",
-                                maxWidth: "var(--custom-section-subtitle-max-width)",
+                                color: "var(--secondary)",
+                                fontSize: "var(--section-padding-y)",
+                                maxWidth: "var(--section-padding-y)",
                             }}
                         >
                             {sub_title}
@@ -172,10 +169,10 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                                     display: "flex",
                                     alignItems: "center",
                                     justifyContent: "center",
-                                    borderRadius: "var(--custom-section-card-radius)",
-                                    border: `1px solid var(--custom-section-card-border)`,
-                                    backgroundColor: "var(--custom-section-card-bg)",
-                                    transition: "var(--custom-section-card-transition)",
+                                    borderRadius: "var(--section-padding-y)",
+                                    border: `1px solid var(--foreground)`,
+                                    backgroundColor: "var(--background)",
+                                    transition: "var(--section-padding-y)",
                                 }}
                             >
                                 {imageContent}
