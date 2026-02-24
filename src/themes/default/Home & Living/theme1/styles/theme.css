@@ -10,7 +10,7 @@
   /* Font Families */
   --font-price: Space Mono;
   --font-sans: Montserrat;
-  --font-serif: Raleway;
+  --font-serif: Playfair Display;
   --font-mono: Fira Code;
 
   /* Font Sizes */
@@ -71,16 +71,16 @@
   --popover-foreground: oklch(10% 0 0);
 
   /* Primary Colors - Grocery Green */
-  --primary: oklch(65% 0.30 340);
-  --primary-hover: oklch(60% 0.32 340);
-  --primary-active: oklch(55% 0.34 340);
-  --on-primary: oklch(100% 0 0);
-  --primary-foreground: oklch(100% 0 0);
+  --primary: oklch(80% 0.15 350);
+  --primary-hover: oklch(75% 0.16 350);
+  --primary-active: oklch(70% 0.17 350);
+  --on-primary: oklch(10% 0 0);
+  --primary-foreground: oklch(10% 0 0);
 
   /* Secondary Colors */
-  --secondary: oklch(15% 0.01 0);
-  --secondary-hover: oklch(20% 0.01 0);
-  --secondary-active: oklch(25% 0.01 0);
+  --secondary: oklch(65% 0.30 340);
+  --secondary-hover: oklch(60% 0.32 340);
+  --secondary-active: oklch(55% 0.34 340);
   --on-secondary: oklch(100% 0 0);
   --secondary-foreground: oklch(100% 0 0);
 
@@ -90,10 +90,10 @@
   --muted-foreground: oklch(56% 0 0);
 
   /* Accent Colors */
-  --accent: oklch(80% 0.15 350);
-  --accent-hover: oklch(75% 0.16 350);
-  --accent-active: oklch(70% 0.17 350);
-  --accent-foreground: oklch(100% 0 0);
+  --accent: oklch(85% 0.15 350);
+  --accent-hover: oklch(80% 0.14 85);
+  --accent-active: oklch(75% 0.16 85);
+  --accent-foreground: oklch(10% 0 0);
 
   /* Destructive Colors */
   --destructive: oklch(64% 0.22 29);
@@ -113,9 +113,9 @@
   /* Sidebar Colors - direct OKLCH values */
   --sidebar: oklch(100% 0 0);
   --sidebar-foreground: oklch(10% 0 0);
-  --sidebar-primary: oklch(65% 0.30 340);
+  --sidebar-primary: oklch(67% 0.16 144);
   --sidebar-primary-foreground: oklch(100% 0 0);
-  --sidebar-accent: oklch(80% 0.15 350);
+  --sidebar-accent: oklch(67% 0.16 144);
   --sidebar-accent-foreground: oklch(100% 0 0);
   --sidebar-border: oklch(85% 0 0);
   --sidebar-ring: oklch(75% 0.16 131);
@@ -698,8 +698,8 @@
   --footer-border: oklch(85% 0 0);
   --footer-border-width: 1px;
   --footer-padding-x: 1rem;
-  --footer-padding-y: 4rem;
-  --footer-grid-gap: 3rem;
+  --footer-padding-y: 3rem;
+  --footer-grid-gap: 2rem;
   --footer-logo-height: 40px;
   --footer-logo-text: oklch(1 0.0099 120.71);
   --footer-description-color: oklch(1 0.0099 120.71);
