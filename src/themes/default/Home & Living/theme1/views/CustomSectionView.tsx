@@ -14,13 +14,11 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
     title = "Curated Fashion Picks",
     sub_title = "Handpicked Styles Just for You",
     images,
-    layouts,
+    layouts = { lg: [{ i: "0", x: 0, y: 0, w: 2, h: 2 }] }, // Example layout
 }) => {
     const gridRef = useRef<HTMLDivElement>(null);
     const [rowHeight, setRowHeight] = useState(60);
-    const [imageLoadErrors, setImageLoadErrors] = useState<Set<string>>(
-        new Set()
-    );
+    const [imageLoadErrors, setImageLoadErrors] = useState<Set<string>>(new Set());
 
     useEffect(() => {
         const updateRowHeight = () => {
@@ -90,7 +88,7 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                         style={{
                             backgroundColor: "var(--primary)",
                             color: "var(--primary-foreground)",
-                            fontWeight: "var(--font-sans)",
+                            fontWeight: "var(--section-padding-y)",
                             padding: `var(--section-padding-y) var(--section-padding-y)`,
                             borderRadius: 0,
                         }}
@@ -117,7 +115,7 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                             style={{
                                 color: "var(--primary)",
                                 fontSize: "var(--section-padding-y)",
-                                fontWeight: "var(--font-sans)",
+                                fontWeight: "var(--section-padding-y)",
                                 marginBottom: "var(--section-padding-y)",
                             }}
                         >
