@@ -16,7 +16,7 @@ const FeaturedCategoriesView: React.FC<FeaturedCategoriesViewProps> = ({
 }) => {
     return (
         <section
-            className="py-[var(--section-padding-y)] md:py-12 px-4 md:px-8 lg:px-28"
+            className="py-[var(--section-padding-y)] md:py-[var(--section-padding-y)] px-4 md:px-8 lg:px-28"
             aria-labelledby="featured-categories-heading"
             style={{ background: "var(--section-bg)" }}
         >
