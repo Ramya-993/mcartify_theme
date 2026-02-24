@@ -100,21 +100,22 @@ jobs:
             # Set proper ownership
             sudo chown -R ubuntu:ubuntu \${EC2_PATH}
             
-            # Install production dependencies (if needed) - use full path or skip if not needed
-            # Uncomment and adjust path if npm install is required:
-            # export NVM_DIR=\"\$HOME/.nvm\"
-            # [ -s \"\$NVM_DIR/nvm.sh\" ] && . \"\$NVM_DIR/nvm.sh\"
-            # npm ci --production || echo 'Skipping npm install'
+            # Load Node environment and restart application
+            export NVM_DIR=\"\$HOME/.nvm\"
+            [ -s \"\$NVM_DIR/nvm.sh\" ] && . \"\$NVM_DIR/nvm.sh\"
             
-            # Start the application
+            # Restart with PM2 if available
             if command -v pm2 &> /dev/null; then
-              pm2 start ecosystem.config.js 2>/dev/null || pm2 start npm --name 'mcartify-store' -- start
-              pm2 save
+              echo 'Restarting application with PM2...'
+              pm2 restart mcartify-store || pm2 start npm --name mcartify-store -- start || echo 'PM2 restart failed'
+              pm2 save || true
             else
-              echo 'PM2 not found. Please start the application manually.'
+              echo 'PM2 not found, checking for app process...'
+              # Try to restart via systemd or other method
+              sudo systemctl restart mcartify || echo 'No systemctl service found'
             fi
             
-            echo 'Deployment completed successfully!'
+            echo '✅ Deployment completed successfully!'
           "
           
           # Clean up
