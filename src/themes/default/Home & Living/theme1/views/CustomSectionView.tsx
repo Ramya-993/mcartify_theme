@@ -11,14 +11,16 @@ import type { CustomSectionViewProps, CustomSectionImage } from "../components/C
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 const CustomSectionView: React.FC<CustomSectionViewProps> = ({
-    title = "Curated Fashion Picks",
-    sub_title = "Handpicked Styles Just for You",
+    title = "Curated Picks",
+    sub_title = "Handpicked styles just for you.",
     images,
-    layouts = { lg: [{ i: "0", x: 0, y: 0, w: 2, h: 2 }] }, // Example layout
+    layouts,
 }) => {
     const gridRef = useRef<HTMLDivElement>(null);
     const [rowHeight, setRowHeight] = useState(60);
-    const [imageLoadErrors, setImageLoadErrors] = useState<Set<string>>(new Set());
+    const [imageLoadErrors, setImageLoadErrors] = useState<Set<string>>(
+        new Set()
+    );
 
     useEffect(() => {
         const updateRowHeight = () => {
@@ -53,7 +55,7 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                             className="mb-2"
                             style={{
                                 color: "var(--foreground)",
-                                fontSize: "var(--section-padding-y)",
+                                fontSize: "var(--primary-foreground)",
                             }}
                         >
                             📷
@@ -88,7 +90,7 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                         style={{
                             backgroundColor: "var(--primary)",
                             color: "var(--primary-foreground)",
-                            fontWeight: "var(--section-padding-y)",
+                            fontWeight: "var(--primary-foreground)",
                             padding: `var(--section-padding-y) var(--section-padding-y)`,
                             borderRadius: 0,
                         }}
@@ -113,9 +115,9 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                     {title && (
                         <h2
                             style={{
-                                color: "var(--primary)",
-                                fontSize: "var(--section-padding-y)",
-                                fontWeight: "var(--section-padding-y)",
+                                color: "var(--foreground)",
+                                fontSize: "var(--primary-foreground)",
+                                fontWeight: "var(--primary-foreground)",
                                 marginBottom: "var(--section-padding-y)",
                             }}
                         >
@@ -126,8 +128,8 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                         <p
                             className="mx-auto"
                             style={{
-                                color: "var(--secondary)",
-                                fontSize: "var(--section-padding-y)",
+                                color: "var(--foreground)",
+                                fontSize: "var(--primary-foreground)",
                                 maxWidth: "var(--section-padding-y)",
                             }}
                         >
