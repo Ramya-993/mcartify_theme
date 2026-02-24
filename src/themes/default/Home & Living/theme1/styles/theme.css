@@ -39,14 +39,14 @@
   /* Base Colors with direct OKLCH values */
 
   /* Main Theme Colors */
-  --background: oklch(100% 0 0);
+  --background: oklch(98% 0.02 260);
   --on-background: oklch(10% 0 0);
-  --foreground: oklch(10% 0 0);
+  --foreground: oklch(15% 0.02 260);
 
   /* Card Colors */
   --card: oklch(100% 0 0);
   --on-card: oklch(10% 0 0);
-  --card-foreground: oklch(10% 0 0);
+  --card-foreground: oklch(15% 0.02 260);
 
   /* Stock Status Colors */
   --in-stock-text: oklch(44% 0.15 143);
@@ -68,35 +68,35 @@
   /* Popover Colors */
   --popover: oklch(100% 0 0);
   --on-popover: oklch(10% 0 0);
-  --popover-foreground: oklch(10% 0 0);
+  --popover-foreground: oklch(15% 0.02 260);
 
   /* Primary Colors - Grocery Green */
-  --primary: oklch(80% 0.15 350);
-  --primary-hover: oklch(75% 0.16 350);
-  --primary-active: oklch(70% 0.17 350);
-  --on-primary: oklch(10% 0 0);
-  --primary-foreground: oklch(10% 0 0);
+  --primary: oklch(60% 0.15 280);
+  --primary-hover: oklch(58% 0.16 280);
+  --primary-active: oklch(55% 0.17 280);
+  --on-primary: oklch(100% 0 0);
+  --primary-foreground: oklch(100% 0 0);
 
   /* Secondary Colors */
-  --secondary: oklch(65% 0.30 340);
-  --secondary-hover: oklch(60% 0.32 340);
-  --secondary-active: oklch(55% 0.34 340);
+  --secondary: oklch(35% 0.08 280);
+  --secondary-hover: oklch(28% 0.06 260);
+  --secondary-active: oklch(26% 0.07 260);
   --on-secondary: oklch(100% 0 0);
   --secondary-foreground: oklch(100% 0 0);
 
   /* Muted Colors */
-  --muted: oklch(70% 0 0);
+  --muted: oklch(80% 0.02 260);
   --on-muted: oklch(10% 0 0);
-  --muted-foreground: oklch(56% 0 0);
+  --muted-foreground: oklch(15% 0.02 260);
 
   /* Accent Colors */
-  --accent: oklch(85% 0.15 350);
-  --accent-hover: oklch(80% 0.14 85);
-  --accent-active: oklch(75% 0.16 85);
-  --accent-foreground: oklch(10% 0 0);
+  --accent: oklch(70% 0.12 290);
+  --accent-hover: oklch(68% 0.13 290);
+  --accent-active: oklch(66% 0.14 290);
+  --accent-foreground: oklch(100% 0 0);
 
   /* Destructive Colors */
-  --destructive: oklch(64% 0.22 29);
+  --destructive: oklch(65% 0.22 29);
   --destructive-hover: oklch(60% 0.24 29);
   --destructive-active: oklch(56% 0.26 29);
   --on-destructive: oklch(100% 0 0);
@@ -112,10 +112,10 @@
 
   /* Sidebar Colors - direct OKLCH values */
   --sidebar: oklch(100% 0 0);
-  --sidebar-foreground: oklch(10% 0 0);
-  --sidebar-primary: oklch(67% 0.16 144);
+  --sidebar-foreground: oklch(15% 0.02 260);
+  --sidebar-primary: oklch(60% 0.15 280);
   --sidebar-primary-foreground: oklch(100% 0 0);
-  --sidebar-accent: oklch(67% 0.16 144);
+  --sidebar-accent: oklch(70% 0.12 290);
   --sidebar-accent-foreground: oklch(100% 0 0);
   --sidebar-border: oklch(85% 0 0);
   --sidebar-ring: oklch(75% 0.16 131);
