@@ -100,8 +100,11 @@ jobs:
             # Set proper ownership
             sudo chown -R ubuntu:ubuntu \${EC2_PATH}
             
-            # Install production dependencies (if needed)
-            npm ci --production
+            # Install production dependencies (if needed) - use full path or skip if not needed
+            # Uncomment and adjust path if npm install is required:
+            # export NVM_DIR=\"\$HOME/.nvm\"
+            # [ -s \"\$NVM_DIR/nvm.sh\" ] && . \"\$NVM_DIR/nvm.sh\"
+            # npm ci --production || echo 'Skipping npm install'
             
             # Start the application
             if command -v pm2 &> /dev/null; then
