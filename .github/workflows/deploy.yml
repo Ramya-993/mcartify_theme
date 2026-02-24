@@ -100,22 +100,19 @@ jobs:
             # Set proper ownership
             sudo chown -R ubuntu:ubuntu \${EC2_PATH}
             
-            # Load Node environment and restart application
+            # Load Node environment
             export NVM_DIR=\"\$HOME/.nvm\"
             [ -s \"\$NVM_DIR/nvm.sh\" ] && . \"\$NVM_DIR/nvm.sh\"
             
-            # Restart with PM2 if available
-            if command -v pm2 &> /dev/null; then
-              echo 'Restarting application with PM2...'
-              pm2 restart mcartify-store || pm2 start npm --name mcartify-store -- start || echo 'PM2 restart failed'
-              pm2 save || true
-            else
-              echo 'PM2 not found, checking for app process...'
-              # Try to restart via systemd or other method
-              sudo systemctl restart mcartify || echo 'No systemctl service found'
-            fi
+            # Kill any existing process on port 3004
+            sudo lsof -ti:3004 | xargs -r sudo kill -9 2>/dev/null || true
+            
+            # Start the application on port 3004
+            cd \${EC2_PATH}
+            PORT=3004 nohup npm start > /tmp/store-dev.log 2>&1 &
             
             echo '✅ Deployment completed successfully!'
+            echo 'App starting on port 3004...'
           "
           
           # Clean up
