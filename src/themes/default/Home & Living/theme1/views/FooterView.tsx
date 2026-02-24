@@ -4,10 +4,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardHeader,
+} from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
-import type { FooterProps, StoreFooter, Social, FooterSection, FooterMenuItem } from "../components/Footer";
+import type {
+    FooterProps,
+    StoreFooter,
+    Social,
+    FooterSection,
+    FooterMenuItem,
+} from "../components/Footer";
 
 export interface FooterViewProps {
     name: string;
@@ -17,7 +28,6 @@ export interface FooterViewProps {
     socials: Social[];
 }
 
-// Social links section component
 const SocialLinks = memo(({ socials }: { socials: Social[] }) => {
     const containerVariants = useMemo(
         () => ({
@@ -85,7 +95,6 @@ const SocialLinks = memo(({ socials }: { socials: Social[] }) => {
 });
 SocialLinks.displayName = "SocialLinks";
 
-// Footer sections component
 const FooterSections = memo(({ store }: { store: StoreFooter }) => {
     const sectionVariants = useMemo(
         () => ({
