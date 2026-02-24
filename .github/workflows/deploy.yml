@@ -84,9 +84,7 @@ jobs:
             fi
             
             # Backup current deployment
-            if [ -d \${EC2_PATH}/backup ]; then
-              sudo rm -rf \${EC2_PATH}/backup
-            fi
+            sudo rm -rf \${EC2_PATH}/backup 2>/dev/null || true
             sudo mkdir -p \${EC2_PATH}/backup
             sudo cp -r \${EC2_PATH}/.next \${EC2_PATH}/backup/ 2>/dev/null || :
             sudo cp -r \${EC2_PATH}/src \${EC2_PATH}/backup/ 2>/dev/null || :
