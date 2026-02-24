@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useState, useEffect } from "react";
-import { WidthProvider, Responsive } from "react-grid-layout";
+import { WidthProvider, Responsive, Layouts, Layout } from "react-grid-layout";
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
 import Image from "next/image";
@@ -11,8 +11,8 @@ import type { CustomSectionViewProps, CustomSectionImage } from "../components/C
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 const CustomSectionView: React.FC<CustomSectionViewProps> = ({
-    title = "Curated Picks",
-    sub_title = "Handpicked styles just for you.",
+    title,
+    sub_title,
     images,
     layouts,
 }) => {
@@ -46,23 +46,10 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
 
         if (hasError) {
             return (
-                <div
-                    className="w-full h-full flex items-center justify-center"
-                    style={{ backgroundColor: "var(--background)" }}
-                >
+                <div className="w-full h-full flex items-center justify-center bg-(color:--gray-200)">
                     <div className="text-center">
-                        <div
-                            className="mb-2"
-                            style={{
-                                color: "var(--foreground)",
-                                fontSize: "var(--primary-foreground)",
-                            }}
-                        >
-                            📷
-                        </div>
-                        <p style={{ color: "var(--foreground)", fontSize: "0.75rem" }}>
-                            Image not available
-                        </p>
+                        <div className="text-(color:--gray-400) text-(size:--4xl) mb-(spacing:--2)">📷</div>
+                        <p className="text-(color:--gray-500) text-(size:--xs)">Image not available</p>
                     </div>
                 </div>
             );
@@ -76,7 +63,7 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                     fill
                     style={{
                         objectFit: "cover",
-                        borderRadius: "var(--section-padding-y)",
+                        borderRadius: 8,
                         width: "100%",
                         height: "100%",
                     }}
@@ -86,14 +73,8 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                 />
                 {image.text && (
                     <Button
-                        className="absolute left-1/2 -translate-x-1/2 bottom-6 rounded-none shadow-none text-base"
-                        style={{
-                            backgroundColor: "var(--primary)",
-                            color: "var(--primary-foreground)",
-                            fontWeight: "var(--primary-foreground)",
-                            padding: `var(--section-padding-y) var(--section-padding-y)`,
-                            borderRadius: 0,
-                        }}
+                        className="absolute left-1/2 -translate-x-1/2 bottom-6 bg-(color:--white) text-(color:--neutral-900) font-(weight:--medium) px-(spacing:--8) py-(spacing:--3) rounded-(radius:--none) shadow-(--none) text-(size:--base)"
+                        style={{ borderRadius: 0 }}
                     >
                         {image.text}
                     </Button>
@@ -103,36 +84,16 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
     };
 
     return (
-        <section
-            className="w-full"
-            style={{
-                paddingLeft: "var(--section-padding-y)",
-                paddingRight: "var(--section-padding-y)",
-            }}
-        >
+        <section className="w-full px-(spacing:--4) md:px-(spacing:--6) lg:px-(spacing:--8)">
             {(title || sub_title) && (
-                <div className="mb-6 text-center">
+                <div className="mb-(spacing:--6) text-center">
                     {title && (
-                        <h2
-                            style={{
-                                color: "var(--foreground)",
-                                fontSize: "var(--primary-foreground)",
-                                fontWeight: "var(--primary-foreground)",
-                                marginBottom: "var(--section-padding-y)",
-                            }}
-                        >
+                        <h2 className="text-(size:--2xl) md:text-(size:--3xl) font-(weight:--bold) mb-(spacing:--2) text-(color:--gray-900)">
                             {title}
                         </h2>
                     )}
                     {sub_title && (
-                        <p
-                            className="mx-auto"
-                            style={{
-                                color: "var(--foreground)",
-                                fontSize: "var(--primary-foreground)",
-                                maxWidth: "var(--section-padding-y)",
-                            }}
-                        >
+                        <p className="text-(size:--lg) text-(color:--gray-600) max-w-2xl mx-auto">
                             {sub_title}
                         </p>
                     )}
@@ -161,7 +122,7 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                             <div
                                 key={img.id}
                                 data-grid={img.layout}
-                                className="group relative overflow-hidden"
+                                className="group relative overflow-hidden rounded-(radius:--lg) border-(color:--gray-200) bg-(color:--gray-50) transition-all duration-300 hover:shadow-(--lg) hover:scale-[1.02]"
                                 style={{
                                     width: "100%",
                                     height: "100%",
@@ -169,10 +130,6 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                                     display: "flex",
                                     alignItems: "center",
                                     justifyContent: "center",
-                                    borderRadius: "var(--section-padding-y)",
-                                    border: `1px solid var(--foreground)`,
-                                    backgroundColor: "var(--background)",
-                                    transition: "var(--section-padding-y)",
                                 }}
                             >
                                 {imageContent}
