@@ -52,9 +52,10 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
                     variants={topSellingAnimationVariants.container}
                 >
                     <motion.div variants={topSellingAnimationVariants.card}>
+                        {/* Section Title */}
                         <h2
                             id="top-selling-title"
-                            className="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-900"
+                            className="text-3xl md:text-4xl font-bold text-center mb-8 text-(color:--foreground)"
                         >
                             {title}
                         </h2>
@@ -125,6 +126,7 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
                                                     </motion.div>
                                                 </AnimatePresence>
 
+                                                {/* Navigation Arrows */}
                                                 {showArrows && totalSlides > 1 && (
                                                     <>
                                                         <Button
@@ -168,6 +170,7 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
                                             </div>
                                         )}
 
+                                        {/* Dots Navigation */}
                                         {layout === "carousel" && showDots && totalSlides > 1 && (
                                             <div className="flex justify-center items-center mt-6 gap-2">
                                                 {Array.from({ length: totalSlides }).map((_, index) => (
@@ -187,6 +190,7 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
                                 )}
                             </CardContent>
                         </Card>
+                        {/* View All Button */}
                         <div className="flex justify-center mt-8">
                             <Link
                                 href="/products"
