@@ -38,7 +38,8 @@ jobs:
           cp -r src deployment-package/
           cp package.json deployment-package/
           cp package-lock.json deployment-package/
-          cp next.config.js deployment-package/ 2>/dev/null || :
+          cp .env deployment-package/ 2>/dev/null || :
+          cp next.config.ts deployment-package/ 2>/dev/null || cp next.config.js deployment-package/ 2>/dev/null || :
           tar -czf deployment.tar.gz -C deployment-package .
 
       - name: Deploy to EC2
@@ -106,9 +107,9 @@ jobs:
             
             # Kill any existing process on port 3004
             sudo lsof -ti:3004 | xargs -r sudo kill -9 2>/dev/null || true
+            sleep 2
             
             # Start the application on port 3004
-            cd \${EC2_PATH}
             PORT=3004 nohup npm start > /tmp/store-dev.log 2>&1 &
             
             echo '✅ Deployment completed successfully!'
