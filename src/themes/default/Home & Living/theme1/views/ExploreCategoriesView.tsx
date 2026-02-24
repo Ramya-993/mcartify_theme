@@ -54,7 +54,7 @@ const ExploreCategoriesView: React.FC<ExploreCategoriesViewProps> = ({
                                 id="explore-categories-error-title"
                                 className="text-lg font-(weight:--card-title-weight) text-(color:--primary) md:text-2xl font-(family-name:--font-primary)"
                             >
-                                Explore Our Fashion Collections
+                                Explore Our Collections
                             </CardTitle>
                         </CardHeader>
                         <CardContent>
@@ -86,12 +86,12 @@ const ExploreCategoriesView: React.FC<ExploreCategoriesViewProps> = ({
                                     id="explore-categories-title"
                                     className="text-lg font-(weight:--card-title-weight) text-(color:--primary) md:text-2xl font-(family-name:--font-primary)"
                                 >
-                                    Explore Our Fashion Collections
+                                    Explore Our Collections
                                 </CardTitle>
                             </CardHeader>
 
                             <CardContent className="px-4 pt-2">
-                                <div className={`grid ${"grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6"}`}>
+                                <div className={`grid ${"grid-cols-2 sm:grid-cols-3 md:grid-cols-4"} gap-5 lg:grid-cols-6`}>
                                     {categories.length === 0 ? (
                                         <div
                                             className="col-span-full flex flex-col items-center justify-center rounded-lg border border-dashed border-(color:--primary)/20 bg-(color:--primary)/5 p-8 text-center"
