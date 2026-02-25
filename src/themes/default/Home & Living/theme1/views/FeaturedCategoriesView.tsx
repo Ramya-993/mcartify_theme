@@ -63,7 +63,7 @@ const FeaturedCategoriesView: React.FC<FeaturedCategoriesViewProps> = ({
                 {/* View All Button at Bottom Center */}
                 <div className="flex justify-center mt-10">
                     <Link href="/categories" aria-label="View all product categories">
-                        <button className="px-8 py-2 border border-(color:--primary) text-(color:--primary) bg-white rounded-md font-medium text-base hover:bg-(color:--primary-hover) transition-colors shadow-sm">
+                        <button className="px-8 py-2 border border-(color:--primary) text-(color:--primary-foreground) bg-white rounded-md font-medium text-base hover:bg-(color:--primary-hover) transition-colors shadow-sm">
                             View All
                         </button>
                     </Link>
