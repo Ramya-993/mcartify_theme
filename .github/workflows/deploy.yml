@@ -87,7 +87,7 @@ jobs:
             # Backup current deployment - use chmod to ensure we can delete
             if [ -d \${EC2_PATH}/backup ]; then
               sudo chmod -R 777 \${EC2_PATH}/backup
-              sudo rm -rf \${EC2_PATH}/backup
+              sudo rm -rf \${EC2_PATH}/backup || sudo rm -rf \${EC2_PATH}/backup
             fi
             sudo mkdir -p \${EC2_PATH}/backup
             sudo cp -r \${EC2_PATH}/.next \${EC2_PATH}/backup/ 2>/dev/null || :
@@ -105,15 +105,21 @@ jobs:
             export NVM_DIR=\"\$HOME/.nvm\"
             [ -s \"\$NVM_DIR/nvm.sh\" ] && . \"\$NVM_DIR/nvm.sh\"
             
-            # Kill any existing process on port 3004
-            sudo lsof -ti:3004 | xargs -r sudo kill -9 2>/dev/null || true
-            sleep 2
+            # Install PM2 if not already installed
+            if ! command -v pm2 &> /dev/null; then
+              echo 'Installing PM2...'
+              npm install -g pm2
+            fi
             
-            # Start the application on port 3004
-            PORT=3004 nohup npm start > /tmp/store-dev.log 2>&1 &
+            # Restart the application with PM2
+            cd \${EC2_PATH}
+            pm2 stop store-dev 2>/dev/null || true
+            pm2 delete store-dev 2>/dev/null || true
+            PORT=3004 pm2 start npm --name store-dev -- start
+            pm2 save
             
             echo '✅ Deployment completed successfully!'
-            echo 'App starting on port 3004...'
+            echo 'App started on port 3004 with PM2'
           "
           
           # Clean up
