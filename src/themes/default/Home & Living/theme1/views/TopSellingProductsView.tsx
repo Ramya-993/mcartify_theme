@@ -63,7 +63,7 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
                         <Card className="border-none shadow-none bg-transparent">
                             <CardContent className="px-0">
                                 {loading ? (
-                                    <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-8">
+                                    <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4 sm:gap-6 lg:gap-8">
                                         {Array(10)
                                             .fill(0)
                                             .map((_, index) => (
