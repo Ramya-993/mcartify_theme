@@ -97,20 +97,22 @@ jobs:
             
             # Backup current deployment - use chmod to ensure we can delete
             if [ -d \${EC2_PATH}/backup ]; then
-              sudo chmod -R 777 \${EC2_PATH}/backup
-              sudo rm -rf \${EC2_PATH}/backup || sudo rm -rf \${EC2_PATH}/backup
+              sudo chmod -R 777 \${EC2_PATH}/backup 2>/dev/null || :
+              sudo rm -rf \${EC2_PATH}/backup 2>/dev/null || :
             fi
-            sudo mkdir -p \${EC2_PATH}/backup
+            sudo mkdir -p \${EC2_PATH}/backup 2>/dev/null || :
             sudo cp -r \${EC2_PATH}/.next \${EC2_PATH}/backup/ 2>/dev/null || :
             sudo cp -r \${EC2_PATH}/src \${EC2_PATH}/backup/ 2>/dev/null || :
             
             # Remove old files to prevent conflicts
             cd \${EC2_PATH}
-            sudo rm -rf .next node_modules src public package.json package-lock.json next.config.* 2>/dev/null || :
+            sudo rm -rf .next node_modules src public package.json package-lock.json next.config.* .env 2>/dev/null || :
             
             # Extract new deployment
-            sudo tar -xzf /tmp/deployment.tar.gz
-            sudo rm /tmp/deployment.tar.gz
+            sudo tar -xzf /tmp/deployment.tar.gz || { echo "ERROR: Failed to extract deployment package"; exit 1; }
+            
+            # Remove temp file (not using sudo since file is owned by upload user)
+            rm -f /tmp/deployment.tar.gz 2>/dev/null || :
             
             # Set proper ownership
             sudo chown -R ubuntu:ubuntu \${EC2_PATH}
