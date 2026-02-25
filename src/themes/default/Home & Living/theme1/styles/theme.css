@@ -8,9 +8,9 @@
   /* Global CSS for Swiper pagination classes */
   /* ===== TYPOGRAPHY ===== */
   /* Font Families */
-  --font-price: JetBrains Mono;
-  --font-sans: Inter;
-  --font-serif: IBM Plex Serif;
+  --font-price: Space Mono;
+  --font-sans: Montserrat;
+  --font-serif: Playfair Display;
   --font-mono: Fira Code;
 
   /* Font Sizes */
@@ -39,7 +39,7 @@
   /* Base Colors with direct OKLCH values */
 
   /* Main Theme Colors */
-  --background: oklch(100% 0 0);
+  --background: oklch(98% 0.02 260);
   --on-background: oklch(10% 0 0);
   --foreground: oklch(10% 0 0);
 
@@ -67,33 +67,33 @@
 
   /* Popover Colors */
   --popover: oklch(100% 0 0);
-  --on-popover: oklch(26% 0.04 268);
+  --on-popover: oklch(10% 0 0);
   --popover-foreground: oklch(10% 0 0);
 
   /* Primary Colors - Grocery Green */
-  --primary: oklch(55% 0.25 250);
-  --primary-hover: oklch(52% 0.27 250);
-  --primary-active: oklch(50% 0.28 250);
+  --primary: oklch(60% 0.25 280);
+  --primary-hover: oklch(55% 0.27 280);
+  --primary-active: oklch(50% 0.29 280);
   --on-primary: oklch(100% 0 0);
   --primary-foreground: oklch(100% 0 0);
 
   /* Secondary Colors */
-  --secondary: oklch(40% 0.1 250);
-  --secondary-hover: oklch(32% 0.09 240);
-  --secondary-active: oklch(30% 0.1 240);
+  --secondary: oklch(25% 0.03 260);
+  --secondary-hover: oklch(18% 0.02 260);
+  --secondary-active: oklch(16% 0.02 260);
   --on-secondary: oklch(100% 0 0);
   --secondary-foreground: oklch(100% 0 0);
 
   /* Muted Colors */
-  --muted: oklch(70% 0 0);
-  --on-muted: oklch(26% 0.04 268);
+  --muted: oklch(80% 0.05 260);
+  --on-muted: oklch(10% 0 0);
   --muted-foreground: oklch(56% 0 0);
 
   /* Accent Colors */
-  --accent: oklch(75% 0.1 250);
-  --accent-hover: oklch(78% 0.09 210);
-  --accent-active: oklch(75% 0.1 210);
-  --accent-foreground: oklch(10% 0 0);
+  --accent: oklch(70% 0.15 300);
+  --accent-hover: oklch(65% 0.17 300);
+  --accent-active: oklch(60% 0.19 300);
+  --accent-foreground: oklch(100% 0 0);
 
   /* Destructive Colors */
   --destructive: oklch(64% 0.22 29);
@@ -104,11 +104,11 @@
 
   /* UI Element Colors */
   --border: oklch(85% 0 0);
-  --on-border: oklch(26% 0.04 268);
+  --on-border: oklch(10% 0 0);
   --input: oklch(91% 0 0);
-  --on-input: oklch(26% 0.04 268);
+  --on-input: oklch(10% 0 0);
   --ring: oklch(75% 0.16 131);
-  --shadow-color: oklch(26% 0.04 268);
+  --shadow-color: oklch(10% 0 0);
 
   /* Sidebar Colors - direct OKLCH values */
   --sidebar: oklch(100% 0 0);
@@ -121,10 +121,10 @@
   --sidebar-ring: oklch(75% 0.16 131);
 
   /* Semantic Colors - direct OKLCH values */
-  --success: oklch(60% 0.18 165);
-  --success-hover: oklch(57% 0.19 165);
-  --success-active: oklch(55% 0.2 165);
-  --success-light: oklch(90% 0.05 165);
+  --success: oklch(65% 0.2 162);
+  --success-hover: oklch(60% 0.22 162);
+  --success-active: oklch(55% 0.24 162);
+  --success-light: oklch(90% 0.05 162);
   --on-success: oklch(100% 0 0);
 
   --warning: oklch(80% 0.2 80);
