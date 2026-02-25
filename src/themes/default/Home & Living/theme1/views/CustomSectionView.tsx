@@ -11,16 +11,14 @@ import type { CustomSectionViewProps, CustomSectionImage } from "../components/C
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 const CustomSectionView: React.FC<CustomSectionViewProps> = ({
-    title = "Curated Fashion Picks",
-    sub_title = "Handpicked Styles Just for You",
+    title = "Innovative Tech Solutions",
+    sub_title = "Customizable layouts for your needs",
     images,
-    layouts = { lg: [{ i: "0", x: 0, y: 0, w: 2, h: 2 }] }, // Example layout
+    layouts = { lg: [{ i: "0", x: 0, y: 0, w: 6, h: 6 }, { i: "1", x: 6, y: 0, w: 6, h: 6 }] },
 }) => {
     const gridRef = useRef<HTMLDivElement>(null);
     const [rowHeight, setRowHeight] = useState(60);
-    const [imageLoadErrors, setImageLoadErrors] = useState<Set<string>>(
-        new Set()
-    );
+    const [imageLoadErrors, setImageLoadErrors] = useState<Set<string>>(new Set());
 
     useEffect(() => {
         const updateRowHeight = () => {
@@ -48,19 +46,19 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
             return (
                 <div
                     className="w-full h-full flex items-center justify-center"
-                    style={{ backgroundColor: "var(--background)" }}
+                    style={{ backgroundColor: "var(--foreground)" }}
                 >
                     <div className="text-center">
                         <div
                             className="mb-2"
                             style={{
-                                color: "var(--foreground)",
+                                color: "var(--primary)",
                                 fontSize: "var(--section-padding-y)",
                             }}
                         >
                             📷
                         </div>
-                        <p style={{ color: "var(--foreground)", fontSize: "0.75rem" }}>
+                        <p style={{ color: "var(--primary)", fontSize: "0.75rem" }}>
                             Image not available
                         </p>
                     </div>
