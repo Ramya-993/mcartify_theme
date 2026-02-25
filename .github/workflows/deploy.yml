@@ -69,9 +69,24 @@ jobs:
           
           echo "✅ Private key loaded successfully"
           
+          # Verify deployment package exists
+          if [ ! -f deployment.tar.gz ]; then
+            echo "ERROR: deployment.tar.gz not found!"
+            ls -la
+            exit 1
+          fi
+          
+          echo "📦 Deployment package size: $(du -h deployment.tar.gz | cut -f1)"
+          
           # Copy deployment package to EC2
+          echo "📤 Copying deployment package to EC2..."
           scp -i private_key.pem -o StrictHostKeyChecking=no \
-            deployment.tar.gz ${USER_NAME}@${HOSTNAME}:/tmp/
+            deployment.tar.gz ${USER_NAME}@${HOSTNAME}:/tmp/ || {
+            echo "ERROR: SCP failed!"
+            exit 1
+          }
+          
+          echo "✅ File copied successfully"
           
           # Extract and deploy on EC2
           ssh -i private_key.pem -o StrictHostKeyChecking=no \
