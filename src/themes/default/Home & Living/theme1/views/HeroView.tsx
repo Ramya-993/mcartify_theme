@@ -6,8 +6,8 @@ import type { HeroProps } from "../components/Hero";
 
 const HeroView: React.FC<HeroProps> = ({ config = {} }) => {
     const {
-        title = "Discover Fresh Organic Groceries",
-        subtitle = "Your one-stop shop for natural and healthy foods",
+        title = "Step into Style",
+        subtitle = "Discover the Latest Trends in Fashion",
         button_text = "Shop Now",
         button_link = "/shop",
         background_image = "/hero-bg.jpg",
@@ -35,7 +35,7 @@ const HeroView: React.FC<HeroProps> = ({ config = {} }) => {
             {/* Dark overlay for better text readability */}
             <div
                 className="absolute inset-0 z-10"
-                style={{ backgroundColor: "rgba(0, 0, 0, var(--hero-overlay-opacity))" }}
+                style={{ backgroundColor: "var(--background)", opacity: "var(--hero-overlay-opacity)" }}
             ></div>
 
             {/* Fade effect at the bottom */}
@@ -85,7 +85,7 @@ const HeroView: React.FC<HeroProps> = ({ config = {} }) => {
                                 backgroundColor: "var(--primary)",
                                 color: "var(--primary-foreground)",
                                 fontWeight: "var(--hero-button-font-weight)",
-                                padding: "var(--section-padding-y) var(--hero-button-padding-x)",
+                                padding: "var(--hero-button-padding-y) var(--hero-button-padding-x)",
                                 borderRadius: "var(--hero-button-radius)",
                                 fontSize: "var(--hero-button-font-size)",
                                 textDecoration: "none",
