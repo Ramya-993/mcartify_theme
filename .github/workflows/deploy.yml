@@ -79,11 +79,6 @@ jobs:
             set -e
             EC2_PATH='${EC2_PATH}'
             
-            # Stop the application (check if PM2 exists)
-            if command -v pm2 &> /dev/null; then
-              pm2 stop mcartify-store || true
-            fi
-            
             # Backup current deployment - use chmod to ensure we can delete
             if [ -d \${EC2_PATH}/backup ]; then
               sudo chmod -R 777 \${EC2_PATH}/backup
@@ -105,21 +100,13 @@ jobs:
             export NVM_DIR=\"\$HOME/.nvm\"
             [ -s \"\$NVM_DIR/nvm.sh\" ] && . \"\$NVM_DIR/nvm.sh\"
             
-            # Install PM2 if not already installed
-            if ! command -v pm2 &> /dev/null; then
-              echo 'Installing PM2...'
-              npm install -g pm2
-            fi
-            
-            # Restart the application with PM2
+            # Restart the server with PM2
             cd \${EC2_PATH}
-            pm2 stop store-dev 2>/dev/null || true
-            pm2 delete store-dev 2>/dev/null || true
-            PORT=3004 pm2 start npm --name store-dev -- start
+            pm2 restart store --max-memory-restart 750M --update-env || pm2 start node_modules/.bin/next --name store --max-memory-restart 750M -- start -p 3004
             pm2 save
             
             echo '✅ Deployment completed successfully!'
-            echo 'App started on port 3004 with PM2'
+            echo 'Server running on port 3004 with PM2'
           "
           
           # Clean up
