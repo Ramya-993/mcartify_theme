@@ -104,8 +104,11 @@ jobs:
             sudo cp -r \${EC2_PATH}/.next \${EC2_PATH}/backup/ 2>/dev/null || :
             sudo cp -r \${EC2_PATH}/src \${EC2_PATH}/backup/ 2>/dev/null || :
             
-            # Extract new deployment
+            # Remove old files to prevent conflicts
             cd \${EC2_PATH}
+            sudo rm -rf .next node_modules src public package.json package-lock.json next.config.* 2>/dev/null || :
+            
+            # Extract new deployment
             sudo tar -xzf /tmp/deployment.tar.gz
             sudo rm /tmp/deployment.tar.gz
             
