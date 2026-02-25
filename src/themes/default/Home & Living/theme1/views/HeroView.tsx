@@ -6,9 +6,9 @@ import type { HeroProps } from "../components/Hero";
 
 const HeroView: React.FC<HeroProps> = ({ config = {} }) => {
     const {
-        title = "Step into Style",
-        subtitle = "Discover the Latest Trends in Fashion",
-        button_text = "Shop the Collection",
+        title = "Discover Fresh Organic Groceries",
+        subtitle = "Your one-stop shop for natural and healthy foods",
+        button_text = "Shop Now",
         button_link = "/shop",
         background_image = "/hero-bg.jpg",
     } = config;
@@ -54,7 +54,7 @@ const HeroView: React.FC<HeroProps> = ({ config = {} }) => {
                     <h1
                         className="text-4xl md:text-6xl mb-6 leading-tight drop-shadow-lg"
                         style={{
-                            color: "var(--hero-title-color)",
+                            color: "var(--primary-foreground)",
                             fontSize: "var(--hero-title-font-size)",
                             fontWeight: "var(--hero-title-weight)",
                             lineHeight: "var(--hero-title-line-height)",
@@ -67,7 +67,7 @@ const HeroView: React.FC<HeroProps> = ({ config = {} }) => {
                     <p
                         className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed drop-shadow-lg"
                         style={{
-                            color: "var(--hero-subtitle-color)",
+                            color: "var(--secondary-foreground)",
                             fontSize: "var(--hero-subtitle-font-size)",
                             lineHeight: "var(--hero-subtitle-line-height)",
                             textShadow: "var(--hero-text-shadow)",
@@ -82,10 +82,10 @@ const HeroView: React.FC<HeroProps> = ({ config = {} }) => {
                             href={button_link}
                             className="inline-block transition-colors duration-200 shadow-lg hover:shadow-xl"
                             style={{
-                                backgroundColor: "var(--hero-button-bg)",
-                                color: "var(--hero-button-text)",
+                                backgroundColor: "var(--primary)",
+                                color: "var(--primary-foreground)",
                                 fontWeight: "var(--hero-button-font-weight)",
-                                padding: "var(--hero-button-padding-y) var(--hero-button-padding-x)",
+                                padding: "var(--section-padding-y) var(--hero-button-padding-x)",
                                 borderRadius: "var(--hero-button-radius)",
                                 fontSize: "var(--hero-button-font-size)",
                                 textDecoration: "none",
