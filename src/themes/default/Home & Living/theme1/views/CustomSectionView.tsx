@@ -11,14 +11,16 @@ import type { CustomSectionViewProps, CustomSectionImage } from "../components/C
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 const CustomSectionView: React.FC<CustomSectionViewProps> = ({
-    title = "Innovative Tech Solutions",
-    sub_title = "Customizable layouts for your needs",
+    title = "Curated Fashion Picks",
+    sub_title = "Handpicked Styles Just for You",
     images,
-    layouts = { lg: [{ i: "0", x: 0, y: 0, w: 6, h: 6 }, { i: "1", x: 6, y: 0, w: 6, h: 6 }] },
+    layouts,
 }) => {
     const gridRef = useRef<HTMLDivElement>(null);
     const [rowHeight, setRowHeight] = useState(60);
-    const [imageLoadErrors, setImageLoadErrors] = useState<Set<string>>(new Set());
+    const [imageLoadErrors, setImageLoadErrors] = useState<Set<string>>(
+        new Set()
+    );
 
     useEffect(() => {
         const updateRowHeight = () => {
@@ -46,19 +48,19 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
             return (
                 <div
                     className="w-full h-full flex items-center justify-center"
-                    style={{ backgroundColor: "var(--foreground)" }}
+                    style={{ backgroundColor: "var(--background)" }}
                 >
                     <div className="text-center">
                         <div
                             className="mb-2"
                             style={{
-                                color: "var(--primary)",
-                                fontSize: "var(--section-padding-y)",
+                                color: "var(--foreground)",
+                                fontSize: "var(--primary-active)",
                             }}
                         >
                             📷
                         </div>
-                        <p style={{ color: "var(--primary)", fontSize: "0.75rem" }}>
+                        <p style={{ color: "var(--foreground)", fontSize: "0.75rem" }}>
                             Image not available
                         </p>
                     </div>
@@ -88,7 +90,7 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                         style={{
                             backgroundColor: "var(--primary)",
                             color: "var(--primary-foreground)",
-                            fontWeight: "var(--section-padding-y)",
+                            fontWeight: "var(--primary-active)",
                             padding: `var(--section-padding-y) var(--section-padding-y)`,
                             borderRadius: 0,
                         }}
@@ -113,9 +115,9 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                     {title && (
                         <h2
                             style={{
-                                color: "var(--primary)",
-                                fontSize: "var(--section-padding-y)",
-                                fontWeight: "var(--section-padding-y)",
+                                color: "var(--foreground)",
+                                fontSize: "var(--primary)",
+                                fontWeight: "var(--primary-active)",
                                 marginBottom: "var(--section-padding-y)",
                             }}
                         >
@@ -126,8 +128,8 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                         <p
                             className="mx-auto"
                             style={{
-                                color: "var(--secondary)",
-                                fontSize: "var(--section-padding-y)",
+                                color: "var(--foreground)",
+                                fontSize: "var(--primary-active)",
                                 maxWidth: "var(--section-padding-y)",
                             }}
                         >
