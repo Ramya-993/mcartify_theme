@@ -11,10 +11,10 @@ import type { CustomSectionViewProps, CustomSectionImage } from "../components/C
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 const CustomSectionView: React.FC<CustomSectionViewProps> = ({
-    title = "Curated Collections",
-    sub_title = "Handpicked Styles Just for You",
+    title = "Curated Organic Selections",
+    sub_title = "Handpicked for Your Health",
     images,
-    layouts,
+    layouts = { lg: [{ i: "0", x: 0, y: 0, w: 2, h: 2 }] }, // Example layout based on "2-2"
 }) => {
     const gridRef = useRef<HTMLDivElement>(null);
     const [rowHeight, setRowHeight] = useState(60);
@@ -115,7 +115,7 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                     {title && (
                         <h2
                             style={{
-                                color: "var(--primary-foreground)",
+                                color: "var(--foreground)",
                                 fontSize: "var(--primary-foreground)",
                                 fontWeight: "var(--primary-foreground)",
                                 marginBottom: "var(--section-padding-y)",
@@ -128,8 +128,8 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                         <p
                             className="mx-auto"
                             style={{
-                                color: "var(--secondary-foreground)",
-                                fontSize: "var(--secondary-foreground)",
+                                color: "var(--foreground)",
+                                fontSize: "var(--primary-foreground)",
                                 maxWidth: "var(--section-padding-y)",
                             }}
                         >
@@ -172,7 +172,7 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                                     borderRadius: "var(--section-padding-y)",
                                     border: `1px solid var(--foreground)`,
                                     backgroundColor: "var(--background)",
-                                    transition: "var(--section-padding-y)",
+                                    transition: "var(--section-bg)",
                                 }}
                             >
                                 {imageContent}
