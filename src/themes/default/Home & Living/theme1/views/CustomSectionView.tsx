@@ -14,7 +14,7 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
     title = "Curated Fashion Picks",
     sub_title = "Handpicked Styles Just for You",
     images,
-    layouts,
+    layouts = { lg: [{ i: "0", x: 0, y: 0, w: 2, h: 2 }] }, // Example layout
 }) => {
     const gridRef = useRef<HTMLDivElement>(null);
     const [rowHeight, setRowHeight] = useState(60);

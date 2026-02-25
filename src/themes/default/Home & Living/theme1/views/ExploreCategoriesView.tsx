@@ -91,7 +91,7 @@ const ExploreCategoriesView: React.FC<ExploreCategoriesViewProps> = ({
                             </CardHeader>
 
                             <CardContent className="px-4 pt-2">
-                                <div className={`grid ${"grid-cols-2 sm:grid-cols-3 md:grid-cols-4"} gap-5`}>
+                                <div className={`grid ${"grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"}`}>
                                     {categories.length === 0 ? (
                                         <div
                                             className="col-span-full flex flex-col items-center justify-center rounded-lg border border-dashed border-(color:--primary)/20 bg-(color:--primary)/5 p-8 text-center"
