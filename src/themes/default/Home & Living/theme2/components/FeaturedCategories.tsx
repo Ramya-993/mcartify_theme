@@ -36,9 +36,9 @@ const FeaturedCategories = memo(({ config = {} }: FeaturedCategoriesProps) => {
   if (!categories?.length) return null;
 
   // Filter and limit categories based on config
-  let filteredCategories = categories;
+  let filteredCategories = categories || [];
   if (featuredCategoryIds.length > 0) {
-    filteredCategories = categories.filter((cat) =>
+    filteredCategories = (categories || []).filter((cat) =>
       featuredCategoryIds.includes(cat.categoryId)
     );
   }

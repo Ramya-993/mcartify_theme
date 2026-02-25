@@ -25,7 +25,7 @@ export const useAboutUs = () => {
     },
     select: (data) => ({
       ...data,
-      AboutUs: data.AboutUs.filter((item) => item.enabled === 1),
+      AboutUs: (data?.AboutUs || []).filter((item) => item.enabled === 1),
     }),
     enabled: true,
     retry: 1,

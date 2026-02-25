@@ -125,7 +125,7 @@ const HomePage = async () => {
   const sections = homepageConfig?.layout?.sections;
 
   // Sort and filter enabled sections for SSR
-  const enabledSections = sections
+  const enabledSections = (sections || [])
     .filter((section: HomepageSection) => section.enabled)
     .sort((a: HomepageSection, b: HomepageSection) => a.order - b.order);
 
