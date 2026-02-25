@@ -8,9 +8,9 @@
   /* Global CSS for Swiper pagination classes */
   /* ===== TYPOGRAPHY ===== */
   /* Font Families */
-  --font-price: Space Mono;
-  --font-sans: Montserrat;
-  --font-serif: Playfair Display;
+  --font-price: JetBrains Mono;
+  --font-sans: Inter;
+  --font-serif: IBM Plex Serif;
   --font-mono: Fira Code;
 
   /* Font Sizes */
@@ -71,18 +71,18 @@
   --popover-foreground: oklch(10% 0 0);
 
   /* Primary Colors - Grocery Green */
-  --primary: oklch(85% 0.2 350);
-  --primary-hover: oklch(75% 0.15 350);
-  --primary-active: oklch(70% 0.15 350);
-  --on-primary: oklch(10% 0 0);
-  --primary-foreground: oklch(10% 0 0);
+  --primary: oklch(55% 0.25 250);
+  --primary-hover: oklch(52% 0.27 250);
+  --primary-active: oklch(50% 0.28 250);
+  --on-primary: oklch(100% 0 0);
+  --primary-foreground: oklch(100% 0 0);
 
   /* Secondary Colors */
-  --secondary: oklch(70% 0.15 350);
-  --secondary-hover: oklch(60% 0.12 35);
-  --secondary-active: oklch(55% 0.12 35);
+  --secondary: oklch(40% 0.1 250);
+  --secondary-hover: oklch(32% 0.09 240);
+  --secondary-active: oklch(30% 0.1 240);
   --on-secondary: oklch(100% 0 0);
-  --secondary-foreground: oklch(10% 0 0);
+  --secondary-foreground: oklch(100% 0 0);
 
   /* Muted Colors */
   --muted: oklch(70% 0 0);
@@ -90,9 +90,9 @@
   --muted-foreground: oklch(56% 0 0);
 
   /* Accent Colors */
-  --accent: oklch(85% 0.2 350);
-  --accent-hover: oklch(80% 0.12 85);
-  --accent-active: oklch(75% 0.12 85);
+  --accent: oklch(75% 0.1 250);
+  --accent-hover: oklch(78% 0.09 210);
+  --accent-active: oklch(75% 0.1 210);
   --accent-foreground: oklch(10% 0 0);
 
   /* Destructive Colors */
@@ -121,10 +121,10 @@
   --sidebar-ring: oklch(75% 0.16 131);
 
   /* Semantic Colors - direct OKLCH values */
-  --success: oklch(65% 0.2 162);
-  --success-hover: oklch(60% 0.22 162);
-  --success-active: oklch(55% 0.24 162);
-  --success-light: oklch(90% 0.05 162);
+  --success: oklch(60% 0.18 165);
+  --success-hover: oklch(57% 0.19 165);
+  --success-active: oklch(55% 0.2 165);
+  --success-light: oklch(90% 0.05 165);
   --on-success: oklch(100% 0 0);
 
   --warning: oklch(80% 0.2 80);
