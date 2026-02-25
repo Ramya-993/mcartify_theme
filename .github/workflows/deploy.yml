@@ -34,7 +34,6 @@ jobs:
         run: |
           mkdir -p deployment-package
           cp -r .next deployment-package/
-          cp -r node_modules deployment-package/
           cp -r public deployment-package/
           cp -r src deployment-package/
           cp package.json deployment-package/
@@ -106,7 +105,7 @@ jobs:
             
             # Remove old files to prevent conflicts
             cd \${EC2_PATH}
-            sudo rm -rf .next node_modules src public package.json package-lock.json next.config.* .env 2>/dev/null || :
+            sudo rm -rf .next src public package.json package-lock.json next.config.* .env 2>/dev/null || :
             
             # Extract new deployment
             sudo tar -xzf /tmp/deployment.tar.gz || { echo "ERROR: Failed to extract deployment package"; exit 1; }
@@ -121,8 +120,15 @@ jobs:
             export NVM_DIR=\"\$HOME/.nvm\"
             [ -s \"\$NVM_DIR/nvm.sh\" ] && . \"\$NVM_DIR/nvm.sh\"
             
-            # Restart the server with PM2
+            # Install/update dependencies
             cd \${EC2_PATH}
+            npm ci --production
+            
+            # Load Node environment again for PM2
+            export NVM_DIR=\"\$HOME/.nvm\"
+            [ -s \"\$NVM_DIR/nvm.sh\" ] && . \"\$NVM_DIR/nvm.sh\"
+            
+            # Restart the server with PM2
             pm2 restart store --max-memory-restart 750M --update-env || pm2 start node_modules/.bin/next --name store --max-memory-restart 750M -- start -p 3004
             pm2 save
             
