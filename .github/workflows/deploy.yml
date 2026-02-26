@@ -112,7 +112,7 @@ jobs:
           [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
           
           cd "${NEW_DIR}"
-          npm ci --production
+          npm install --production --no-audit
           
           # Atomic swap: backup old, move new into place
           if [ -d "${EC2_PATH}" ]; then
