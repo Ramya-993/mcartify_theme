@@ -16,9 +16,9 @@ const FeaturedCategoriesView: React.FC<FeaturedCategoriesViewProps> = ({
 }) => {
     return (
         <section
-            className="py-[var(--section-padding-y)] md:py-12 px-4 md:px-8 lg:px-28"
+            className="py-[var(--section-padding-y)] md:py-[var(--section-padding-y)] px-4 md:px-8 lg:px-28"
             aria-labelledby="featured-categories-heading"
-            style={{ backgroundColor: "var(--section-bg)" }}
+            style={{ background: "var(--section-bg)" }}
         >
             <div className="container mx-auto max-w-full">
                 {/* Section Header - Centered Title */}
@@ -63,7 +63,7 @@ const FeaturedCategoriesView: React.FC<FeaturedCategoriesViewProps> = ({
                 {/* View All Button at Bottom Center */}
                 <div className="flex justify-center mt-10">
                     <Link href="/categories" aria-label="View all product categories">
-                        <button className="px-8 py-2 border border-(color:--primary) text-(color:--primary) bg-white rounded-md font-medium text-base hover:bg-(color:--primary-hover) transition-colors shadow-sm">
+                        <button className="px-8 py-2 border border-(color:--primary) text-(color:--primary-foreground) bg-white rounded-md font-medium text-base hover:bg-(color:--primary-hover) transition-colors shadow-sm">
                             View All
                         </button>
                     </Link>

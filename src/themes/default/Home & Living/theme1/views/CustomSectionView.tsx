@@ -55,7 +55,7 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                             className="mb-2"
                             style={{
                                 color: "var(--foreground)",
-                                fontSize: "var(--primary-active)",
+                                fontSize: "var(--section-padding-y)",
                             }}
                         >
                             📷
@@ -90,7 +90,7 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                         style={{
                             backgroundColor: "var(--primary)",
                             color: "var(--primary-foreground)",
-                            fontWeight: "var(--primary-active)",
+                            fontWeight: "var(--section-padding-y)",
                             padding: `var(--section-padding-y) var(--section-padding-y)`,
                             borderRadius: 0,
                         }}
@@ -115,9 +115,9 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                     {title && (
                         <h2
                             style={{
-                                color: "var(--foreground)",
-                                fontSize: "var(--primary)",
-                                fontWeight: "var(--primary-active)",
+                                color: "var(--primary)",
+                                fontSize: "var(--section-padding-y)",
+                                fontWeight: "var(--section-padding-y)",
                                 marginBottom: "var(--section-padding-y)",
                             }}
                         >
@@ -128,8 +128,8 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                         <p
                             className="mx-auto"
                             style={{
-                                color: "var(--foreground)",
-                                fontSize: "var(--primary-active)",
+                                color: "var(--secondary)",
+                                fontSize: "var(--section-padding-y)",
                                 maxWidth: "var(--section-padding-y)",
                             }}
                         >
