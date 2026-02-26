@@ -49,104 +49,88 @@ jobs:
           USER_NAME: ${{ secrets.EC2_USERNAME }}
           EC2_PATH: /var/www/store-dev
         run: |
-          # Write private key - handle both regular and base64 encoded keys
+          # Setup SSH key
           if echo "$PRIVATE_KEY" | grep -q "BEGIN.*PRIVATE KEY"; then
-            # Key is in PEM format
             echo "$PRIVATE_KEY" > private_key.pem
           else
-            # Try to decode as base64
             echo "$PRIVATE_KEY" | base64 -d > private_key.pem
           fi
           
           chmod 600 private_key.pem
           
-          # Verify key format
           if ! grep -q "BEGIN.*PRIVATE KEY" private_key.pem; then
             echo "ERROR: Private key is not properly formatted"
-            cat private_key.pem
             exit 1
           fi
           
           echo "✅ Private key loaded successfully"
           
-          # Verify deployment package exists
-          # Transfer deployment via rsync for reliability and atomic swap on server
-          echo "📤 Transferring deployment-package to EC2 using rsync..."
-          # ensure rsync available on runner
-          sudo apt-get update -y && sudo apt-get install -y rsync >/dev/null 2>&1 || true
-          RSYNC_EXIT=0
-          rsync -az -e "ssh -i private_key.pem -o StrictHostKeyChecking=no" deployment-package/ ${USER_NAME}@${HOSTNAME}:/tmp/deployment_package/ || RSYNC_EXIT=$?
-          if [ "$RSYNC_EXIT" -ne 0 ]; then
-            echo "rsync failed, falling back to scp tar upload"
-            scp -i private_key.pem -o StrictHostKeyChecking=no deployment.tar.gz ${USER_NAME}@${HOSTNAME}:/tmp/ || { echo "ERROR: SCP failed!"; exit 1; }
-            echo "✅ Tar uploaded via scp"
-            SSH_USE_TAR=true
-          else
-            echo "✅ Files transferred successfully via rsync"
-            SSH_USE_TAR=false
+          if [ ! -f deployment.tar.gz ]; then
+            echo "ERROR: deployment.tar.gz not found!"
+            exit 1
           fi
-
-          # Deploy on EC2 using atomic directory swap
-          ssh -i private_key.pem -o StrictHostKeyChecking=no ${USER_NAME}@${HOSTNAME} "
-            set -euo pipefail
-            EC2_PATH='${EC2_PATH}'
-            TMP_UPLOAD='/tmp/deployment_package'
-            TMP_TAR='/tmp/deployment.tar.gz'
-            DEPLOY_TMP_DIR=\"${EC2_PATH}_new\"
-
-            # Prepare deployment directory based on transfer method
-            if [ \"${SSH_USE_TAR:-false}\" = \"true\" ]; then
-              if [ ! -f \"${TMP_TAR}\" ]; then
-                echo 'ERROR: expected ${TMP_TAR} but it is missing'
-                exit 1
-              fi
-              rm -rf \"${DEPLOY_TMP_DIR}\" || :
-              mkdir -p \"${DEPLOY_TMP_DIR}\"
-              tar -xzf \"${TMP_TAR}\" -C \"${DEPLOY_TMP_DIR}\" || { echo 'ERROR: tar extraction failed'; exit 1; }
-              rm -f \"${TMP_TAR}\"
-            else
-              if [ ! -d \"${TMP_UPLOAD}\" ]; then
-                echo 'ERROR: expected ${TMP_UPLOAD} but it is missing'
-                exit 1
-              fi
-              rm -rf \"${DEPLOY_TMP_DIR}\" || :
-              mkdir -p \"${DEPLOY_TMP_DIR}\"
-              rsync -a --delete \"${TMP_UPLOAD}/\" \"${DEPLOY_TMP_DIR}/\"
-              rm -rf \"${TMP_UPLOAD}\" || :
-            fi
-
-            # Backup current deployment (atomic swap)
-            if [ -d \"${EC2_PATH}\" ]; then
-              sudo rm -rf \"${EC2_PATH}_prev\" 2>/dev/null || :
-              sudo mv \"${EC2_PATH}\" \"${EC2_PATH}_prev\"
-            fi
-
-            # Move new deployment into place
-            sudo mv \"${DEPLOY_TMP_DIR}\" \"${EC2_PATH}\"
-            sudo chown -R ubuntu:ubuntu \"${EC2_PATH}\" || :
-
-            # Install/update dependencies
-            export NVM_DIR=\"$HOME/.nvm\"
-            [ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\"
-            cd \"${EC2_PATH}\"
-            npm ci --production
-
-            # Restart the server with PM2
-            [ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\"
-            pm2 restart store --max-memory-restart 750M --update-env || pm2 start node_modules/.bin/next --name store --max-memory-restart 750M -- start -p 3004
-            pm2 save
-
-            echo '✅ Deployment completed successfully!'
-            echo 'Server running on port 3004 with PM2'
-          "
-
-          # Clean up private key on runner
-          rm -f private_key.pem
-            pm2 save
-            
-            echo '✅ Deployment completed successfully!'
-            echo 'Server running on port 3004 with PM2'
-          "
+          
+          echo "📦 Deployment package size: $(du -h deployment.tar.gz | cut -f1)"
+          
+          # Copy deployment package to EC2
+          echo "📤 Copying deployment package to EC2..."
+          scp -i private_key.pem -o StrictHostKeyChecking=no \
+            deployment.tar.gz ${USER_NAME}@${HOSTNAME}:/tmp/deployment_new.tar.gz || {
+            echo "ERROR: SCP failed!"
+            exit 1
+          }
+          
+          echo "✅ File copied successfully"
+          
+          # Deploy on EC2 - use completely fresh directory each time
+          ssh -i private_key.pem -o StrictHostKeyChecking=no \
+            ${USER_NAME}@${HOSTNAME} << 'ENDSSH'
+          set -e
+          
+          EC2_PATH="/var/www/store-dev"
+          NEW_DIR="${EC2_PATH}_new"
+          
+          # Create fresh deployment directory
+          sudo rm -rf "${NEW_DIR}" 2>/dev/null || :
+          sudo mkdir -p "${NEW_DIR}"
+          
+          # Extract to fresh directory
+          cd "${NEW_DIR}"
+          sudo tar -xzf /tmp/deployment_new.tar.gz || {
+            echo "ERROR: Failed to extract deployment package"
+            exit 1
+          }
+          
+          # Cleanup tar file
+          rm -f /tmp/deployment_new.tar.gz
+          
+          # Set ownership
+          sudo chown -R ubuntu:ubuntu "${NEW_DIR}"
+          
+          # Load Node environment and install dependencies
+          export NVM_DIR="$HOME/.nvm"
+          [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+          
+          cd "${NEW_DIR}"
+          npm ci --production
+          
+          # Atomic swap: backup old, move new into place
+          if [ -d "${EC2_PATH}" ]; then
+            sudo rm -rf "${EC2_PATH}_prev" 2>/dev/null || :
+            sudo mv "${EC2_PATH}" "${EC2_PATH}_prev"
+          fi
+          
+          sudo mv "${NEW_DIR}" "${EC2_PATH}"
+          
+          # Restart PM2
+          [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+          pm2 restart store --max-memory-restart 750M --update-env || \
+            pm2 start node_modules/.bin/next --name store --max-memory-restart 750M -- start -p 3004
+          pm2 save
+          
+          echo '✅ Deployment completed successfully!'
+          echo 'Server running on port 3004 with PM2'
+          ENDSSH
           
           # Clean up
           rm -f private_key.pem
@@ -157,18 +141,12 @@ jobs:
         run: |
           echo "Waiting for application to start..."
           sleep 10
-          
-          # Check if the application is responding
-          curl -f http://${HOSTNAME}:3000 || curl -f https://${HOSTNAME} || echo "Warning: Could not verify deployment"
+          curl -f https://${HOSTNAME} || echo "Warning: Could not verify deployment"
 
       - name: Notify on failure
         if: failure()
-        run: |
-          echo "Deployment failed! Please check the logs."
-          # You can add Slack/Discord/Email notification here
+        run: echo "❌ Deployment failed! Please check the logs."
 
       - name: Notify on success
         if: success()
-        run: |
-          echo "Deployment successful!"
-          # You can add Slack/Discord/Email notification here
+        run: echo "✅ Deployment successful!"
