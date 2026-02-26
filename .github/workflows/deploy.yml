@@ -83,7 +83,9 @@ jobs:
           echo "✅ File copied successfully"
           
           # Deploy on EC2 - use completely fresh directory each time
+          # Add ServerAliveInterval to keep connection alive during long npm install
           ssh -i private_key.pem -o StrictHostKeyChecking=no \
+            -o ServerAliveInterval=30 -o ServerAliveCountMax=10 \
             ${USER_NAME}@${HOSTNAME} << 'ENDSSH'
           set -e
           
@@ -112,7 +114,8 @@ jobs:
           [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
           
           cd "${NEW_DIR}"
-          npm install --production --no-audit
+          echo "Installing dependencies (this may take a few minutes)..."
+          npm install --production --no-audit --loglevel=error
           
           # Atomic swap: backup old, move new into place
           if [ -d "${EC2_PATH}" ]; then
