@@ -66,22 +66,22 @@ jobs:
           
           echo "✅ Private key loaded successfully"
           
-          if [ ! -f deployment.tar.gz ]; then
-            echo "ERROR: deployment.tar.gz not found!"
-            exit 1
-          fi
+          # Install rsync if not available
+          sudo apt-get update -qq && sudo apt-get install -y rsync >/dev/null 2>&1 || true
           
-          echo "📦 Deployment package size: $(du -h deployment.tar.gz | cut -f1)"
+          echo "📦 Transferring files to EC2 using rsync..."
           
-          # Copy deployment package to EC2
-          echo "📤 Copying deployment package to EC2..."
-          scp -i private_key.pem -o StrictHostKeyChecking=no \
-            deployment.tar.gz ${USER_NAME}@${HOSTNAME}:/tmp/deployment_new.tar.gz || {
-            echo "ERROR: SCP failed!"
+          # Use rsync to transfer the deployment-package directory directly
+          # This is more reliable than SCP for large transfers
+          rsync -avz --progress \
+            -e "ssh -i private_key.pem -o StrictHostKeyChecking=no -o ServerAliveInterval=30" \
+            deployment-package/ \
+            ${USER_NAME}@${HOSTNAME}:/tmp/deployment_staging/ || {
+            echo "ERROR: rsync failed!"
             exit 1
           }
           
-          echo "✅ File copied successfully"
+          echo "✅ Files transferred successfully"
           
           # Deploy on EC2 - use completely fresh directory each time
           # Add ServerAliveInterval to keep connection alive during long npm install
@@ -92,20 +92,15 @@ jobs:
           
           EC2_PATH="/var/www/store-dev"
           NEW_DIR="${EC2_PATH}_new"
+          STAGING="/tmp/deployment_staging"
           
           # Create fresh deployment directory
           sudo rm -rf "${NEW_DIR}" 2>/dev/null || :
           sudo mkdir -p "${NEW_DIR}"
           
-          # Extract to fresh directory
-          cd "${NEW_DIR}"
-          sudo tar -xzf /tmp/deployment_new.tar.gz || {
-            echo "ERROR: Failed to extract deployment package"
-            exit 1
-          }
-          
-          # Cleanup tar file
-          rm -f /tmp/deployment_new.tar.gz
+          # Move staged files to deployment directory
+          sudo rsync -a "${STAGING}/" "${NEW_DIR}/"
+          sudo rm -rf "${STAGING}"
           
           # Set ownership
           sudo chown -R ubuntu:ubuntu "${NEW_DIR}"
