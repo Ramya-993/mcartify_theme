@@ -70,66 +70,78 @@ jobs:
           echo "✅ Private key loaded successfully"
           
           # Verify deployment package exists
-          if [ ! -f deployment.tar.gz ]; then
-            echo "ERROR: deployment.tar.gz not found!"
-            ls -la
-            exit 1
+          # Transfer deployment via rsync for reliability and atomic swap on server
+          echo "📤 Transferring deployment-package to EC2 using rsync..."
+          # ensure rsync available on runner
+          sudo apt-get update -y && sudo apt-get install -y rsync >/dev/null 2>&1 || true
+          RSYNC_EXIT=0
+          rsync -az -e "ssh -i private_key.pem -o StrictHostKeyChecking=no" deployment-package/ ${USER_NAME}@${HOSTNAME}:/tmp/deployment_package/ || RSYNC_EXIT=$?
+          if [ "$RSYNC_EXIT" -ne 0 ]; then
+            echo "rsync failed, falling back to scp tar upload"
+            scp -i private_key.pem -o StrictHostKeyChecking=no deployment.tar.gz ${USER_NAME}@${HOSTNAME}:/tmp/ || { echo "ERROR: SCP failed!"; exit 1; }
+            echo "✅ Tar uploaded via scp"
+            SSH_USE_TAR=true
+          else
+            echo "✅ Files transferred successfully via rsync"
+            SSH_USE_TAR=false
           fi
-          
-          echo "📦 Deployment package size: $(du -h deployment.tar.gz | cut -f1)"
-          
-          # Copy deployment package to EC2
-          echo "📤 Copying deployment package to EC2..."
-          scp -i private_key.pem -o StrictHostKeyChecking=no \
-            deployment.tar.gz ${USER_NAME}@${HOSTNAME}:/tmp/ || {
-            echo "ERROR: SCP failed!"
-            exit 1
-          }
-          
-          echo "✅ File copied successfully"
-          
-          # Extract and deploy on EC2
-          ssh -i private_key.pem -o StrictHostKeyChecking=no \
-            ${USER_NAME}@${HOSTNAME} "
-            set -e
+
+          # Deploy on EC2 using atomic directory swap
+          ssh -i private_key.pem -o StrictHostKeyChecking=no ${USER_NAME}@${HOSTNAME} "
+            set -euo pipefail
             EC2_PATH='${EC2_PATH}'
-            
-            # Backup current deployment - use chmod to ensure we can delete
-            if [ -d \${EC2_PATH}/backup ]; then
-              sudo chmod -R 777 \${EC2_PATH}/backup 2>/dev/null || :
-              sudo rm -rf \${EC2_PATH}/backup 2>/dev/null || :
+            TMP_UPLOAD='/tmp/deployment_package'
+            TMP_TAR='/tmp/deployment.tar.gz'
+            DEPLOY_TMP_DIR=\"${EC2_PATH}_new\"
+
+            # Prepare deployment directory based on transfer method
+            if [ \"${SSH_USE_TAR:-false}\" = \"true\" ]; then
+              if [ ! -f \"${TMP_TAR}\" ]; then
+                echo 'ERROR: expected ${TMP_TAR} but it is missing'
+                exit 1
+              fi
+              rm -rf \"${DEPLOY_TMP_DIR}\" || :
+              mkdir -p \"${DEPLOY_TMP_DIR}\"
+              tar -xzf \"${TMP_TAR}\" -C \"${DEPLOY_TMP_DIR}\" || { echo 'ERROR: tar extraction failed'; exit 1; }
+              rm -f \"${TMP_TAR}\"
+            else
+              if [ ! -d \"${TMP_UPLOAD}\" ]; then
+                echo 'ERROR: expected ${TMP_UPLOAD} but it is missing'
+                exit 1
+              fi
+              rm -rf \"${DEPLOY_TMP_DIR}\" || :
+              mkdir -p \"${DEPLOY_TMP_DIR}\"
+              rsync -a --delete \"${TMP_UPLOAD}/\" \"${DEPLOY_TMP_DIR}/\"
+              rm -rf \"${TMP_UPLOAD}\" || :
             fi
-            sudo mkdir -p \${EC2_PATH}/backup 2>/dev/null || :
-            sudo cp -r \${EC2_PATH}/.next \${EC2_PATH}/backup/ 2>/dev/null || :
-            sudo cp -r \${EC2_PATH}/src \${EC2_PATH}/backup/ 2>/dev/null || :
-            
-            # Remove old files to prevent conflicts
-            cd \${EC2_PATH}
-            sudo rm -rf .next src public package.json package-lock.json next.config.* .env 2>/dev/null || :
-            
-            # Extract new deployment
-            sudo tar -xzf /tmp/deployment.tar.gz || { echo "ERROR: Failed to extract deployment package"; exit 1; }
-            
-            # Remove temp file (not using sudo since file is owned by upload user)
-            rm -f /tmp/deployment.tar.gz 2>/dev/null || :
-            
-            # Set proper ownership
-            sudo chown -R ubuntu:ubuntu \${EC2_PATH}
-            
-            # Load Node environment
-            export NVM_DIR=\"\$HOME/.nvm\"
-            [ -s \"\$NVM_DIR/nvm.sh\" ] && . \"\$NVM_DIR/nvm.sh\"
-            
+
+            # Backup current deployment (atomic swap)
+            if [ -d \"${EC2_PATH}\" ]; then
+              sudo rm -rf \"${EC2_PATH}_prev\" 2>/dev/null || :
+              sudo mv \"${EC2_PATH}\" \"${EC2_PATH}_prev\"
+            fi
+
+            # Move new deployment into place
+            sudo mv \"${DEPLOY_TMP_DIR}\" \"${EC2_PATH}\"
+            sudo chown -R ubuntu:ubuntu \"${EC2_PATH}\" || :
+
             # Install/update dependencies
-            cd \${EC2_PATH}
+            export NVM_DIR=\"$HOME/.nvm\"
+            [ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\"
+            cd \"${EC2_PATH}\"
             npm ci --production
-            
-            # Load Node environment again for PM2
-            export NVM_DIR=\"\$HOME/.nvm\"
-            [ -s \"\$NVM_DIR/nvm.sh\" ] && . \"\$NVM_DIR/nvm.sh\"
-            
+
             # Restart the server with PM2
+            [ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\"
             pm2 restart store --max-memory-restart 750M --update-env || pm2 start node_modules/.bin/next --name store --max-memory-restart 750M -- start -p 3004
+            pm2 save
+
+            echo '✅ Deployment completed successfully!'
+            echo 'Server running on port 3004 with PM2'
+          "
+
+          # Clean up private key on runner
+          rm -f private_key.pem
             pm2 save
             
             echo '✅ Deployment completed successfully!'
