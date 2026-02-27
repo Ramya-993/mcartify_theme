@@ -6,8 +6,8 @@ import type { HeroProps } from "../components/Hero";
 
 const HeroView: React.FC<HeroProps> = ({ config = {} }) => {
     const {
-        title = "Step into Style",
-        subtitle = "Discover the Latest Trends in Fashion",
+        title = "Discover Fresh Organic Produce",
+        subtitle = "Your one-stop shop for healthy, organic groceries",
         button_text = "Shop Now",
         button_link = "/shop",
         background_image = "/hero-bg.jpg",

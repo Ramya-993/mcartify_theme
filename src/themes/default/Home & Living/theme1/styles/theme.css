@@ -8,10 +8,10 @@
   /* Global CSS for Swiper pagination classes */
   /* ===== TYPOGRAPHY ===== */
   /* Font Families */
-  --font-price: Montserrat;
-  --font-sans: Montserrat;
-  --font-serif: Raleway;
-  --font-mono: JetBrains Mono;
+  --font-price: Space Mono;
+  --font-sans: Quicksand;
+  --font-serif: Lora;
+  --font-mono: Fira Code;
 
   /* Font Sizes */
   --fs-xs: 0.75rem; /* 12px */
@@ -39,13 +39,13 @@
   /* Base Colors with direct OKLCH values */
 
   /* Main Theme Colors */
-  --background: oklch(100% 0 0);
-  --on-background: oklch(10% 0 0);
+  --background: oklch(98% 0.01 100);
+  --on-background: oklch(26% 0.04 268);
   --foreground: oklch(10% 0 0);
 
   /* Card Colors */
   --card: oklch(100% 0 0);
-  --on-card: oklch(10% 0 0);
+  --on-card: oklch(26% 0.04 268);
   --card-foreground: oklch(10% 0 0);
 
   /* Stock Status Colors */
@@ -67,32 +67,32 @@
 
   /* Popover Colors */
   --popover: oklch(100% 0 0);
-  --on-popover: oklch(10% 0 0);
+  --on-popover: oklch(26% 0.04 268);
   --popover-foreground: oklch(10% 0 0);
 
   /* Primary Colors - Grocery Green */
-  --primary: oklch(15% 0.01 0);
-  --primary-hover: oklch(8% 0 0);
-  --primary-active: oklch(6% 0 0);
+  --primary: oklch(62% 0.138 155);
+  --primary-hover: oklch(58% 0.15 155);
+  --primary-active: oklch(55% 0.16 155);
   --on-primary: oklch(100% 0 0);
   --primary-foreground: oklch(100% 0 0);
 
   /* Secondary Colors */
-  --secondary: oklch(15% 0.01 0);
-  --secondary-hover: oklch(60% 0.32 340);
-  --secondary-active: oklch(55% 0.34 340);
+  --secondary: oklch(45% 0.12 120);
+  --secondary-hover: oklch(40% 0.14 120);
+  --secondary-active: oklch(35% 0.16 120);
   --on-secondary: oklch(100% 0 0);
   --secondary-foreground: oklch(10% 0 0);
 
   /* Muted Colors */
   --muted: oklch(70% 0 0);
-  --on-muted: oklch(10% 0 0);
+  --on-muted: oklch(26% 0.04 268);
   --muted-foreground: oklch(56% 0 0);
 
   /* Accent Colors */
-  --accent: oklch(15% 0.01 0);
-  --accent-hover: oklch(60% 0.32 340);
-  --accent-active: oklch(55% 0.34 340);
+  --accent: oklch(75% 0.10 80);
+  --accent-hover: oklch(70% 0.17 80);
+  --accent-active: oklch(65% 0.19 80);
   --accent-foreground: oklch(100% 0 0);
 
   /* Destructive Colors */
@@ -104,27 +104,27 @@
 
   /* UI Element Colors */
   --border: oklch(85% 0 0);
-  --on-border: oklch(10% 0 0);
+  --on-border: oklch(26% 0.04 268);
   --input: oklch(91% 0 0);
-  --on-input: oklch(10% 0 0);
+  --on-input: oklch(26% 0.04 268);
   --ring: oklch(75% 0.16 131);
-  --shadow-color: oklch(10% 0 0);
+  --shadow-color: oklch(26% 0.04 268);
 
   /* Sidebar Colors - direct OKLCH values */
   --sidebar: oklch(100% 0 0);
   --sidebar-foreground: oklch(10% 0 0);
-  --sidebar-primary: oklch(65% 0.30 340);
+  --sidebar-primary: oklch(67% 0.16 144);
   --sidebar-primary-foreground: oklch(100% 0 0);
-  --sidebar-accent: oklch(65% 0.30 340);
+  --sidebar-accent: oklch(67% 0.16 144);
   --sidebar-accent-foreground: oklch(100% 0 0);
   --sidebar-border: oklch(85% 0 0);
   --sidebar-ring: oklch(75% 0.16 131);
 
   /* Semantic Colors - direct OKLCH values */
-  --success: oklch(65% 0.2 162);
-  --success-hover: oklch(60% 0.22 162);
-  --success-active: oklch(55% 0.24 162);
-  --success-light: oklch(90% 0.05 162);
+  --success: oklch(55% 0.18 140);
+  --success-hover: oklch(50% 0.20 140);
+  --success-active: oklch(45% 0.22 140);
+  --success-light: oklch(90% 0.05 140);
   --on-success: oklch(100% 0 0);
 
   --warning: oklch(80% 0.2 80);

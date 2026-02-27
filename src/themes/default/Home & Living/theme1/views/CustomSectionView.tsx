@@ -11,16 +11,14 @@ import type { CustomSectionViewProps, CustomSectionImage } from "../components/C
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 const CustomSectionView: React.FC<CustomSectionViewProps> = ({
-    title = "Curated Fashion Picks",
-    sub_title = "Handpicked Styles Just for You",
+    title = "Curated Organic Selections",
+    sub_title = "Handpicked for Your Health",
     images,
-    layouts = { lg: [{ i: "0", x: 0, y: 0, w: 2, h: 2 }] }, // Example layout
+    layouts = { lg: [{ i: "0", x: 0, y: 0, w: 2, h: 2 }, { i: "1", x: 2, y: 0, w: 2, h: 2 }] },
 }) => {
     const gridRef = useRef<HTMLDivElement>(null);
     const [rowHeight, setRowHeight] = useState(60);
-    const [imageLoadErrors, setImageLoadErrors] = useState<Set<string>>(
-        new Set()
-    );
+    const [imageLoadErrors, setImageLoadErrors] = useState<Set<string>>(new Set());
 
     useEffect(() => {
         const updateRowHeight = () => {
@@ -55,7 +53,7 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                             className="mb-2"
                             style={{
                                 color: "var(--foreground)",
-                                fontSize: "var(--primary-foreground)",
+                                fontSize: "var(--primary-active)",
                             }}
                         >
                             📷
@@ -90,7 +88,7 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                         style={{
                             backgroundColor: "var(--primary)",
                             color: "var(--primary-foreground)",
-                            fontWeight: "var(--primary-foreground)",
+                            fontWeight: "var(--primary-active)",
                             padding: `var(--section-padding-y) var(--section-padding-y)`,
                             borderRadius: 0,
                         }}
@@ -116,8 +114,8 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                         <h2
                             style={{
                                 color: "var(--foreground)",
-                                fontSize: "var(--primary-foreground)",
-                                fontWeight: "var(--primary-foreground)",
+                                fontSize: "var(--primary-active)",
+                                fontWeight: "var(--primary-hover)",
                                 marginBottom: "var(--section-padding-y)",
                             }}
                         >
@@ -129,7 +127,7 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                             className="mx-auto"
                             style={{
                                 color: "var(--foreground)",
-                                fontSize: "var(--primary-foreground)",
+                                fontSize: "var(--primary-active)",
                                 maxWidth: "var(--section-padding-y)",
                             }}
                         >
@@ -172,7 +170,7 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                                     borderRadius: "var(--section-padding-y)",
                                     border: `1px solid var(--foreground)`,
                                     backgroundColor: "var(--background)",
-                                    transition: "var(--primary-hover)",
+                                    transition: "var(--section-padding-y)",
                                 }}
                             >
                                 {imageContent}
@@ -185,9 +183,7 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                                 href={link}
                                 className="block"
                                 target={img.link_type === "url" ? "_blank" : "_self"}
-                                rel={
-                                    img.link_type === "url" ? "noopener noreferrer" : undefined
-                                }
+                                rel={img.link_type === "url" ? "noopener noreferrer" : undefined}
                             >
                                 {imageContainer}
                             </Link>
