@@ -100,15 +100,17 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
                                                                     animate={{ opacity: 1, y: 0 }}
                                                                     transition={{ delay: index * 0.1 }}
                                                                     className="carousel-product-container"
-                                                                    style={{
-                                                                        "--carousel-scale": "0.85",
-                                                                        "--carousel-height": "auto",
-                                                                        "--image-aspect": "3/4",
-                                                                        "--card-padding": "0.75rem",
-                                                                        "--title-size": "0.875rem",
-                                                                        "--price-size": "1rem",
-                                                                        "--content-spacing": "0.5rem",
-                                                                    } as React.CSSProperties}
+                                                                    style={
+                                                                        {
+                                                                            "--carousel-scale": "0.85",
+                                                                            "--carousel-height": "auto",
+                                                                            "--image-aspect": "3/4",
+                                                                            "--card-padding": "0.75rem",
+                                                                            "--title-size": "0.875rem",
+                                                                            "--price-size": "1rem",
+                                                                            "--content-spacing": "0.5rem",
+                                                                        } as React.CSSProperties
+                                                                    }
                                                                 >
                                                                     <div className="transform scale-[0.85] origin-center">
                                                                         <Product product={product} />
@@ -196,7 +198,7 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
                                 href="/products"
                                 aria-label="View all best selling products cursor-pointer"
                             >
-                                <button className="px-8 py-2 border cursor-pointer border-yellow-500 text-yellow-600 bg-white rounded-md font-medium text-base hover:bg-yellow-50 transition-colors shadow-sm">
+                                <button className="px-8 py-2 border cursor-pointer border-(color:--primary) text-(color:--primary-foreground) bg-white rounded-md font-medium text-base hover:bg-(color:--primary-hover) transition-colors shadow-sm">
                                     View All
                                 </button>
                             </Link>
