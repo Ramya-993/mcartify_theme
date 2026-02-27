@@ -11,16 +11,14 @@ import type { CustomSectionViewProps, CustomSectionImage } from "../components/C
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 const CustomSectionView: React.FC<CustomSectionViewProps> = ({
-    title = "Curated Fashion Collections",
-    sub_title = "Handpicked styles just for you",
+    title = "Curated Color Collections",
+    sub_title = "Handpicked styles to brighten your wardrobe",
     images,
-    layouts,
+    layouts = { lg: [{ i: "0", x: 0, y: 0, w: 2, h: 2 }] }, // Default layout for demonstration
 }) => {
     const gridRef = useRef<HTMLDivElement>(null);
     const [rowHeight, setRowHeight] = useState(60);
-    const [imageLoadErrors, setImageLoadErrors] = useState<Set<string>>(
-        new Set()
-    );
+    const [imageLoadErrors, setImageLoadErrors] = useState<Set<string>>(new Set());
 
     useEffect(() => {
         const updateRowHeight = () => {
@@ -54,13 +52,13 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                         <div
                             className="mb-2"
                             style={{
-                                color: "var(--primary-foreground)",
-                                fontSize: "var(--custom-section-error-icon-size)",
+                                color: "var(--foreground)",
+                                fontSize: "var(--primary-active)",
                             }}
                         >
                             📷
                         </div>
-                        <p style={{ color: "var(--primary-foreground)", fontSize: "0.75rem" }}>
+                        <p style={{ color: "var(--foreground)", fontSize: "0.75rem" }}>
                             Image not available
                         </p>
                     </div>
@@ -76,7 +74,7 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                     fill
                     style={{
                         objectFit: "cover",
-                        borderRadius: "var(--custom-section-card-radius)",
+                        borderRadius: "var(--section-padding-y)",
                         width: "100%",
                         height: "100%",
                     }}
@@ -90,8 +88,8 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                         style={{
                             backgroundColor: "var(--primary)",
                             color: "var(--primary-foreground)",
-                            fontWeight: "var(--custom-section-button-font-weight)",
-                            padding: `var(--custom-section-button-padding-y) var(--custom-section-button-padding-x)`,
+                            fontWeight: "var(--primary-active)",
+                            padding: `var(--section-padding-y) var(--section-padding-y)`,
                             borderRadius: 0,
                         }}
                     >
@@ -115,10 +113,10 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                     {title && (
                         <h2
                             style={{
-                                color: "var(--primary-foreground)",
-                                fontSize: "var(--custom-section-title-size)",
-                                fontWeight: "var(--custom-section-title-weight)",
-                                marginBottom: "var(--custom-section-title-margin-bottom)",
+                                color: "var(--foreground)",
+                                fontSize: "var(--primary-active)",
+                                fontWeight: "var(--primary-active)",
+                                marginBottom: "var(--section-padding-y)",
                             }}
                         >
                             {title}
@@ -128,9 +126,9 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                         <p
                             className="mx-auto"
                             style={{
-                                color: "var(--secondary-foreground)",
-                                fontSize: "var(--custom-section-subtitle-size)",
-                                maxWidth: "var(--custom-section-subtitle-max-width)",
+                                color: "var(--foreground)",
+                                fontSize: "var(--primary-active)",
+                                maxWidth: "var(--section-padding-y)",
                             }}
                         >
                             {sub_title}
@@ -169,10 +167,10 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                                     display: "flex",
                                     alignItems: "center",
                                     justifyContent: "center",
-                                    borderRadius: "var(--custom-section-card-radius)",
-                                    border: `1px solid var(--custom-section-card-border)`,
-                                    backgroundColor: "var(--section-bg)",
-                                    transition: "var(--custom-section-card-transition)",
+                                    borderRadius: "var(--section-padding-y)",
+                                    border: `1px solid var(--foreground)`,
+                                    backgroundColor: "var(--background)",
+                                    transition: "var(--section-padding-y)",
                                 }}
                             >
                                 {imageContent}
@@ -185,9 +183,7 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                                 href={link}
                                 className="block"
                                 target={img.link_type === "url" ? "_blank" : "_self"}
-                                rel={
-                                    img.link_type === "url" ? "noopener noreferrer" : undefined
-                                }
+                                rel={img.link_type === "url" ? "noopener noreferrer" : undefined}
                             >
                                 {imageContainer}
                             </Link>
