@@ -64,7 +64,7 @@ jobs:
           # Transfer files using rsync
           echo "📤 Transferring files to EC2..."
           rsync -avz --delete \
-            -e "ssh -i private_key.pem -o StrictHostKeyChecking=no -o ServerAliveInterval=60" \
+            -e "ssh -i private_key.pem -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -o ServerAliveCountMax=10 -o TCPKeepAlive=yes" \
             deployment-package/ \
             ${USER_NAME}@${HOSTNAME}:/var/www/store-dev/
           
@@ -72,10 +72,13 @@ jobs:
           
           # Start PM2
           echo "▶️  Starting application..."
-          ssh -i private_key.pem -o StrictHostKeyChecking=no ${USER_NAME}@${HOSTNAME} \
+          ssh -i private_key.pem -o StrictHostKeyChecking=no \
+            -o ServerAliveInterval=60 -o ServerAliveCountMax=10 -o TCPKeepAlive=yes \
+            ${USER_NAME}@${HOSTNAME} \
             "export NVM_DIR=\"\$HOME/.nvm\" && [ -s \"\$NVM_DIR/nvm.sh\" ] && . \"\$NVM_DIR/nvm.sh\" && \
              cd /var/www/store-dev && \
-             pm2 restart store --max-memory-restart 750M --update-env || \
+             pm2 delete store 2>/dev/null || true && \
+             sleep 2 && \
              pm2 start node_modules/.bin/next --name store --max-memory-restart 750M -- start -p 3004 && \
              pm2 save"
           
