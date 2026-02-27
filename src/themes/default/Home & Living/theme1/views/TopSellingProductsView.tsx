@@ -196,7 +196,7 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
                                 href="/products"
                                 aria-label="View all best selling products cursor-pointer"
                             >
-                                <button className="px-8 py-2 border cursor-pointer border-yellow-500 text-yellow-600 bg-white rounded-md font-medium text-base hover:bg-yellow-50 transition-colors shadow-sm">
+                                <button className="px-8 py-2 border cursor-pointer border-(color:--primary) text-(color:--primary-foreground) bg-white rounded-md font-medium text-base hover:bg-(color:--primary-hover) transition-colors shadow-sm">
                                     View All
                                 </button>
                             </Link>
