@@ -6,9 +6,9 @@ import type { HeroProps } from "../components/Hero";
 
 const HeroView: React.FC<HeroProps> = ({ config = {} }) => {
     const {
-        title = "Step into Style",
-        subtitle = "Discover the Latest Trends in Fashion",
-        button_text = "Shop Now",
+        title = "Unleash Your Bold Style",
+        subtitle = "Discover vibrant and unique fashion pieces",
+        button_text = "Shop the Collection",
         button_link = "/shop",
         background_image = "/hero-bg.jpg",
     } = config;
@@ -35,7 +35,7 @@ const HeroView: React.FC<HeroProps> = ({ config = {} }) => {
             {/* Dark overlay for better text readability */}
             <div
                 className="absolute inset-0 z-10"
-                style={{ backgroundColor: "rgba(var(--background), var(--hero-overlay-opacity))" }}
+                style={{ backgroundColor: "rgba(0, 0, 0, var(--hero-overlay-opacity))" }}
             ></div>
 
             {/* Fade effect at the bottom */}
@@ -54,7 +54,7 @@ const HeroView: React.FC<HeroProps> = ({ config = {} }) => {
                     <h1
                         className="text-4xl md:text-6xl mb-6 leading-tight drop-shadow-lg"
                         style={{
-                            color: "var(--primary-foreground)",
+                            color: "var(--hero-title-color)",
                             fontSize: "var(--hero-title-font-size)",
                             fontWeight: "var(--hero-title-weight)",
                             lineHeight: "var(--hero-title-line-height)",
@@ -67,10 +67,10 @@ const HeroView: React.FC<HeroProps> = ({ config = {} }) => {
                     <p
                         className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed drop-shadow-lg"
                         style={{
-                            color: "var(--secondary-foreground)",
+                            color: "var(--hero-subtitle-color)",
                             fontSize: "var(--hero-subtitle-font-size)",
                             lineHeight: "var(--hero-subtitle-line-height)",
-                            textShadow: "var(--hero-text-shadow)",
+                            textShadow: "var(--hero-subtitle-shadow)",
                             margin: "0 auto 2rem auto",
                             maxWidth: "48rem",
                         }}
@@ -82,10 +82,10 @@ const HeroView: React.FC<HeroProps> = ({ config = {} }) => {
                             href={button_link}
                             className="inline-block transition-colors duration-200 shadow-lg hover:shadow-xl"
                             style={{
-                                backgroundColor: "var(--primary)",
-                                color: "var(--primary-foreground)",
+                                backgroundColor: "var(--hero-button-bg)",
+                                color: "var(--hero-button-text)",
                                 fontWeight: "var(--hero-button-font-weight)",
-                                padding: "var(--section-padding-y) var(--hero-button-padding-x)",
+                                padding: "var(--hero-button-padding-y) var(--hero-button-padding-x)",
                                 borderRadius: "var(--hero-button-radius)",
                                 fontSize: "var(--hero-button-font-size)",
                                 textDecoration: "none",
