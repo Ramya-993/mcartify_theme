@@ -10,7 +10,7 @@
   /* Font Families */
   --font-price: Space Mono;
   --font-sans: Montserrat;
-  --font-serif: Playfair Display;
+  --font-serif: Raleway;
   --font-mono: Fira Code;
 
   /* Font Sizes */
@@ -39,7 +39,7 @@
   /* Base Colors with direct OKLCH values */
 
   /* Main Theme Colors */
-  --background: oklch(98% 0.02 260);
+  --background: oklch(100% 0 0);
   --on-background: oklch(10% 0 0);
   --foreground: oklch(10% 0 0);
 
@@ -71,28 +71,28 @@
   --popover-foreground: oklch(10% 0 0);
 
   /* Primary Colors - Grocery Green */
-  --primary: oklch(60% 0.25 280);
-  --primary-hover: oklch(55% 0.27 280);
-  --primary-active: oklch(50% 0.29 280);
+  --primary: oklch(15% 0.01 0);
+  --primary-hover: oklch(15% 0 0);
+  --primary-active: oklch(20% 0 0);
   --on-primary: oklch(100% 0 0);
   --primary-foreground: oklch(100% 0 0);
 
   /* Secondary Colors */
-  --secondary: oklch(25% 0.03 260);
-  --secondary-hover: oklch(18% 0.02 260);
-  --secondary-active: oklch(16% 0.02 260);
+  --secondary: oklch(15% 0.01 0);
+  --secondary-hover: oklch(70% 0.32 340);
+  --secondary-active: oklch(75% 0.34 340);
   --on-secondary: oklch(100% 0 0);
-  --secondary-foreground: oklch(100% 0 0);
+  --secondary-foreground: oklch(10% 0 0);
 
   /* Muted Colors */
-  --muted: oklch(80% 0.05 260);
+  --muted: oklch(70% 0 0);
   --on-muted: oklch(10% 0 0);
   --muted-foreground: oklch(56% 0 0);
 
   /* Accent Colors */
-  --accent: oklch(70% 0.15 300);
-  --accent-hover: oklch(65% 0.17 300);
-  --accent-active: oklch(60% 0.19 300);
+  --accent: oklch(85% 0.12 85);
+  --accent-hover: oklch(55% 0.06 320);
+  --accent-active: oklch(60% 0.07 320);
   --accent-foreground: oklch(100% 0 0);
 
   /* Destructive Colors */
