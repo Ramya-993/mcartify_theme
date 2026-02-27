@@ -52,10 +52,9 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
                     variants={topSellingAnimationVariants.container}
                 >
                     <motion.div variants={topSellingAnimationVariants.card}>
-                        {/* Section Title */}
                         <h2
                             id="top-selling-title"
-                            className="text-3xl md:text-4xl font-bold text-center mb-8 text-(color:--foreground)"
+                            className="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-900"
                         >
                             {title}
                         </h2>
@@ -100,15 +99,17 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
                                                                     animate={{ opacity: 1, y: 0 }}
                                                                     transition={{ delay: index * 0.1 }}
                                                                     className="carousel-product-container"
-                                                                    style={{
-                                                                        "--carousel-scale": "0.85",
-                                                                        "--carousel-height": "auto",
-                                                                        "--image-aspect": "3/4",
-                                                                        "--card-padding": "0.75rem",
-                                                                        "--title-size": "0.875rem",
-                                                                        "--price-size": "1rem",
-                                                                        "--content-spacing": "0.5rem",
-                                                                    } as React.CSSProperties}
+                                                                    style={
+                                                                        {
+                                                                            "--carousel-scale": "0.85",
+                                                                            "--carousel-height": "auto",
+                                                                            "--image-aspect": "3/4",
+                                                                            "--card-padding": "0.75rem",
+                                                                            "--title-size": "0.875rem",
+                                                                            "--price-size": "1rem",
+                                                                            "--content-spacing": "0.5rem",
+                                                                        } as React.CSSProperties
+                                                                    }
                                                                 >
                                                                     <div className="transform scale-[0.85] origin-center">
                                                                         <Product product={product} />
@@ -126,7 +127,6 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
                                                     </motion.div>
                                                 </AnimatePresence>
 
-                                                {/* Navigation Arrows */}
                                                 {showArrows && totalSlides > 1 && (
                                                     <>
                                                         <Button
@@ -170,7 +170,6 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
                                             </div>
                                         )}
 
-                                        {/* Dots Navigation */}
                                         {layout === "carousel" && showDots && totalSlides > 1 && (
                                             <div className="flex justify-center items-center mt-6 gap-2">
                                                 {Array.from({ length: totalSlides }).map((_, index) => (
@@ -190,7 +189,6 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
                                 )}
                             </CardContent>
                         </Card>
-                        {/* View All Button */}
                         <div className="flex justify-center mt-8">
                             <Link
                                 href="/products"
