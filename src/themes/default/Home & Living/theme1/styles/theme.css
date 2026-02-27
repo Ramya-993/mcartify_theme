@@ -9,7 +9,7 @@
   /* ===== TYPOGRAPHY ===== */
   /* Font Families */
   --font-price: Space Mono;
-  --font-sans: Montserrat;
+  --font-sans: Quicksand;
   --font-serif: Playfair Display;
   --font-mono: Fira Code;
 
@@ -71,34 +71,34 @@
   --popover-foreground: oklch(10% 0 0);
 
   /* Primary Colors - Grocery Green */
-  --primary: oklch(85% 0.15 90);
-  --primary-hover: oklch(80% 0.18 90);
-  --primary-active: oklch(75% 0.20 90);
-  --on-primary: oklch(10% 0 0);
-  --primary-foreground: oklch(10% 0 0);
+  --primary: oklch(75% 0.15 320) and additional rainbow colors;
+  --primary-hover: oklch(70% 0.15 320);
+  --primary-active: oklch(65% 0.15 320);
+  --on-primary: oklch(100% 0 0);
+  --primary-foreground: oklch(100% 0 0);
 
   /* Secondary Colors */
-  --secondary: oklch(70% 0.15 90);
-  --secondary-hover: oklch(15% 0.02 0);
-  --secondary-active: oklch(20% 0.02 0);
-  --on-secondary: oklch(100% 0 0);
-  --secondary-foreground: oklch(100% 0 0);
+  --secondary: oklch(85% 0.15 60) and additional hues;
+  --secondary-hover: oklch(80% 0.15 60);
+  --secondary-active: oklch(75% 0.15 60);
+  --on-secondary: oklch(10% 0 0);
+  --secondary-foreground: oklch(10% 0 0);
 
   /* Muted Colors */
-  --muted: oklch(90% 0.05 90);
+  --muted: oklch(70% 0.05 240);
   --on-muted: oklch(10% 0 0);
-  --muted-foreground: oklch(10% 0 0);
+  --muted-foreground: oklch(56% 0 0);
 
   /* Accent Colors */
-  --accent: oklch(70% 0.15 60);
-  --accent-hover: oklch(65% 0.18 60);
-  --accent-active: oklch(60% 0.20 60);
-  --accent-foreground: oklch(10% 0 0);
+  --accent: oklch(85% 0.15 120) and more rainbow accents;
+  --accent-hover: oklch(80% 0.15 120);
+  --accent-active: oklch(75% 0.15 120);
+  --accent-foreground: oklch(100% 0 0);
 
   /* Destructive Colors */
-  --destructive: oklch(65% 0.25 10);
-  --destructive-hover: oklch(60% 0.28 10);
-  --destructive-active: oklch(55% 0.30 10);
+  --destructive: oklch(65% 0.22 29);
+  --destructive-hover: oklch(60% 0.24 29);
+  --destructive-active: oklch(56% 0.26 29);
   --on-destructive: oklch(100% 0 0);
   --destructive-foreground: oklch(100% 0 0);
 
@@ -113,10 +113,10 @@
   /* Sidebar Colors - direct OKLCH values */
   --sidebar: oklch(100% 0 0);
   --sidebar-foreground: oklch(10% 0 0);
-  --sidebar-primary: oklch(85% 0.15 90);
-  --sidebar-primary-foreground: oklch(10% 0 0);
-  --sidebar-accent: oklch(70% 0.15 60);
-  --sidebar-accent-foreground: oklch(10% 0 0);
+  --sidebar-primary: oklch(67% 0.16 144);
+  --sidebar-primary-foreground: oklch(100% 0 0);
+  --sidebar-accent: oklch(67% 0.16 144);
+  --sidebar-accent-foreground: oklch(100% 0 0);
   --sidebar-border: oklch(85% 0 0);
   --sidebar-ring: oklch(75% 0.16 131);
 
