@@ -41,14 +41,12 @@ jobs:
           cp package-lock.json deployment-package/
           cp .env deployment-package/ 2>/dev/null || :
           cp next.config.ts deployment-package/ 2>/dev/null || cp next.config.js deployment-package/ 2>/dev/null || :
-          tar -czf deployment.tar.gz -C deployment-package .
 
       - name: Deploy to EC2
         env:
           PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
           HOSTNAME: ${{ secrets.EC2_HOST }}
           USER_NAME: ${{ secrets.EC2_USERNAME }}
-          EC2_PATH: /var/www/store-dev
         run: |
           # Setup SSH key
           if echo "$PRIVATE_KEY" | grep -q "BEGIN.*PRIVATE KEY"; then
@@ -56,88 +54,38 @@ jobs:
           else
             echo "$PRIVATE_KEY" | base64 -d > private_key.pem
           fi
-          
           chmod 600 private_key.pem
           
-          if ! grep -q "BEGIN.*PRIVATE KEY" private_key.pem; then
-            echo "ERROR: Private key is not properly formatted"
-            exit 1
-          fi
+          echo "✅ SSH key configured"
           
-          echo "✅ Private key loaded successfully"
+          # Install rsync
+          sudo apt-get update -qq && sudo apt-get install -y rsync >/dev/null 2>&1
           
-          # Install rsync if not available
-          sudo apt-get update -qq && sudo apt-get install -y rsync >/dev/null 2>&1 || true
-          
-          echo "📦 Transferring files to EC2 using rsync..."
-          
-          # Use rsync to transfer the deployment-package directory directly
-          # This is more reliable than SCP for large transfers
-          rsync -avz --progress \
-            -e "ssh -i private_key.pem -o StrictHostKeyChecking=no -o ServerAliveInterval=30" \
+          # Transfer files using rsync (overwrites directly to /var/www/store-dev)
+          echo "📤 Transferring files to EC2..."
+          rsync -avz --delete \
+            -e "ssh -i private_key.pem -o StrictHostKeyChecking=no -o ServerAliveInterval=60" \
             deployment-package/ \
-            ${USER_NAME}@${HOSTNAME}:/tmp/deployment_staging/ || {
-            echo "ERROR: rsync failed!"
-            exit 1
-          }
+            ${USER_NAME}@${HOSTNAME}:/var/www/store-dev/
           
-          echo "✅ Files transferred successfully"
-          
-          # Deploy on EC2 - use completely fresh directory each time
-          # Add ServerAliveInterval to keep connection alive during long npm install
-          ssh -i private_key.pem -o StrictHostKeyChecking=no \
-            -o ServerAliveInterval=30 -o ServerAliveCountMax=10 \
-            ${USER_NAME}@${HOSTNAME} << 'ENDSSH'
-          set -e
-          
-          EC2_PATH="/var/www/store-dev"
-          NEW_DIR="${EC2_PATH}_new"
-          STAGING="/tmp/deployment_staging"
-          
-          # Create fresh deployment directory
-          sudo rm -rf "${NEW_DIR}" 2>/dev/null || :
-          sudo mkdir -p "${NEW_DIR}"
-          
-          # Move staged files to deployment directory
-          sudo rsync -a "${STAGING}/" "${NEW_DIR}/"
-          sudo rm -rf "${STAGING}"
-          
-          # Set ownership
-          sudo chown -R ubuntu:ubuntu "${NEW_DIR}"
-          
-          # Atomic swap: backup old, move new into place
-          if [ -d "${EC2_PATH}" ]; then
-            sudo rm -rf "${EC2_PATH}_prev" 2>/dev/null || :
-            sudo mv "${EC2_PATH}" "${EC2_PATH}_prev"
-          fi
-          
-          sudo mv "${NEW_DIR}" "${EC2_PATH}"
+          echo "✅ Files transferred"
           
           # Restart PM2
-          export NVM_DIR="$HOME/.nvm"
-          [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-          pm2 restart store --max-memory-restart 750M --update-env || \
-            pm2 start node_modules/.bin/next --name store --max-memory-restart 750M -- start -p 3004
-          pm2 save
+          echo "🔄 Restarting application..."
+          ssh -i private_key.pem -o StrictHostKeyChecking=no ${USER_NAME}@${HOSTNAME} \
+            "export NVM_DIR=\"\$HOME/.nvm\" && [ -s \"\$NVM_DIR/nvm.sh\" ] && . \"\$NVM_DIR/nvm.sh\" && \
+             cd /var/www/store-dev && \
+             pm2 restart store --max-memory-restart 750M --update-env || \
+             pm2 start node_modules/.bin/next --name store --max-memory-restart 750M -- start -p 3004"
           
-          echo '✅ Deployment completed successfully!'
-          echo 'Server running on port 3004 with PM2'
-          ENDSSH
+          echo "✅ Deployment complete!"
           
-          # Clean up
+          # Cleanup
           rm -f private_key.pem
-
-      - name: Verify deployment
-        env:
-          HOSTNAME: ${{ secrets.EC2_HOST }}
-        run: |
-          echo "Waiting for application to start..."
-          sleep 10
-          curl -f https://${HOSTNAME} || echo "Warning: Could not verify deployment"
 
       - name: Notify on failure
         if: failure()
-        run: echo "❌ Deployment failed! Please check the logs."
+        run: echo "❌ Deployment failed!"
 
       - name: Notify on success
         if: success()
