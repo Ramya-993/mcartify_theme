@@ -18,7 +18,7 @@ const FeaturedCategoriesView: React.FC<FeaturedCategoriesViewProps> = ({
         <section
             className="py-[var(--section-padding-y)] md:py-[var(--section-padding-y)] px-4 md:px-8 lg:px-28"
             aria-labelledby="featured-categories-heading"
-            style={{ background: "var(--section-bg)" }}
+            style={{ backgroundColor: "var(--section-bg)" }}
         >
             <div className="container mx-auto max-w-full">
                 {/* Section Header - Centered Title */}
