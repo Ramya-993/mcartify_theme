@@ -61,7 +61,12 @@ jobs:
           # Install rsync
           sudo apt-get update -qq && sudo apt-get install -y rsync >/dev/null 2>&1
           
-          # Transfer files using rsync (overwrites directly to /var/www/store-dev)
+          # Stop PM2 before deployment to release file locks
+          echo "⏸️  Stopping application..."
+          ssh -i private_key.pem -o StrictHostKeyChecking=no ${USER_NAME}@${HOSTNAME} \
+            "export NVM_DIR=\"\$HOME/.nvm\" && [ -s \"\$NVM_DIR/nvm.sh\" ] && . \"\$NVM_DIR/nvm.sh\" && pm2 stop store || true"
+          
+          # Transfer files using rsync
           echo "📤 Transferring files to EC2..."
           rsync -avz --delete \
             -e "ssh -i private_key.pem -o StrictHostKeyChecking=no -o ServerAliveInterval=60" \
@@ -70,13 +75,14 @@ jobs:
           
           echo "✅ Files transferred"
           
-          # Restart PM2
-          echo "🔄 Restarting application..."
+          # Start PM2
+          echo "▶️  Starting application..."
           ssh -i private_key.pem -o StrictHostKeyChecking=no ${USER_NAME}@${HOSTNAME} \
             "export NVM_DIR=\"\$HOME/.nvm\" && [ -s \"\$NVM_DIR/nvm.sh\" ] && . \"\$NVM_DIR/nvm.sh\" && \
              cd /var/www/store-dev && \
              pm2 restart store --max-memory-restart 750M --update-env || \
-             pm2 start node_modules/.bin/next --name store --max-memory-restart 750M -- start -p 3004"
+             pm2 start node_modules/.bin/next --name store --max-memory-restart 750M -- start -p 3004 && \
+             pm2 save"
           
           echo "✅ Deployment complete!"
           
