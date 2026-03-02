@@ -179,15 +179,15 @@
   /* ===== SHADOWS ===== */
   --shadow-2xs: none;
   --shadow-xs: 0 1px 2px rgba(0,0,0,0.05);
-  --shadow-sm:
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
     0 2px 4px rgba(0,0,0,0.1);
-  --shadow:
+  --shadow: 0 4px 8px rgba(0,0,0,0.1);
     0 4px 8px rgba(0,0,0,0.1);
-  --shadow-md:
+  --shadow-md: 0 6px 12px rgba(0,0,0,0.15);
     0 6px 12px rgba(0,0,0,0.15);
-  --shadow-lg:
+  --shadow-lg: 0 8px 16px rgba(0,0,0,0.2);
     0 8px 16px rgba(0,0,0,0.2);
-  --shadow-xl:
+  --shadow-xl: 0 10px 20px rgba(0,0,0,0.25);
     0 10px 20px rgba(0,0,0,0.25);
   --shadow-2xl: 0 12px 24px rgba(0,0,0,0.3);
 
@@ -309,7 +309,7 @@
   --navbar-padding-x: 16px;
   --navbar-padding-y: 16px;
   --navbar-logo-height: 60px;
-  --navbar-shadow:
+  --navbar-shadow: none;
     0 2px 4px rgba(0,0,0,0.1);
   --navbar-z-index: 1000;
   --navbar-font-family: 'Inter', sans-serif;
@@ -353,7 +353,7 @@
   --navbar-button-border-radius: 8px; /* rounded-full */
   --navbar-button-padding-x: 16px;
   --navbar-button-padding-y: 8px;
-  --navbar-button-transition:
+  --navbar-button-transition: 300ms ease-in-out;
     150ms ease;
   --navbar-button-gap: 16px;
   --navbar-button-bg: oklch(50% 0.2 30);
@@ -707,7 +707,7 @@
   /* Mobile Cart Optimizations */
   --cart-mobile-card-bg: oklch(98% 0.01 60); /* white */
   --cart-mobile-card-border: oklch(40% 0.04 180); /* gray-200 */
-  --cart-mobile-card-shadow:
+  --cart-mobile-card-shadow: 0 2px 4px rgba(0,0,0,0.1);
     0 2px 4px rgba(0,0,0,0.1);
   --cart-mobile-card-radius: 12px;
   --cart-mobile-padding: 16px;
@@ -1219,7 +1219,7 @@
   --nav-dropdown-bg: oklch(98% 0.01 60);
   --nav-dropdown-text: oklch(15% 0.4 0);
   --nav-dropdown-border: 1px solid oklch(15% 0.2 0);
-  --nav-dropdown-shadow:
+  --nav-dropdown-shadow: none;
     0 4px 8px rgba(0,0,0,0.1);
   --nav-dropdown-radius: 8px;
 
@@ -1260,7 +1260,7 @@
   --category-menu-item-hover-bg: oklch(95% 0.05 120); /* primary/10 */
   --category-menu-item-hover-text-color: oklch(10% 0.2 240);
   --category-menu-item-font-size: 1rem;
-  --category-menu-shadow:
+  --category-menu-shadow: 0 2px 4px rgba(0,0,0,0.1);
     0 2px 4px rgba(0,0,0,0.1);
 
   /* Search Box Component */
@@ -1283,7 +1283,7 @@
   --search-results-border-color: oklch(80% 0.1 60); /* primary/20 */
   --search-results-max-height: 300px;
   --search-results-border-radius: 8px; /* rounded-lg */
-  --search-results-shadow:
+  --search-results-shadow: 0 2px 4px rgba(0,0,0,0.1);
     0 2px 4px rgba(0,0,0,0.1);
   --search-results-item-padding-x: 16px;
   --search-results-item-padding-y: 12px;
@@ -1310,7 +1310,7 @@
   --mobile-nav-active-bg: oklch(95% 0.05 120);
   --mobile-nav-active-text: oklch(10% 0.2 240);
   --mobile-nav-width: 100%;
-  --mobile-nav-shadow:
+  --mobile-nav-shadow: 0 2px 4px rgba(0,0,0,0.1);
     0 4px 8px rgba(0,0,0,0.1);
 
   /* Mobile Menu */
@@ -1380,9 +1380,9 @@
   /* Product Card */
   /* Product Card variables consolidated below */
   --product-card-border-radius: 12px;
-  --product-card-shadow:
+  --product-card-shadow: 0 4px 8px rgba(0,0,0,0.1);
     0 4px 8px rgba(0,0,0,0.1);
-  --product-card-hover-shadow:
+  --product-card-hover-shadow: 0 6px 12px rgba(0,0,0,0.15);
     0 6px 12px rgba(0,0,0,0.15);
   --product-card-padding: 1.5rem;
   --product-card-gap: 16px;
@@ -1434,7 +1434,7 @@
   --product-details-border: oklch(30% 0.1 30);
   --product-details-padding: 16px;
   --product-details-radius: 12px;
-  --product-details-shadow:
+  --product-details-shadow: 0 2px 4px rgba(0,0,0,0.1);
     0 2px 4px rgba(0,0,0,0.1);
   --product-details-gap: 16px;
 
@@ -1475,7 +1475,7 @@
   --top-selling-section-bg: oklch(98% 0.01 0);
   --top-selling-card-border: oklch(30% 0.1 30);
   --top-selling-card-bg: oklch(95% 0.02 0);
-  --top-selling-card-shadow:
+  --top-selling-card-shadow: 0 2px 4px rgba(0,0,0,0.1);
     0 2px 4px rgba(0,0,0,0.1);
   --top-selling-card-radius: 8px;
   --top-selling-title-color: oklch(30% 0.1 0);
@@ -1556,7 +1556,7 @@
   --slider-arrow-hover-bg: oklch(80% 0.1 60);
   --slider-arrow-size: 24px;
   --slider-arrow-radius: 50%;
-  --slider-arrow-shadow:
+  --slider-arrow-shadow: 0 2px 4px rgba(0,0,0,0.1);
     0 2px 4px rgba(0,0,0,0.1);
   --slider-pagination-color: oklch(20% 0.1 240);
   --slider-pagination-inactive-color: oklch(60% 0.05 240);
@@ -1569,9 +1569,9 @@
   --category-card-text: oklch(10% 0.1 240);
   --category-card-border: oklch(80% 0.1 120);
   --category-card-radius: 8px;
-  --category-card-shadow:
+  --category-card-shadow: 0 2px 4px rgba(0,0,0,0.1);
     0 2px 4px rgba(0,0,0,0.1);
-  --category-card-hover-shadow:
+  --category-card-hover-shadow: 0 4px 8px rgba(0,0,0,0.15);
     0 4px 8px rgba(0,0,0,0.15);
   --category-card-padding: 16px;
   --category-card-image-size-mobile: 100%;
@@ -1644,7 +1644,7 @@
   --explore-categories-border: oklch(40% 0.1 90);
   --explore-categories-radius: 8px;
   --explore-categories-padding: 16px;
-  --explore-categories-shadow:
+  --explore-categories-shadow: 0 2px 4px rgba(0,0,0,0.1);
     0 2px 4px rgba(0,0,0,0.1);
   --explore-categories-title-size: 1.5rem;
   --explore-categories-title-weight: 600;
@@ -1676,7 +1676,7 @@
   --hero-button-radius: 12px;
   --hero-button-font-size: 1rem;
   --hero-button-font-weight: 500;
-  --hero-button-shadow:
+  --hero-button-shadow: 0 2px 4px rgba(0,0,0,0.1);
     0 2px 4px rgba(0,0,0,0.1);
 
   /* ===== Testimonials Section (TestimonialsView) ===== */
@@ -1884,7 +1884,7 @@
   --cart-bg: oklch(98% 0.01 60);
   --cart-text: oklch(10% 0.1 30);
   --cart-border: oklch(40% 0.1 30);
-  --cart-shadow:
+  --cart-shadow: 0 2px 4px rgba(0,0,0,0.1);
     0 2px 4px rgba(0,0,0,0.1);
   --cart-radius: 16px;
   --cart-header-bg: oklch(95% 0.02 60);
@@ -1941,7 +1941,7 @@
   --order-success-border: oklch(80% 0.2 120);
   --order-success-radius: 12px;
   --order-success-padding: 16px;
-  --order-success-shadow:
+  --order-success-shadow: 0 2px 10px rgba(0,0,0,0.1);
     0 2px 10px rgba(0,0,0,0.1);
   --order-success-icon-size: 24px;
   --order-success-icon-color: oklch(20% 0.1 30);
@@ -1974,7 +1974,7 @@
   --contact-form-border: oklch(10% 0.03 120);
   --contact-form-radius: 12px;
   --contact-form-padding: 16px;
-  --contact-form-shadow:
+  --contact-form-shadow: 0 2px 4px rgba(0,0,0,0.1);
     0 2px 4px rgba(0,0,0,0.1);
   --contact-form-gap: 16px;
   --contact-form-title-size: 1.5rem;
@@ -2124,7 +2124,7 @@
   --add-cart-btn-hover-bg: oklch(50% 0.1 40);
   --add-cart-btn-text: oklch(98% 0.01 60);
   --auth-form-padding: 16px;
-  --auth-form-shadow:
+  --auth-form-shadow: 0 2px 4px rgba(0,0,0,0.1);
     0 2px 4px rgba(0,0,0,0.1);
   --auth-form-title-size: 1.5rem;
   --auth-form-title-weight: 600;
