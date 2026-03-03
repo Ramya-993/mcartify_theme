@@ -9,20 +9,20 @@
   /* ===== TYPOGRAPHY ===== */
   /* Font Families */
   --font-price: "Merriweather", serif;
-  --font-sans: "Lato", sans-serif;
-  --font-serif: "Merriweather", serif;
-  --font-mono: "Courier New", monospace;
+  --font-sans: "Montserrat", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-mono: "Space Mono", monospace;
 
   /* Font Sizes */
-  --fs-xs: 0.9rem; /* 12px */
-  --fs-sm: 1.1rem; /* 14px */
-  --fs-base: 1.3rem; /* 16px */
-  --fs-md: 1.5rem; /* 18px */
-  --fs-lg: 1.8rem; /* 20px */
-  --fs-xl: 2.1rem; /* 24px */
-  --fs-2xl: 2.5rem; /* 28px */
-  --fs-3xl: 3rem; /* 32px */
-  --fs-4xl: 3.5rem; /* 40px */
+  --fs-xs: 0.8rem; /* 12px */
+  --fs-sm: 1rem; /* 14px */
+  --fs-base: 1.2rem; /* 16px */
+  --fs-md: 1.4rem; /* 18px */
+  --fs-lg: 1.7rem; /* 20px */
+  --fs-xl: 2.25rem; /* 24px */
+  --fs-2xl: 2.75rem; /* 28px */
+  --fs-3xl: 3.25rem; /* 32px */
+  --fs-4xl: 4rem; /* 40px */
 
   /* Font Weights */
   --fw-regular: 400;
@@ -31,22 +31,22 @@
   --fw-bold: 700;
 
   /* Line Heights */
-  --lh-tight: 1.15;
-  --lh-normal: 1.45;
-  --lh-relaxed: 1.75;
+  --lh-tight: 1.1;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.8;
 
   /* ===== COLOR SYSTEM ===== */
   /* Base Colors with direct OKLCH values */
 
   /* Main Theme Colors */
-  --background: oklch(98% 0.01 90);
+  --background: oklch(97% 0.02 250);
   --on-background: oklch(95% 0.05 260);
-  --foreground: oklch(20% 0.05 220);
+  --foreground: oklch(12% 0.06 240);
 
   /* Card Colors */
-  --card: oklch(15% 0.03 260);
-  --on-card: oklch(95% 0.05 260);
-  --card-foreground: oklch(90% 0.15 190);
+  --card: oklch(95% 0.02 230);
+  --on-card: oklch(20% 0.02 230);
+  --card-foreground: oklch(10% 0.1 210);
 
   /* Stock Status Colors */
   --in-stock-text: oklch(85% 0.25 150);
@@ -66,49 +66,49 @@
   --out-of-stock-border: oklch(60% 0.05 0);
 
   /* Popover Colors */
-  --popover: oklch(95% 0.02 90);
+  --popover: oklch(96% 0.015 240);
   --on-popover: oklch(95% 0.05 260);
-  --popover-foreground: oklch(20% 0.05 220);
+  --popover-foreground: oklch(10% 0.06 240);
 
   /* Primary Colors - Grocery Green */
-  --primary: oklch(34% 0.1 258);
-  --primary-hover: oklch(30% 0.1 258);
-  --primary-active: oklch(25% 0.1 258);
+  --primary: oklch(33% 0.1 230);
+  --primary-hover: oklch(29% 0.1 230);
+  --primary-active: oklch(23% 0.1 230);
   --on-primary: oklch(10% 0 190);
-  --primary-foreground: oklch(95% 0.01 90);
+  --primary-foreground: oklch(98% 0.01 240);
 
   /* Secondary Colors */
-  --secondary: oklch(22% 0.05 270);
-  --secondary-hover: oklch(18% 0.05 270);
-  --secondary-active: oklch(15% 0.05 270);
+  --secondary: oklch(20% 0.05 280);
+  --secondary-hover: oklch(16% 0.05 280);
+  --secondary-active: oklch(12% 0.05 280);
   --on-secondary: oklch(95% 0.05 260);
-  --secondary-foreground: oklch(92% 0.12 60);
+  --secondary-foreground: oklch(94% 0.11 50);
 
   /* Muted Colors */
-  --muted: oklch(92% 0.02 90);
+  --muted: oklch(90% 0.015 240);
   --on-muted: oklch(90% 0.05 170);
-  --muted-foreground: oklch(34% 0.02 180);
+  --muted-foreground: oklch(32% 0.02 200);
 
   /* Accent Colors */
-  --accent: oklch(90% 0.3 50);
-  --accent-hover: oklch(87% 0.3 50);
-  --accent-active: oklch(84% 0.3 50);
-  --accent-foreground: oklch(15% 0.08 240);
+  --accent: oklch(87% 0.25 40);
+  --accent-hover: oklch(84% 0.25 40);
+  --accent-active: oklch(81% 0.25 40);
+  --accent-foreground: oklch(18% 0.06 230);
 
   /* Destructive Colors */
-  --destructive: oklch(45% 0.25 30);
-  --destructive-hover: oklch(40% 0.25 30);
-  --destructive-active: oklch(35% 0.25 30);
+  --destructive: oklch(42% 0.2 20);
+  --destructive-hover: oklch(37% 0.2 20);
+  --destructive-active: oklch(32% 0.2 20);
   --on-destructive: oklch(10% 0 190);
-  --destructive-foreground: oklch(100% 0.05 90);
+  --destructive-foreground: oklch(99% 0.04 245);
 
   /* UI Element Colors */
-  --border: oklch(80% 0.05 70);
+  --border: oklch(78% 0.04 80);
   --on-border: oklch(85% 0.08 180);
   --input: oklch(90% 0.02 200);
   --on-input: oklch(15% 0 190);
-  --ring: oklch(78% 0.12 180);
-  --shadow-color: oklch(15% 0 0 / 0.25);
+  --ring: oklch(76% 0.1 190);
+  --shadow-color: oklch(12% 0 0 / 0.2);
 
   /* Sidebar Colors - direct OKLCH values */
   --sidebar: oklch(14% 0.01 260);
@@ -121,16 +121,16 @@
   --sidebar-ring: oklch(75% 0.10 190);
 
   /* Semantic Colors - direct OKLCH values */
-  --success: oklch(48% 0.1 140);
-  --success-hover: oklch(43% 0.1 140);
-  --success-active: oklch(38% 0.1 140);
-  --success-light: oklch(94% 0.05 140);
+  --success: oklch(46% 0.08 150);
+  --success-hover: oklch(41% 0.08 150);
+  --success-active: oklch(36% 0.08 150);
+  --success-light: oklch(92% 0.04 150);
   --on-success: oklch(98% 0.03 180);
 
-  --warning: oklch(60% 0.2 110);
-  --warning-hover: oklch(57% 0.2 110);
-  --warning-active: oklch(53% 0.2 110);
-  --warning-light: oklch(92% 0.1 95);
+  --warning: oklch(58% 0.18 120);
+  --warning-hover: oklch(55% 0.18 120);
+  --warning-active: oklch(51% 0.18 120);
+  --warning-light: oklch(90% 0.09 105);
   --on-warning: oklch(5% 0.02 72);
 
   --error: oklch(65% 0.25 355);
@@ -146,12 +146,12 @@
   --on-info: oklch(5% 0.01 240);
 
   /* ===== SPACING ===== */
-  --spacing-xs: 0.75rem; /* 4px */
-  --spacing-sm: 1.25rem; /* 8px */
-  --spacing-md: 2rem; /* 16px */
-  --spacing-lg: 3rem; /* 24px */
-  --spacing-xl: 4rem; /* 32px */
-  --spacing-2xl: 5rem; /* 48px */
+  --spacing-xs: 1rem; /* 4px */
+  --spacing-sm: 1.5rem; /* 8px */
+  --spacing-md: 2.5rem; /* 16px */
+  --spacing-lg: 3.5rem; /* 24px */
+  --spacing-xl: 4.5rem; /* 32px */
+  --spacing-2xl: 6rem; /* 48px */
 
   /* ===== Z-INDEX HIERARCHY ===== */
   --z-dropdown: 105;
@@ -169,85 +169,85 @@
   --border-width-medium: 2px;
   --border-width-thick: 3px;
 
-  --radius-sm: 4px; /* 4px */
-  --radius-md: 8px; /* 8px */
-  --radius-lg: 12px; /* 12px */
-  --radius-xl: 16px; /* 16px */
+  --radius-sm: 8px; /* 4px */
+  --radius-md: 12px; /* 8px */
+  --radius-lg: 16px; /* 12px */
+  --radius-xl: 24px; /* 16px */
   --radius-full: 50%;
-  --radius: 8px;
+  --radius: 12px;
 
   /* ===== SHADOWS ===== */
-  --shadow-2xs: 0px 2px 5px -1px oklch(15% 0.05 220 / 0.15);
-  --shadow-xs: 0px 3px 7px -1px oklch(15% 0.05 220 / 0.2);
-  --shadow-sm: 0px 3px 9px -2px oklch(15% 0.05 220 / 0.15), 0px 2px 6px -1px oklch(15% 0.05 220 / 0.15);
-  --shadow: 0px 6px 16px -2px oklch(15% 0.05 220 / 0.2), 0px 2px 8px -2px oklch(15% 0.05 220 / 0.15);
-  --shadow-md: 0px 8px 20px -2px oklch(15% 0.1 225 / 0.25), 0px 4px 10px -2px oklch(15% 0.1 225 / 0.2);
-  --shadow-lg: 0px 12px 25px -3px oklch(15% 0.1 225 / 0.3), 0px 6px 15px -3px oklch(15% 0.1 225 / 0.25);
-  --shadow-xl: 0px 16px 32px -3px oklch(15% 0.1 225 / 0.3), 0px 10px 20px -4px oklch(15% 0.1 225 / 0.25);
-  --shadow-2xl: 0px 20px 40px -4px oklch(15% 0.1 230 / 0.35);
+  --shadow-2xs: 0px 1px 3px -1px oklch(15% 0.05 230 / 0.1);
+  --shadow-xs: 0px 2px 4px -1px oklch(15% 0.05 235 / 0.15);
+  --shadow-sm: 0px 3px 6px -2px oklch(15% 0.05 240 / 0.15), 0px 1px 4px -1px oklch(15% 0.05 240 / 0.1);
+  --shadow: 0px 5px 15px -2px oklch(15% 0.05 245 / 0.2), 0px 2px 6px -2px oklch(15% 0.05 245 / 0.15);
+  --shadow-md: 0px 10px 25px -3px oklch(15% 0.08 255 / 0.25), 0px 4px 8px -2px oklch(15% 0.08 255 / 0.2);
+  --shadow-lg: 0px 14px 30px -3px oklch(15% 0.1 260 / 0.3), 0px 8px 15px -3px oklch(15% 0.1 260 / 0.25);
+  --shadow-xl: 0px 18px 36px -4px oklch(15% 0.1 265 / 0.3), 0px 12px 24px -4px oklch(15% 0.1 265 / 0.25);
+  --shadow-2xl: 0px 24px 48px -6px oklch(15% 0.12 270 / 0.35);
 
   /* ===== TRANSITIONS ===== */
-  --transition-fast: 100ms cubic-bezier(0.5, 0, 0.3, 1);
-  --transition-normal: 200ms cubic-bezier(0.5, 0, 0.3, 1);
-  --transition-slow: 400ms cubic-bezier(0.5, 0, 0.3, 1);
+  --transition-fast: 80ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
 
   /* Animation Timing */
-  --animation-bounce: cubic-bezier(0.2, 1.1, 0.35, 1.25);
-  --animation-smooth: cubic-bezier(0.45, 0, 0.2, 1.1);
-  --animation-spring: cubic-bezier(0.5, 0.25, 0.3, 1.2);
-  --animation-elastic: cubic-bezier(0.75, -0.5, 0.35, 1.6);
+  --animation-bounce: cubic-bezier(0.3, 1, 0.3, 1.3);
+  --animation-smooth: cubic-bezier(0.4, 0, 0.3, 1);
+  --animation-spring: cubic-bezier(0.5, 0.25, 0.2, 1);
+  --animation-elastic: cubic-bezier(0.8, -0.55, 0.35, 1.7);
 
   /* Animation Durations */
-  --animation-fast: 120ms;
-  --animation-normal: 300ms;
-  --animation-slow: 500ms;
-  --animation-extra-slow: 800ms;
+  --animation-fast: 100ms;
+  --animation-normal: 250ms;
+  --animation-slow: 450ms;
+  --animation-extra-slow: 700ms;
 
   /* ===== LAYOUT ===== */
-  --container-max-width: 1360px;
+  --container-max-width: 1440px;
   --header-height: 80px;
   --footer-height: 350px;
 
   /* Banner */
   --banner-height: 350px;
   --banner-height-md: 600px;
-  --banner-radius: 12px;
-  --banner-content-radius: 8px;
-  --banner-shadow: 0 10px 30px -5px oklch(15% 0.07 205 / 0.3);
-  --banner-container-margin-y: 2rem;
+  --banner-radius: 16px;
+  --banner-content-radius: 10px;
+  --banner-shadow: 0 12px 36px -6px oklch(15% 0.07 210 / 0.25);
+  --banner-container-margin-y: 3rem;
 
   /* Banner skeleton */
   --banner-skeleton-bg: oklch(20% 0.035 240);
   --banner-skeleton-element-bg: oklch(18% 0.03 240);
 
   /* Banner error */
-  --banner-error-padding-y: 3rem;
+  --banner-error-padding-y: 3.5rem;
   --banner-error-bg: oklch(15% 0.04 20);
-  --banner-error-icon-color: oklch(85% 0.2 10);
-  --banner-error-title-color: oklch(15% 0.1 10);
-  --banner-error-text-color: oklch(22% 0.15 10);
-  --banner-error-button-bg: oklch(60% 0.18 25);
-  --banner-error-button-hover-bg: oklch(50% 0.18 25);
+  --banner-error-icon-color: oklch(83% 0.18 15);
+  --banner-error-title-color: oklch(13% 0.09 15);
+  --banner-error-text-color: oklch(20% 0.14 15);
+  --banner-error-button-bg: oklch(90% 0.01 210);
+  --banner-error-button-hover-bg: oklch(85% 0.02 210);
   --banner-error-button-text: oklch(5% 0.01 0);
 
   /* Banner gradient and content */
   --banner-gradient-start: oklch(20% 0.16 125 / 0.75);
   --banner-gradient-middle: oklch(15% 0.1 210 / 0.5);
   --banner-gradient-end: oklch(10% 0 210);
-  --banner-text-color: oklch(5% 0.05 240);
-  --banner-title-color: oklch(15% 0.09 180);
-  --banner-description-color: oklch(95% 0.1 160 / 0.8);
-  --banner-text-shadow: 0 2px 5px oklch(8% 0 0 / 0.15);
+  --banner-text-color: oklch(3% 0.04 250);
+  --banner-title-color: oklch(13% 0.08 190);
+  --banner-description-color: oklch(93% 0.09 170 / 0.8);
+  --banner-text-shadow: 0 2px 4px oklch(9% 0 0 / 0.2);
 
   /* Banner tag */
   --banner-tag-bg: oklch(60% 0.3 200);
   --banner-tag-text: oklch(95% 0 0);
 
   /* Banner button */
-  --banner-button-bg: oklch(65% 0.15 180);
-  --banner-button-hover-bg: oklch(70% 0.2 190);
-  --banner-button-text: oklch(5% 0.3 200);
-  --banner-button-shadow: 0 5px 12px oklch(10% 0 0 / 0.2);
+  --banner-button-bg: oklch(80% 0.02 250);
+  --banner-button-hover-bg: oklch(78% 0.025 260);
+  --banner-button-text: oklch(5% 0.3 220);
+  --banner-button-shadow: 0 5px 15px oklch(0% 0 0 / 0.15);
 
   /* Banner navigation */
   --banner-nav-text: oklch(90% 0 0);
@@ -261,18 +261,18 @@
 
   /* Custom banner pagination styles */
   --banner-pagination-bullet-size: 10px;
-  --banner-pagination-bullet-margin: 0 8px;
+  --banner-pagination-bullet-margin: 0 0.5rem;
   --banner-pagination-bullet-opacity: 0.8;
   --banner-pagination-bullet-active-opacity: 1;
 
   /* Banner empty state */
-  --banner-empty-padding-y: 6rem;
+  --banner-empty-padding-y: 5rem;
   --banner-empty-bg: oklch(90% 0.02 220);
   --banner-empty-border: oklch(80% 0.06 220);
-  --banner-empty-shadow: 0 2px 6px oklch(8% 0 0 / 0.1);
-  --banner-empty-icon-color: oklch(55% 0.2 160);
-  --banner-empty-title-color: oklch(65% 0.1 180);
-  --banner-empty-text-color: oklch(72% 0.12 180);
+  --banner-empty-shadow: 0 2px 6px oklch(10% 0 0 / 0.1);
+  --banner-empty-icon-color: oklch(52% 0.18 170);
+  --banner-empty-title-color: oklch(63% 0.09 190);
+  --banner-empty-text-color: oklch(70% 0.1 190);
 
   /* ===== PRODUCT VARIANT SELECTOR ===== */
   --variant-select-trigger-bg: oklch(20% 0.05 200);
@@ -407,22 +407,22 @@
   --navbar-search-empty-subtext-color: oklch(65% 0.02 180);
 
   /* Location Selector */
-  --location-icon-color: oklch(81% 0.04 135);
-  --location-text-color: oklch(85% 0.01 135);
+  --location-icon-color: oklch(78% 0.03 145);
+  --location-text-color: oklch(82% 0.005 145);
   --location-text-size: 1rem;
   --location-text-weight: 500;
-  --location-dropdown-icon-color: oklch(45% 0.05 135);
+  --location-dropdown-icon-color: oklch(42% 0.04 145);
   --location-dropdown-icon-size: 1.5rem;
-  --location-button-gap: 0.75rem;
-  --location-button-padding-x: 1.25rem;
-  --location-button-padding-y: 0.75rem;
-  --location-button-hover-bg: oklch(18% 0.1 180);
-  --location-button-active-bg: oklch(16% 0.1 180);
-  --location-popup-shadow: 0 8px 25px oklch(5% 0.04 190);
-  --location-popup-border-radius: 8px;
+  --location-button-gap: 1.25rem;
+  --location-button-padding-x: 1.5rem;
+  --location-button-padding-y: 1rem;
+  --location-button-hover-bg: oklch(20% 0.05 180);
+  --location-button-active-bg: oklch(18% 0.06 180);
+  --location-popup-shadow: 0 10px 30px oklch(7% 0.04 200);
+  --location-popup-border-radius: 10px;
   --location-popup-width: 32rem;
-  --location-popup-border-color: oklch(30% 0.02 135);
-  --location-popup-border-width: 1px;
+  --location-popup-border-color: oklch(28% 0.018 145);
+  --location-popup-border-width: 2px;
 
   /* User Menu */
   --user-menu-icon-color: oklch(95% 0.12 180);
@@ -448,9 +448,9 @@
   --user-menu-avatar-border-width: 2px;
 
   /* Cart Button */
-  --cart-button-icon-size: 1.5rem;
-  --cart-button-text-color: oklch(95% 0 0);
-  --cart-button-hover-bg: oklch(55% 0.15 180);
+  --cart-button-icon-size: 1.75rem;
+  --cart-button-text-color: oklch(10% 0.02 0);
+  --cart-button-hover-bg: oklch(65% 0.12 190);
   --cart-badge-bg: oklch(60% 0.3 190);
   --cart-badge-text-color: oklch(97% 0 0);
   --cart-badge-size: 1.5rem;
@@ -535,16 +535,16 @@
   --contact-page-bg: oklch(8% 0.03 240); /* Page background */
 
   /* Main Card */
-  --contact-card-bg: oklch(15% 0.02 240); /* Main card background */
-  --contact-card-border: oklch(20% 0.02 240); /* Main card border */
-  --contact-card-shadow: 0 4px 12px rgba(0, 0, 0, 0.8); /* Main card shadow */
-  --contact-card-radius: 8px; /* Main card border radius */
+  --contact-card-bg: oklch(97% 0.01 250); /* Main card background */
+  --contact-card-border: oklch(92% 0.01 240); /* Main card border */
+  --contact-card-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Main card shadow */
+  --contact-card-radius: 16px; /* Main card border radius */
 
   /* Card Header */
   --contact-header-bg: var( --primary );
   --contact-header-text-color: var( --on-primary );
-  --contact-title-color: oklch(94% 0.04 30); /* Title text color in header */
-  --contact-description-color: oklch(90% 0.03 36); /* Description text color with slight transparency */
+  --contact-title-color: oklch(92% 0.035 40); /* Title text color in header */
+  --contact-description-color: oklch(88% 0.025 46); /* Description text color with slight transparency */
 
   /* Card Content Area */
   --contact-content-bg: var( --card );
@@ -552,22 +552,22 @@
   /* Contact Detail Item Card (for address, phone, email) */
   --contact-item-bg: var( --background );
   --contact-item-border: var( --border );
-  --contact-item-shadow: 0px 3px 9px -2px oklch(15% 0.05 220 / 0.15), 0px 2px 6px -1px oklch(15% 0.05 220 / 0.15);
-  --contact-item-hover-shadow: 0px 8px 20px -2px oklch(15% 0.1 225 / 0.25), 0px 4px 10px -2px oklch(15% 0.1 225 / 0.2);
-  --contact-item-radius: 4px; /* Border radius for item cards */
+  --contact-item-shadow: 0px 3px 8px -2px oklch(15% 0.06 225 / 0.15), 0px 2px 6px -1px oklch(15% 0.06 225 / 0.15);
+  --contact-item-hover-shadow: 0px 10px 24px -3px oklch(15% 0.08 240 / 0.25), 0px 5px 12px -3px oklch(15% 0.08 240 / 0.2);
+  --contact-item-radius: 6px; /* Border radius for item cards */
   --contact-item-icon-bg: oklch( var(--primary-l) calc(var(--primary-c) * 0.1) var(--primary-h) / 0.15 );
-  --contact-item-icon-color: oklch(91% 0.12 60); /* Color of the icon itself */
+  --contact-item-icon-color: oklch(88% 0.11 70); /* Color of the icon itself */
   --contact-item-title-color: var(--foreground);
   --contact-item-text-color: var(--muted-foreground);
   --contact-item-link-hover-color: var(--primary);
 
   /* Store Information Section */
-  --contact-store-info-title-color: oklch(88% 0.22 135);
-  --contact-store-info-text-color: oklch(82% 0.21 135);
-  --contact-store-info-highlight-color: oklch(98% 0.3 245);
+  --contact-store-info-title-color: oklch(85% 0.21 145);
+  --contact-store-info-text-color: oklch(80% 0.2 145);
+  --contact-store-info-highlight-color: oklch(97% 0.28 255);
 
   /* Separators */
-  --contact-separator-color: oklch(25% 0.15 290);
+  --contact-separator-color: oklch(22% 0.14 300);
 
   /* Footer in Card */
   --contact-card-footer-bg: oklch(12% 0.02 240);
@@ -575,25 +575,25 @@
   --contact-card-footer-border: oklch(20% 0.02 240);
 
   /* Loading State */
-  --contact-loading-spinner-color: oklch(100% 0.1 160);
-  --contact-loading-text-color: oklch(95% 0.05 240);
-  --contact-loading-subtext-color: oklch(88% 0.03 220);
+  --contact-loading-spinner-color: oklch(99% 0.09 170);
+  --contact-loading-text-color: oklch(94% 0.045 250);
+  --contact-loading-subtext-color: oklch(86% 0.025 230);
   --contact-loading-bg: var( --background );
 
   /* Error State */
   --contact-error-bg: oklch(15% 0.02 240); /* Background for error state container */
-  --contact-error-card-bg: oklch( var(--error-light-l) var(--error-light-c) var(--error-light-h) );
-  --contact-error-card-border: oklch(50% 0.09 20);
-  --contact-error-icon-color: oklch(50% 0.08 15);
-  --contact-error-title-color: oklch(60% 0.09 15);
-  --contact-error-text-color: oklch(80% 0.01 180);
-  --contact-error-button-bg: oklch(50% 0.09 20);
-  --contact-error-button-hover-bg: oklch(60% 0.1 20);
-  --contact-error-button-text-color: oklch(95% 0 0);
+  --contact-error-card-bg: oklch(95% 0.1 30);
+  --contact-error-card-border: oklch(85% 0.15 25);
+  --contact-error-icon-color: oklch(48% 0.07 20);
+  --contact-error-title-color: oklch(57% 0.08 20);
+  --contact-error-text-color: oklch(78% 0.005 190);
+  --contact-error-button-bg: oklch(30% 0.02 20);
+  --contact-error-button-hover-bg: oklch(35% 0.025 20);
+  --contact-error-button-text-color: oklch(95% 0 25);
 
   /* Fallback Info (within Error State) */
-  --contact-fallback-title-color: oklch(87% 0.02 170);
-  --contact-fallback-separator-color: oklch(20% 0.05 300);
+  --contact-fallback-title-color: oklch(84% 0.018 180);
+  --contact-fallback-separator-color: oklch(18% 0.06 310);
 
   /* Cart Popup Content */
   --cart-popup-header-padding: 1rem 1.5rem;
@@ -622,11 +622,11 @@
   --cart-popup-product-price-font-weight: 800;
   --cart-popup-product-price-color: oklch(18% 0.25 50);
 
-  --cart-popup-quantity-button-bg: oklch(10% 0.03 240);
-  --cart-popup-quantity-button-color: oklch(88% 0 180);
-  --cart-popup-quantity-button-hover-bg: oklch(95% 0.2 190);
-  --cart-popup-quantity-button-hover-color: oklch(0% 0 360);
-  --cart-popup-quantity-button-size: 1.75rem;
+  --cart-popup-quantity-button-bg: oklch(85% 0.01 240);
+  --cart-popup-quantity-button-color: oklch(20% 0.05 180);
+  --cart-popup-quantity-button-hover-bg: oklch(95% 0.15 200);
+  --cart-popup-quantity-button-hover-color: oklch(0% 0.03 360);
+  --cart-popup-quantity-button-size: 2rem;
   --cart-popup-quantity-text-font-size: 0.925rem;
 
   --cart-popup-empty-padding: 3rem;
@@ -667,7 +667,7 @@
   /* Social Icons */
   --social-icon-radius: 50%;
   --social-icon-hover-bg: oklch(60% 0.15 208 / 0.8);
-  --social-icon-hover-color: oklch(98% 0.0 240);
+  --social-icon-hover-color: oklch(97% 0.0 230);
   --social-icon-hover-scale: 1.1;
 
   /* Product Description */
@@ -717,7 +717,7 @@
 
   /* Mobile Touch Targets */
   --cart-mobile-touch-target: 65px; /* Minimum touch target size */
-  --cart-mobile-button-height: 56px; /* Comfortable button height */
+  --cart-mobile-button-height: 60px; /* Comfortable button height */
   --cart-mobile-icon-size: 28px; /* Optimal icon size for mobile */
 
   /* Cart Table */
@@ -727,12 +727,12 @@
   --cart-table-header-text: oklch(60% 0.02 210);
 
   /* Cart Buttons */
-  --continue-shopping-btn-border: oklch(36% 0.02 180);
-  --continue-shopping-btn-text: oklch(100% 0% 230);
-  --continue-shopping-btn-hover-bg: oklch(20% 0.01 180 / 0.3);
-  --remove-all-btn-border: oklch(55% 0.08 350 / 0.3);
-  --remove-all-btn-text: oklch(55% 0% 20);
-  --remove-all-btn-hover-bg: oklch(70% 0.05 350);
+  --continue-shopping-btn-border: oklch(40% 0.02 200);
+  --continue-shopping-btn-text: oklch(99% 0 230);
+  --continue-shopping-btn-hover-bg: oklch(22% 0.01 190 / 0.25);
+  --remove-all-btn-border: oklch(50% 0.02 340 / 0.3);
+  --remove-all-btn-text: oklch(98% 0 20);
+  --remove-all-btn-hover-bg: oklch(78% 0.035 350);
 
   /* Order Summary */
   --order-summary-border: oklch(40% 0.03 200 / 0.4);
@@ -744,9 +744,9 @@
   --order-summary-total: oklch(50% 0.19 190);
 
   /* Checkout Button */
-  --checkout-btn-bg: oklch(50% 0.15 208);
-  --checkout-btn-text: oklch(100% 0% 230);
-  --checkout-btn-hover-bg: oklch(50% 0.2 208);
+  --checkout-btn-bg: oklch(65% 0.1 195);
+  --checkout-btn-text: oklch(95% 0.01 230);
+  --checkout-btn-hover-bg: oklch(63% 0.15 195);
 
   /* Empty Cart */
   --empty-cart-bg: oklch(95% 0.01 145);
@@ -756,9 +756,9 @@
   --empty-cart-icon-color: oklch(65% 0.2 48);
   --empty-cart-heading: oklch(95% 0.01 235);
   --empty-cart-text: oklch(59% 0.05 48);
-  --empty-cart-btn-bg: oklch(50% 0.15 208);
-  --empty-cart-btn-text: oklch(91% 0.23 185);
-  --empty-cart-btn-hover-bg: oklch(75% 0.23 185);
+  --empty-cart-btn-bg: oklch(55% 0.1 195);
+  --empty-cart-btn-text: oklch(96% 0.18 190);
+  --empty-cart-btn-hover-bg: oklch(70% 0.2 185);
 
   /* Category Badge */
   --category-badge-bg: oklch(20% 0.05 210 / 0.4);
@@ -776,35 +776,35 @@
   --about-section-text-size: 1.1rem;
   --about-header-padding-y: 8rem;
   --about-header-padding-x: 2rem;
-  --about-heading-margin: 2.5rem;
+  --about-heading-margin: 3rem;
   --about-heading-weight: 700;
-  --about-heading-color: oklch(95% 0.13 270);
-  --about-heading-shadow: 0 3px 5px oklch(10% 0 0 / 0.2);
+  --about-heading-color: oklch(94% 0.12 280);
+  --about-heading-shadow: 0 4px 6px oklch(11% 0 0 / 0.2);
   --about-header-overlay: oklch(10% 0 0);
-  --about-content-padding-x: 2.5rem;
-  --about-content-padding-y: 5rem;
-  --about-description-color: oklch(86% 0.07 140);
+  --about-content-padding-x: 3rem;
+  --about-content-padding-y: 5.5rem;
+  --about-description-color: oklch(84% 0.06 150);
   --about-description-bg: oklch(20% 0.04 220);
-  --about-description-padding: 2.5rem;
-  --about-description-radius: 10px;
-  --about-description-shadow: 0 3px 7px oklch(10% 0 0 / 0.25);
+  --about-description-padding: 3rem;
+  --about-description-radius: 12px;
+  --about-description-shadow: 0 4px 8px oklch(11% 0 0 / 0.25);
   --about-section-padding-y: 4rem;
   --about-section-padding-x: 2rem;
-  --about-card-hover-shadow: 0 6px 12px rgba(0, 255, 255, 0.4);
-  --about-card-border-color: oklch(30% 0.1 210);
-  --about-card-border-hover-color: oklch(91% 0.23 185);
-  --about-card-radius: 10px;
-  --about-card-padding-mobile: 2rem;
-  --about-card-padding-desktop: 3rem;
+  --about-card-hover-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  --about-card-border-color: oklch(85% 0.03 200);
+  --about-card-border-hover-color: oklch(92% 0.025 260);
+  --about-card-radius: 20px;
+  --about-card-padding-mobile: 2.5rem;
+  --about-card-padding-desktop: 4rem;
   --about-card-header-margin: 1.5rem;
-  --about-card-title-weight: 600;
-  --about-card-title-color: oklch(90% 0.10 200);
-  --about-card-text-color: oklch(70% 0.05 200);
-  --about-card-text-margin: 1.5rem;
-  --about-skeleton-spacing: 3rem;
-  --about-skeleton-padding-y: 4rem;
+  --about-card-title-weight: 700;
+  --about-card-title-color: oklch(10% 0.02 220);
+  --about-card-text-color: oklch(35% 0.015 220);
+  --about-card-text-margin: 2rem;
+  --about-skeleton-spacing: 4rem;
+  --about-skeleton-padding-y: 4.5rem;
   --about-skeleton-header-bg: oklch(18% 0.02 220);
-  --about-skeleton-radius: 6px;
+  --about-skeleton-radius: 8px;
 
   /* Navbar Skeleton */
   --navbar-skeleton-bg: oklch(18% 0.02 220);
@@ -851,20 +851,20 @@
   --cart-table-header-bg: oklch(15% 0.01 180 / 0.2);
   --cart-table-hover-bg: oklch(92% 0.02 140 / 0.1);
   --cart-table-header-text: oklch(60% 0.02 210);
-  --cart-quantity-button-bg: oklch(91% 0.23 185);
-  --cart-quantity-button-border: oklch(91% 0.23 185 / 15);
-  --cart-quantity-button-hover-bg: oklch(91% 0.25 185 / 10);
+  --cart-quantity-button-bg: oklch(70% 0.18 185);
+  --cart-quantity-button-border: oklch(55% 0.1 185 / 15);
+  --cart-quantity-button-hover-bg: oklch(75% 0.25 185 / 12);
   --cart-quantity-text-color: oklch(96% 0.2 45);
-  --cart-remove-button-color: oklch(10% 0.3 350);
-  --cart-remove-button-hover-color: oklch(15% 0.3 350 / 85);
+  --cart-remove-button-color: oklch(15% 0.3 330);
+  --cart-remove-button-hover-color: oklch(12% 0.35 330 / 80);
   --cart-subtotal-color: oklch(85% 0.04 50);
   --cart-subtotal-value-color: oklch(90% 0.25 50);
-  --cart-checkout-button-bg: oklch(90% 0.2 180);
-  --cart-checkout-button-hover-bg: oklch(90% 0.2 180 / 0.9);
+  --cart-checkout-button-bg: oklch(95% 0.1 160);
+  --cart-checkout-button-hover-bg: oklch(93% 0.12 160 / 0.85);
   --cart-checkout-button-text: oklch(100% 0 0);
-  --cart-clear-button-bg: oklch(90% 0.2 30);
-  --cart-clear-button-hover-bg: oklch(90% 0.2 30 / 0.9);
-  --cart-clear-button-text: oklch(100% 0 0);
+  --cart-clear-button-bg: oklch(65% 0.25 350);
+  --cart-clear-button-hover-bg: oklch(68% 0.15 30 / 0.85);
+  --cart-clear-button-text: oklch(98% 0 0);
 
   /* Product Card */
   --product-card-border: oklch(15% 0 260);
@@ -885,12 +885,12 @@
   --badge-bg: oklch(90% 0.2 180);
   --badge-text: oklch(100% 0 0);
   --cart-quantity-border: oklch(37% 0.04 30);
-  --cart-btn-hover-bg: oklch(90% 0.2 180);
-  --cart-btn-hover-text: oklch(100% 0 0);
+  --cart-btn-hover-bg: oklch(92% 0.2 160);
+  --cart-btn-hover-text: oklch(98% 0 0);
   --cart-quantity-text: oklch(93% 0.08 36);
-  --add-to-cart-btn-bg: oklch(90% 0.2 180);
+  --add-to-cart-btn-bg: oklch(92% 0.2 170);
   --add-to-cart-btn-text: oklch(100% 0 0);
-  --add-to-cart-btn-hover-bg: oklch(85% 0.25 180);
+  --add-to-cart-btn-hover-bg: oklch(88% 0.22 170);
 
   /* Featured Categories */
   --featured-categories-section-padding-y-mobile: 4rem;
@@ -905,16 +905,16 @@
   --featured-categories-heading-color: oklch(92% 0.09 180);
   --featured-categories-icon-color: oklch(90% 0.2 180);
   --featured-categories-subheading-color: oklch(70% 0.05 180);
-  --featured-categories-button-from: oklch(90% 0.2 180);
-  --featured-categories-button-to: oklch(85% 0.25 180);
-  --featured-categories-button-hover-from: oklch(85% 0.25 180);
-  --featured-categories-button-hover-to: oklch(90% 0.2 180);
+  --featured-categories-button-from: oklch(91% 0.2 175);
+  --featured-categories-button-to: oklch(87% 0.22 175);
+  --featured-categories-button-hover-from: oklch(86% 0.22 175);
+  --featured-categories-button-hover-to: oklch(92% 0.2 175);
   --featured-categories-separator-spacing: 2rem;
   --featured-categories-separator-color: oklch(25% 0.03 180);
   --separator-height: 2px;
   --featured-categories-carousel-padding-x-mobile: 1rem;
   --featured-categories-carousel-padding-x-desktop: 3rem;
-  --carousel-content-margin-left: 6rem;
+  --carousel-content-margin-left: 7rem;
   --category-card-padding-mobile: 1rem;
   --category-card-padding-desktop: 2rem;
   --featured-categories-carousel-nav-bg: oklch(10% 0.05 180);
@@ -929,13 +929,13 @@
   --featured-categories-mobile-link-hover-color: oklch(85% 0.25 180);
 
   /* Order History */
-  --order-history-title-color: oklch(92% 0.09 155);
+  --order-history-title-color: oklch(90% 0.08 165);
   --order-history-title-weight: 600;
   --order-history-title-size: 2rem;
-  --order-history-card-border: 1px solid oklch(25% 0.03 180);
-  --order-history-card-radius: 15px;
-  --order-history-card-shadow: 0 3px 6px oklch(60% 0 0.05);
-  --order-history-card-hover-shadow: 0 5px 12px oklch(60% 0 0.06);
+  --order-history-card-border: 1px solid oklch(88% 0.02 195);
+  --order-history-card-radius: 20px;
+  --order-history-card-shadow: 0 3px 6px oklch(0.0 0 0.1 / 0.08);
+  --order-history-card-hover-shadow: 0 7px 15px oklch(0.0 0 0.1 / 0.15);
   --order-history-status-pending-color: oklch(92% 0.25 50);
   --order-history-status-completed-color: oklch(92% 0.25 130);
   --order-history-status-cancelled-color: oklch(92% 0.25 10);
@@ -948,22 +948,22 @@
   --contact-form-label-weight: 500;
   --contact-form-input-border: 1px solid oklch(25% 0.03 180);
   --contact-form-input-focus-border: 1px solid oklch(63% 0.32 180);
-  --contact-form-button-bg: oklch(63% 0.32 180);
-  --contact-form-button-color: oklch(95% 0.05 180);
+  --contact-form-button-bg: oklch(60% 0.3 185);
+  --contact-form-button-color: oklch(94% 0 180);
 
   /* FAQ Section */
-  --faq-title-color: oklch(90% 0.06 250);
+  --faq-title-color: oklch(89% 0.05 260);
   --faq-title-weight: 700;
   --faq-title-size: 1.8rem;
-  --faq-question-color: oklch(72% 0.1 240);
+  --faq-question-color: oklch(70% 0.09 250);
   --faq-question-weight: 600;
   --faq-question-size: 1.125rem;
-  --faq-answer-color: oklch(68% 0.1 240);
+  --faq-answer-color: oklch(66% 0.09 250);
   --faq-answer-weight: 400;
   --faq-answer-size: 1rem;
 
   /* Checkout */
-  --checkout-title-color: oklch(95% 0.08 160);
+  --checkout-title-color: oklch(92% 0.07 170);
   --checkout-title-weight: 700;
   --checkout-title-size: 2rem;
   --checkout-section-title-color: oklch(90% 0.05 180);
@@ -976,40 +976,40 @@
   --checkout-input-focus-border: 1px solid oklch(63% 0.32 180);
   --checkout-input-bg: oklch(20% 0.05 180);
   --checkout-input-radius: 6px;
-  --checkout-card-bg: oklch(15% 0.1 180);
-  --checkout-card-border: 1px solid oklch(40% 0.05 180);
-  --checkout-card-radius: 12px;
-  --checkout-card-shadow: 0 2px 10px 0 oklch(0% 0% 0%);
-  --checkout-card-hover-shadow: 0 4px 20px 0 oklch(0% 0% 0%);
+  --checkout-card-bg: oklch(98% 0.01 225);
+  --checkout-card-border: 1px solid oklch(89% 0.02 225);
+  --checkout-card-radius: 18px;
+  --checkout-card-shadow: 0 2px 12px 0 oklch(0% 0 0 / 3%);
+  --checkout-card-hover-shadow: 0 5px 20px 0 oklch(0% 0 0 / 5%);
   --checkout-card-selected-border: 1px solid oklch(63% 0.32 180);
-  --checkout-address-title-color: oklch(78% 0.1 210);
+  --checkout-address-title-color: oklch(75% 0.09 220);
   --checkout-address-title-weight: 600;
-  --checkout-address-text-color: oklch(70% 0.08 200);
-  --checkout-payment-option-color: oklch(72% 0.3 180);
+  --checkout-address-text-color: oklch(67% 0.07 210);
+  --checkout-payment-option-color: oklch(70% 0.28 190);
   --checkout-payment-option-weight: 600;
-  --checkout-payment-description-color: oklch(67% 0.05 160);
-  --checkout-summary-title-color: oklch(87% 0.06 200);
+  --checkout-payment-description-color: oklch(65% 0.045 170);
+  --checkout-summary-title-color: oklch(84% 0.05 210);
   --checkout-summary-title-weight: 600;
   --checkout-summary-label-color: oklch(70% 0.05 180);
-  --checkout-summary-value-color: oklch(90% 0.05 200);
-  --checkout-summary-total-color: oklch(95% 0.03 180);
+  --checkout-summary-value-color: oklch(88% 0.045 210);
+  --checkout-summary-total-color: oklch(93% 0.02 190);
   --checkout-summary-total-weight: 700;
   --checkout-summary-total-size: 1.5rem;
-  --checkout-button-bg: oklch(63% 0.32 180);
-  --checkout-button-hover-bg: oklch(58% 0.3 180);
-  --checkout-button-text: oklch(95% 0.05 180);
-  --checkout-button-radius: 50px;
+  --checkout-button-bg: oklch(70% 0.25 200);
+  --checkout-button-hover-bg: oklch(65% 0.28 200);
+  --checkout-button-text: oklch(98% 0 210);
+  --checkout-button-radius: 20px;
   --checkout-coupon-border: 1px dashed oklch(43% 0.05 180);
   --checkout-coupon-bg: oklch(17% 0.05 180);
   --checkout-coupon-input-bg: oklch(20% 0.05 180);
-  --checkout-coupon-button-bg: oklch(63% 0.32 180);
-  --checkout-coupon-button-text: oklch(95% 0.05 180);
+  --checkout-coupon-button-bg: oklch(55% 0.2 200);
+  --checkout-coupon-button-text: oklch(97% 0 200);
   --checkout-section-radius: 12px;
   --checkout-section-shadow: 0 2px 8px 0 oklch(0% 0% 0%);
   --checkout-form-label-color: oklch(80% 0.05 180);
   --checkout-form-label-weight: 500;
-  --checkout-total-color: oklch(98% 0.08 185);
-  --checkout-subtitle-color: oklch(75% 0.02 190);
+  --checkout-total-color: oklch(97% 0.07 195);
+  --checkout-subtitle-color: oklch(73% 0.018 200);
   --checkout-subtitle-weight: 500;
   --checkout-subtitle-size: 1.125rem;
   --checkout-section-bg: oklch(10% 0.05 180);
@@ -1019,13 +1019,13 @@
   --checkout-total-weight: 700;
   --checkout-total-size: 1.5rem;
 
-  --cart-popup-checkout-button-bg: oklch(63% 0.32 180);
-  --cart-popup-checkout-button-text-color: oklch(95% 0.05 180);
-  --cart-popup-checkout-button-hover-bg: oklch(58% 0.3 180);
-  --cart-popup-view-cart-button-bg: oklch(10% 0.05 180);
-  --cart-popup-view-cart-button-text-color: oklch(95% 0.05 180);
-  --cart-popup-view-cart-button-border-color: oklch(40% 0.05 180);
-  --cart-popup-view-cart-button-hover-bg: oklch(12% 0.05 0);
+  --cart-popup-checkout-button-bg: oklch(65% 0.3 190);
+  --cart-popup-checkout-button-text-color: oklch(98% 0 210);
+  --cart-popup-checkout-button-hover-bg: oklch(62% 0.28 190);
+  --cart-popup-view-cart-button-bg: oklch(18% 0.05 190);
+  --cart-popup-view-cart-button-text-color: oklch(92% 0 200);
+  --cart-popup-view-cart-button-border-color: oklch(42% 0.05 200);
+  --cart-popup-view-cart-button-hover-bg: oklch(22% 0.05 0);
 
   /* Navbar Component */
   --navbar-height: 80px;
@@ -1254,40 +1254,40 @@
   --category-menu-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.4);
 
   /* Search Box Component */
-  --search-box-border-color: oklch(57% 0.08 280); /* primary/20 */
-  --search-box-hover-border-color: oklch(62% 0.07 285); /* primary/30 */
+  --search-box-border-color: oklch(94% 0.05 250); /* primary/20 */
+  --search-box-hover-border-color: oklch(96% 0.06 255); /* primary/30 */
   --search-box-focus-ring-color: oklch(24% 0.05 180); /* primary/20 */
   --search-box-bg: oklch(15% 0.02 180);
-  --search-box-text-color: oklch(85% 0.03 270);
+  --search-box-text-color: oklch(8% 0.01 270);
   --search-box-placeholder-color: oklch(40% 0.01 180);
   --search-box-height: 3rem; /* h-10 */
-  --search-box-border-radius: 20px; /* rounded-full */
-  --search-box-padding-left: 3.5rem;
-  --search-box-padding-right: 2rem;
+  --search-box-border-radius: 24px; /* rounded-full */
+  --search-box-padding-left: 4rem;
+  --search-box-padding-right: 2.5rem;
   --search-box-font-size: 1rem;
   --search-box-icon-size: 1.2rem;
-  --search-box-icon-color: oklch(70% 0.15 45);
+  --search-box-icon-color: oklch(23% 0.12 215);
 
   /* Search Results Dropdown */
   --search-results-bg: oklch(10% 0.01 250);
-  --search-results-border-color: oklch(40% 0.03 200); /* primary/20 */
+  --search-results-border-color: oklch(90% 0.03 240); /* primary/20 */
   --search-results-max-height: 500px;
-  --search-results-border-radius: 6px; /* rounded-lg */
-  --search-results-shadow: 0 10px 15px -4px oklch(15% 0 0 / 0.2), 0 4px 6px -3px oklch(15% 0 0 / 0.1);
-  --search-results-item-padding-x: 2rem;
-  --search-results-item-padding-y: 1.5rem;
+  --search-results-border-radius: 8px; /* rounded-lg */
+  --search-results-shadow: 0 12px 20px -5px oklch(15% 0.05 235 / 0.2), 0 6px 10px -4px oklch(15% 0.05 235 / 0.1);
+  --search-results-item-padding-x: 2.5rem;
+  --search-results-item-padding-y: 2rem;
   --search-results-item-hover-bg: oklch(15% 0.05 210); /* primary/10 */
-  --search-results-item-hover-text-color: oklch(80% 0.05 260);
+  --search-results-item-hover-text-color: oklch(5% 0.01 265);
   --search-results-item-font-size: 1rem;
   --search-results-z-index: 100;
 
   /* Support Section Component */
   --support-icon-bg: oklch(15% 0.05 190); /* primary/10 */
-  --support-icon-color: oklch(65% 0.12 40);
+  --support-icon-color: oklch(22% 0.15 230);
   --support-icon-size: 2rem; /* 24px */
-  --support-phone-color: oklch(80% 0.06 200);
+  --support-phone-color: oklch(6% 0.01 260);
   --support-phone-font-size: 1.125rem;
-  --support-text-color: oklch(75% 0.02 195);
+  --support-text-color: oklch(8% 0.01 260);
   --support-text-font-size: 0.875rem;
 
   /* Mobile Navigation */
@@ -1310,11 +1310,11 @@
   --mobile-nav-icon-color: oklch(85% 0.04 250);
   --mobile-nav-icon-size: 2rem;
   --mobile-nav-separator: oklch(10% 0.02 235);
-  --mobile-location-title-color: oklch(78% 0.05 30);
+  --mobile-location-title-color: oklch(87% 0.06 35);
   --mobile-location-title-weight: 600;
-  --mobile-location-btn-border: oklch(20% 0.01 180);
+  --mobile-location-btn-border: oklch(22% 0.01 190);
   --mobile-location-btn-bg: transparent;
-  --mobile-location-btn-text: oklch(85% 0.04 250);
+  --mobile-location-btn-text: oklch(82% 0.04 240);
 
   /* Mobile Category Dropdown */
   --mobile-category-container-z-index: 10010;
@@ -1356,13 +1356,13 @@
   --search-placeholder: oklch(55% 0.01 190);
   --search-border: oklch(22% 0.01 160);
   --search-focus-border: oklch(25% 0.02 180);
-  --search-radius: 6px;
-  --search-padding-x: 1.5rem;
-  --search-padding-y: 1rem;
+  --search-radius: 8px;
+  --search-padding-x: 2rem;
+  --search-padding-y: 1.5rem;
   --search-height: 3rem;
-  --search-icon-color: oklch(68% 0.10 250);
-  --search-button-bg: oklch(8% 0.01 250);
-  --search-button-text: oklch(85% 0.05 255);
+  --search-icon-color: oklch(25% 0.10 220);
+  --search-button-bg: oklch(10% 0.01 240);
+  --search-button-text: oklch(80% 0.05 255);
 
   /* ===== Product Components ===== */
   /* Product Card */
@@ -1458,15 +1458,15 @@
   /* Top Selling Products Section */
   --top-selling-section-padding-y: 3.5rem;
   --top-selling-section-bg: oklch(10% 0.02 240);
-  --top-selling-card-border: oklch(35% 0.05 190);
-  --top-selling-card-bg: oklch(13% 0.02 240);
-  --top-selling-card-shadow: 0 4px 10px -2px oklch(0.2 0.03 154.99 / 0.1), 0 2px 4px -1px oklch(0.2 0.03 154.99 / 0.05);
-  --top-selling-card-radius: 1.5rem;
-  --top-selling-title-color: oklch(75% 0.24 170);
+  --top-selling-card-border: oklch(90% 0.015 250);
+  --top-selling-card-bg: oklch(96% 0.01 250);
+  --top-selling-card-shadow: 0 4px 10px -2px oklch(0.3 0.03 154.99 / 0.15), 0 2px 4px -1px oklch(0.3 0.03 154.99 / 0.08);
+  --top-selling-card-radius: 15px;
+  --top-selling-title-color: oklch(18% 0.25 185);
   --top-selling-title-font: var(--font-secondary);
   --top-selling-title-size: 1.5rem;
   --top-selling-title-weight: 700;
-  --top-selling-grid-gap: 2rem;
+  --top-selling-grid-gap: 2.5rem;
   --top-selling-empty-border: oklch(33% 0.03 190);
   --top-selling-empty-bg: oklch(12% 0.01 180);
   --top-selling-empty-text: oklch(50% 0.15 190);
@@ -1534,17 +1534,17 @@
   --product-grid-gap: 3rem;
 
   /* Product Slider */
-  --slider-arrow-color: oklch(88% 0.10 195);
+  --slider-arrow-color: oklch(93% 0.08 195);
   --slider-arrow-bg: oklch(20% 0.3 180);
-  --slider-arrow-hover-color: oklch(91% 0.12 205);
+  --slider-arrow-hover-color: oklch(95% 0.10 210);
   --slider-arrow-hover-bg: oklch(25% 0.3 180);
   --slider-arrow-size: 2.5rem;
   --slider-arrow-radius: 50%;
-  --slider-arrow-shadow: 0 2px 5px -1px oklch(0.2 0.03 154.99 / 0.05), 0 1px 3px -1px oklch(0.2 0.03 154.99 / 0.05);
-  --slider-pagination-color: oklch(94% 0.10 190);
-  --slider-pagination-inactive-color: oklch(50% 0.04 245);
+  --slider-arrow-shadow: 0 3px 6px -1px oklch(15% 0.03 160 / 0.07), 0 2px 4px -1px oklch(15% 0.03 160 / 0.05);
+  --slider-pagination-color: oklch(92% 0.06 205);
+  --slider-pagination-inactive-color: oklch(80% 0.02 235);
   --slider-pagination-size: 0.75rem;
-  --slider-pagination-spacing: 0.75rem;
+  --slider-pagination-spacing: 1rem;
 
   /* Category Components */
   /* Category Card */
@@ -1590,10 +1590,10 @@
   --featured-categories-badge-text: oklch(80% 0.4 180);
   --featured-categories-heading-color: oklch(92% 0.09 180);
   --featured-categories-subheading-color: oklch(70% 0.05 180);
-  --featured-categories-button-from: oklch(90% 0.2 180);
-  --featured-categories-button-to: oklch(85% 0.25 180);
-  --featured-categories-button-hover-from: oklch(85% 0.25 180);
-  --featured-categories-button-hover-to: oklch(90% 0.2 180);
+  --featured-categories-button-from: oklch(91% 0.2 175);
+  --featured-categories-button-to: oklch(87% 0.22 175);
+  --featured-categories-button-hover-from: oklch(86% 0.22 175);
+  --featured-categories-button-hover-to: oklch(92% 0.2 175);
   --featured-categories-separator-color: oklch(25% 0.03 180);
   --featured-categories-carousel-nav-bg: oklch(10% 0.05 180);
   --featured-categories-carousel-nav-text: oklch(90% 0.2 180);
@@ -1705,63 +1705,63 @@
   --custom-section-card-hover-shadow: 0 15px 30px -5px oklch(0% 0% 0%/0.2);
   --custom-section-card-hover-scale: 1.05;
   --custom-section-card-transition: all 0.3s ease-in-out;
-  --custom-section-button-bg: oklch(52% 0.4 180);
-  --custom-section-button-text: oklch(95% 0.0 0);
-  --custom-section-button-font-weight: 600;
-  --custom-section-button-padding-x: 2.25rem;
-  --custom-section-button-padding-y: 1rem;
+  --custom-section-button-bg: oklch(55% 0.35 190);
+  --custom-section-button-text: oklch(93% 0.0 180);
+  --custom-section-button-font-weight: 700;
+  --custom-section-button-padding-x: 2rem;
+  --custom-section-button-padding-y: 1.5rem;
   --custom-section-error-bg: oklch(45% 0.3 30);
   --custom-section-error-text: oklch(100% 0.0 10);
   --custom-section-error-icon-size: 3rem;
 
   /* ===== UI Elements ===== */
   /* Buttons */
-  --btn-primary-bg: oklch(48% 0.3 180);
-  --btn-primary-text: oklch(100% 0.0 0);
-  --btn-primary-border: 2px solid oklch(52% 0.4 180);
-  --btn-primary-hover-bg: oklch(56% 0.35 182);
+  --btn-primary-bg: oklch(58% 0.2 240);
+  --btn-primary-text: oklch(96% 0.0 0);
+  --btn-primary-border: 2px solid oklch(62% 0.2 240);
+  --btn-primary-hover-bg: oklch(63% 0.18 242);
   --btn-primary-hover-text: oklch(100% 0.0 0);
-  --btn-primary-active-bg: oklch(40% 0.25 178);
+  --btn-primary-active-bg: oklch(48% 0.15 238);
 
   /* Button variables consolidated below */
-  --btn-secondary-active-bg: oklch(44% 0.32 180);
-  --btn-outline-bg: oklch(10% 0.04 270);
-  --btn-outline-text: oklch(95% 0.0 0);
-  --btn-outline-border: 2px solid oklch(89% 0.01 270);
-  --btn-outline-hover-bg: oklch(12% 0.04 270);
-  --btn-outline-hover-text: oklch(100% 0.0 0);
-  --btn-outline-active-bg: oklch(15% 0.06 270);
-  --btn-destructive-bg: oklch(46% 0.3 25);
-  --btn-destructive-text: oklch(100% 0.0 30);
-  --btn-destructive-hover-bg: oklch(40% 0.25 10);
-  --btn-destructive-hover-text: oklch(95% 0.0 240);
-  --btn-destructive-active-bg: oklch(38% 0.22 10);
+  --btn-secondary-active-bg: oklch(52% 0.18 240);
+  --btn-outline-bg: oklch(8% 0.03 270);
+  --btn-outline-text: oklch(90% 0.0 0);
+  --btn-outline-border: 2px solid oklch(85% 0.02 270);
+  --btn-outline-hover-bg: oklch(10% 0.03 270);
+  --btn-outline-hover-text: oklch(98% 0.0 0);
+  --btn-outline-active-bg: oklch(12% 0.04 270);
+  --btn-destructive-bg: oklch(50% 0.28 15);
+  --btn-destructive-text: oklch(98% 0.0 30);
+  --btn-destructive-hover-bg: oklch(43% 0.26 12);
+  --btn-destructive-hover-text: oklch(90% 0.0 235);
+  --btn-destructive-active-bg: oklch(40% 0.24 12);
   --btn-ghost-bg: transparent;
-  --btn-ghost-text: oklch(80% 0.0 240);
-  --btn-ghost-hover-bg: oklch(20% 0.01 250);
-  --btn-ghost-hover-text: oklch(85% 0.0 240);
-  --btn-ghost-active-bg: oklch(18% 0.01 250);
-  --btn-link-text: oklch(65% 0.15 190);
-  --btn-link-hover-text: oklch(70% 0.18 190);
-  --btn-link-active-text: oklch(60% 0.12 190);
-  --btn-disabled-bg: oklch(15% 0.02 200);
-  --btn-disabled-text: oklch(50% 0.02 240);
-  --btn-disabled-border: oklch(25% 0.01 250);
-  --btn-sm-padding-x: 1rem;
-  --btn-sm-padding-y: 0.5rem;
-  --btn-sm-font-size: 0.875rem;
+  --btn-ghost-text: oklch(85% 0.0 235);
+  --btn-ghost-hover-bg: oklch(18% 0.0 250);
+  --btn-ghost-hover-text: oklch(88% 0.0 235);
+  --btn-ghost-active-bg: oklch(16% 0.0 250);
+  --btn-link-text: oklch(70% 0.14 195);
+  --btn-link-hover-text: oklch(75% 0.17 195);
+  --btn-link-active-text: oklch(65% 0.11 195);
+  --btn-disabled-bg: oklch(20% 0.01 200);
+  --btn-disabled-text: oklch(55% 0.01 240);
+  --btn-disabled-border: oklch(25% 0.01 255);
+  --btn-sm-padding-x: 1.1rem;
+  --btn-sm-padding-y: 0.55rem;
+  --btn-sm-font-size: 0.85rem;
   --btn-sm-line-height: 1.5;
-  --btn-md-padding-x: 1.25rem;
-  --btn-md-padding-y: 0.625rem;
+  --btn-md-padding-x: 1.35rem;
+  --btn-md-padding-y: 0.65rem;
   --btn-md-font-size: 1rem;
-  --btn-md-line-height: 1.5;
-  --btn-lg-padding-x: 1.5rem;
+  --btn-md-line-height: 1.6;
+  --btn-lg-padding-x: 1.6rem;
   --btn-lg-padding-y: 0.75rem;
-  --btn-lg-font-size: 1.25rem;
-  --btn-lg-line-height: 1.75;
-  --btn-radius: 0.25rem;
-  --btn-font-weight: 600;
-  --btn-transition: 200ms ease-out;
+  --btn-lg-font-size: 1.3rem;
+  --btn-lg-line-height: 1.8;
+  --btn-radius: 0.5rem;
+  --btn-font-weight: 500;
+  --btn-transition: 250ms ease;
 
   /* Input Fields */
   --input-bg: oklch(13% 0.02 240);
@@ -1810,10 +1810,10 @@
   --tab-active-text: oklch(95% 0.0 240);
   --tab-active-border: oklch(65% 0.15 190);
   --tab-active-bg: oklch(20% 0.01 250);
-  --tab-padding-x: 1.75rem;
-  --tab-padding-y: 1rem;
+  --tab-padding-x: 2rem;
+  --tab-padding-y: 1.25rem;
   --tab-font-weight: 500;
-  --tab-content-padding: 1.5rem;
+  --tab-content-padding: 2rem;
   --tab-content-bg: oklch(20% 0.01 250);
   --tab-content-text: oklch(85% 0.0 240);
 
@@ -1825,15 +1825,15 @@
   --pagination-hover-text: oklch(90% 0.0 240);
   --pagination-active-bg: oklch(65% 0.15 190);
   --pagination-active-text: oklch(85% 0.0 240);
-  --pagination-radius: 0.4rem;
+  --pagination-radius: 0.5rem;
   --pagination-size: 2.5rem;
-  --pagination-spacing: 0.75rem;
+  --pagination-spacing: 1rem;
   --pagination-font-size: 1rem;
 
   /* Alerts */
-  --alert-radius: 0.3rem;
-  --alert-padding: 1rem 1.5rem;
-  --alert-margin-bottom: 2rem;
+  --alert-radius: 0.4rem;
+  --alert-padding: 1.25rem 1.75rem;
+  --alert-margin-bottom: 2.5rem;
   --alert-border-width: 1px;
 
   --alert-success-bg: oklch(40% 0.15 140);
@@ -1853,7 +1853,7 @@
   --alert-info-text: oklch(96% 0.0 0);
 
   /* Loaders */
-  --loader-color: oklch(80% 0.14 200);
+  --loader-color: oklch(25% 0.12 205);
   --loader-size: 2rem;
   --loader-width: 0.25rem;
   --loader-bg: oklch(10% 0.02 200);
@@ -1877,24 +1877,24 @@
   --cart-remove-hover-color: oklch(60% 0.2 180);
   --cart-empty-title-size: 2.25rem;
   --cart-empty-text-color: oklch(60% 0.2 180);
-  --checkout-btn-bg: oklch(50% 0.15 208);
-  --empty-cart-btn-bg: oklch(50% 0.15 208);
-  --empty-cart-btn-text: oklch(91% 0.23 185);
-  --checkout-btn-text: oklch(100% 0% 230);
-  --checkout-btn-hover-bg: oklch(50% 0.2 208);
-  --remove-all-btn-bg: oklch(62% 0.24 360);
-  --remove-all-btn-text: oklch(55% 0% 20);
-  --remove-all-btn-hover-bg: oklch(70% 0.05 350);
+  --checkout-btn-bg: oklch(65% 0.1 195);
+  --empty-cart-btn-bg: oklch(55% 0.1 195);
+  --empty-cart-btn-text: oklch(96% 0.18 190);
+  --checkout-btn-text: oklch(95% 0.01 230);
+  --checkout-btn-hover-bg: oklch(63% 0.15 195);
+  --remove-all-btn-bg: oklch(70% 0.2 0);
+  --remove-all-btn-text: oklch(98% 0 20);
+  --remove-all-btn-hover-bg: oklch(78% 0.035 350);
 
   /* Order Summary */
   --order-summary-bg: oklch(15% 0.01 180);
   --order-summary-border: oklch(40% 0.03 200 / 0.4);
-  --order-summary-radius: 0.6rem;
-  --order-summary-padding: 2.5rem;
-  --order-summary-shadow: 0 1px 2px 0 oklch(18% 0.04 210);
+  --order-summary-radius: 0.7rem;
+  --order-summary-padding: 3rem;
+  --order-summary-shadow: 0 2px 3px 0 oklch(20% 0.04 220);
   --order-summary-title-size: 1.5rem;
   --order-summary-title-weight: 600;
-  --order-summary-row-padding: 0.75rem 0;
+  --order-summary-row-padding: 1rem 0;
   --order-summary-total-border: oklch(20% 0.05 200);
   --order-summary-total-font-size: 1.5rem;
   --order-summary-total-font-weight: 700;
@@ -1910,41 +1910,41 @@
   --checkout-section-title-size: 1.5rem;
   --checkout-section-title-weight: 600;
   --checkout-form-gap: 1.5rem;
-  --checkout-step-inactive-color: oklch(40% 0.14 330);
-  --checkout-step-active-color: oklch(60% 0.22 340);
-  --checkout-step-completed-color: oklch(58% 0.31 145);
+  --checkout-step-inactive-color: oklch(20% 0.10 350);
+  --checkout-step-active-color: oklch(35% 0.18 355);
+  --checkout-step-completed-color: oklch(40% 0.26 160);
 
   /* Order Success */
   --order-success-bg: oklch(76% 0.22 150);
   --order-success-border: oklch(20% 0.05 200);
-  --order-success-radius: 0.8rem;
-  --order-success-padding: 3rem;
-  --order-success-shadow: 0 5px 7px -2px oklch(18% 0.05 210), 0 3px 4px -2px oklch(18% 0.05 210);
+  --order-success-radius: 0.9rem;
+  --order-success-padding: 3.5rem;
+  --order-success-shadow: 0 6px 9px -3px oklch(20% 0.05 225), 0 4px 5px -2px oklch(20% 0.05 225);
   --order-success-icon-size: 5rem;
-  --order-success-icon-color: oklch(70% 0.20 160);
+  --order-success-icon-color: oklch(55% 0.20 170);
   --order-success-title-size: 2.5rem;
   --order-success-title-weight: 700;
 
   /* Order History */
   --order-history-bg: oklch(10% 0.02 200);
   --order-history-border: oklch(20% 0.05 200);
-  --order-history-radius: 0.6rem;
-  --order-history-padding: 2rem;
+  --order-history-radius: 0.8rem;
+  --order-history-padding: 2.5rem;
   --order-history-shadow: none;
   --order-history-item-border: oklch(20% 0.05 200);
-  --order-history-item-padding: 2rem;
+  --order-history-item-padding: 2.5rem;
   --order-history-item-hover-bg: oklch(14% 0.02 200);
 
   /* Banners */
-  --banner-padding: 3rem;
-  --banner-radius: 12px;
+  --banner-padding: 3.5rem;
+  --banner-radius: 16px;
   --banner-title-size: 3rem;
   --banner-title-weight: 700;
   --banner-subtitle-size: 1.75rem;
-  --banner-button-size: 1.25rem;
-  --banner-overlay-color: oklch(13% 0.01 180 / 0.85);
-  --banner-text-shadow: 0 2px 5px oklch(8% 0 0 / 0.15);
-  --banner-content-gap: 2rem;
+  --banner-button-size: 1.35rem;
+  --banner-overlay-color: oklch(5% 0.02 190 / 0.85);
+  --banner-text-shadow: 0 2px 4px oklch(9% 0 0 / 0.2);
+  --banner-content-gap: 2.5rem;
 
   /* Contact Form */
   --contact-form-bg: oklch(12% 0.01 200);
@@ -1959,8 +1959,8 @@
   /* App Engage Section */
   --app-engage-bg: oklch(14% 0.01 200);
   --app-engage-text: oklch(95% 0.0 0);
-  --app-engage-padding: 3rem;
-  --app-engage-radius: 7px;
+  --app-engage-padding: 3.5rem;
+  --app-engage-radius: 10px;
   --app-engage-title-size: 2.5rem;
   --app-engage-title-weight: 600;
   --app-engage-image-width: 140px;
@@ -1972,53 +1972,53 @@
   --auth-form-radius: 12px;
 
   /* Order Success Page */
-  --order-success-card-border: oklch(20% 0.08 240);
-  --order-success-card-bg: oklch(15% 0.01 240);
-  --order-success-card-radius: 12px;
+  --order-success-card-border: oklch(87% 0.15 245);
+  --order-success-card-bg: oklch(98% 0.01 245);
+  --order-success-card-radius: 18px;
   --order-success-header-bg: oklch(15% 0.01 240);
   --order-success-header-border: oklch(20% 0.08 240);
   --order-success-icon-bg: oklch(15% 0.01 240);
-  --order-success-icon-color: oklch(70% 0.20 160);
-  --order-success-title-color: oklch(95% 0.11 210);
-  --order-success-description-color: oklch(88% 0.06 200);
+  --order-success-icon-color: oklch(55% 0.20 170);
+  --order-success-title-color: oklch(90% 0.05 215);
+  --order-success-description-color: oklch(87% 0.04 205);
   --order-id-badge-border: oklch(20% 0.08 240);
   --order-id-badge-text: oklch(95% 0.1 190);
-  --stepper-active-color: oklch(90% 0.09 185);
-  --stepper-completed-color: oklch(85% 0.19 190);
-  --stepper-disabled-color: oklch(24% 0.05 245);
-  --stepper-active-bg-color: oklch(16% 0.01 235);
-  --stepper-completed-bg-color: oklch(20% 0.03 225);
-  --stepper-active-text-color: oklch(93% 0.09 205);
-  --stepper-completed-text-color: oklch(87% 0.19 185);
-  --stepper-inactive-bg-color: oklch(14% 0.02 245);
-  --stepper-inactive-text-color: oklch(52% 0.03 195);
+  --stepper-active-color: oklch(8% 0.01 205);
+  --stepper-completed-color: oklch(7% 0.02 220);
+  --stepper-disabled-color: oklch(30% 0.02 245);
+  --stepper-active-bg-color: oklch(6% 0.01 240);
+  --stepper-completed-bg-color: oklch(10% 0.02 235);
+  --stepper-active-text-color: oklch(10% 0.01 210);
+  --stepper-completed-text-color: oklch(8% 0.02 220);
+  --stepper-inactive-bg-color: oklch(6% 0.01 250);
+  --stepper-inactive-text-color: oklch(32% 0.01 205);
   --order-footer-bg: oklch(15% 0.01 240);
   --order-footer-border: oklch(20% 0.08 240);
-  --continue-shopping-btn-bg: oklch(15% 0.01 240);
-  --continue-shopping-btn-hover-bg: oklch(20% 0.01 180 / 0.3);
-  --continue-shopping-btn-text: oklch(100% 0% 230);
-  --view-orders-btn-border: oklch(20% 0.08 240);
-  --view-orders-btn-hover-bg: oklch(20% 0.05 240);
-  --view-orders-btn-text: oklch(95% 0.1 190);
-  --btn-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  --continue-shopping-btn-bg: oklch(12% 0.03 240);
+  --continue-shopping-btn-hover-bg: oklch(22% 0.01 190 / 0.25);
+  --continue-shopping-btn-text: oklch(99% 0 230);
+  --view-orders-btn-border: oklch(22% 0.07 245);
+  --view-orders-btn-hover-bg: oklch(22% 0.07 245);
+  --view-orders-btn-text: oklch(97% 0.09 192);
+  --btn-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 
   /* Order Details Page */
-  --order-loading-card-border: oklch(20% 0.08 240);
+  --order-loading-card-border: oklch(85% 0.15 245);
   --loading-skeleton-bg: oklch(25% 0.08 240);
-  --order-card-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  --order-card-border: oklch(20% 0.08 240);
-  --order-card-bg: oklch(15% 0.01 240);
-  --order-card-radius: 10px;
+  --order-card-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+  --order-card-border: oklch(87% 0.1 225);
+  --order-card-bg: oklch(97% 0.01 225);
+  --order-card-radius: 15px;
   --order-header-bg: linear-gradient( to right, var(--background), var(--background) );
-  --order-title-color: oklch(92% 0.09 200);
+  --order-title-color: oklch(95% 0.05 200);
   --order-badge-bg: oklch(18% 0.02 240);
   --order-badge-text: oklch(80% 0.08 190);
   --order-badge-border: oklch(20% 0.08 240);
-  --order-date-color: oklch(86% 0.05 220);
+  --order-date-color: oklch(87% 0.04 215);
   --order-step-completed-bg: oklch(20% 0.02 240);
   --order-step-pending-bg: oklch(18% 0.01 240);
   --order-step-completed-icon: oklch(90% 0.15 190);
-  --order-step-text-color: oklch(88% 0.09 200);
+  --order-step-text-color: oklch(90% 0.05 200);
   --order-section-title: oklch(95% 0.1 190);
   --order-table-border: oklch(20% 0.08 240);
   --order-table-header-bg: oklch(25% 0.05 240);
@@ -2031,26 +2031,26 @@
   --spec-table-header-text: oklch(88% 0.06 190);
   --spec-table-row-hover: oklch(15% 0.02 240);
   --spec-table-border: oklch(20% 0.08 240);
-  --spec-table-cell-padding: 1.5rem;
-  --spec-table-mobile-padding: 1rem;
+  --spec-table-cell-padding: 1.75rem;
+  --spec-table-mobile-padding: 1.25rem;
 
   /* Mobile Responsive Variables */
-  --mobile-card-padding: 1.5rem;
-  --mobile-card-gap: 1rem;
+  --mobile-card-padding: 2rem;
+  --mobile-card-gap: 1.5rem;
   --mobile-text-sm: 1rem;
   --mobile-text-xs: 0.875rem;
   --mobile-min-touch-target: 48px;
-  --order-address-card-border: oklch(20% 0.08 240);
-  --order-address-card-bg: oklch(15% 0.01 240);
-  --order-address-card-radius: 12px;
+  --order-address-card-border: oklch(85% 0.1 225);
+  --order-address-card-bg: oklch(97% 0.01 225);
+  --order-address-card-radius: 15px;
   --order-address-name: oklch(90% 0.12 190);
   --order-address-text: oklch(85% 0.11 190);
   --order-address-divider: oklch(20% 0.08 240);
   --order-address-label: oklch(88% 0.1 190);
   --order-address-value: oklch(93% 0.07 190);
-  --order-summary-card-border: oklch(20% 0.08 240);
-  --order-summary-card-bg: oklch(15% 0.01 240);
-  --order-summary-card-radius: 12px;
+  --order-summary-card-border: oklch(85% 0.1 225);
+  --order-summary-card-bg: oklch(97% 0.01 225);
+  --order-summary-card-radius: 15px;
   --order-summary-divider: oklch(20% 0.08 240);
   --order-summary-label: oklch(60% 0.02 210);
   --order-summary-value: oklch(100% 0% 230);
@@ -2060,30 +2060,30 @@
 
   /* Contact Us Page */
   --contact-page-bg: oklch(8% 0.03 240);
-  --contact-card-border: oklch(20% 0.02 240);
-  --contact-card-bg: oklch(15% 0.02 240);
-  --contact-card-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
-  --contact-card-radius: 8px;
-  --contact-title-color: oklch(94% 0.04 30);
-  --contact-description-color: oklch(90% 0.03 36);
-  --contact-inner-card-border: oklch(20% 0.1 210);
-  --contact-inner-card-bg: oklch(8% 0.04 210);
-  --contact-inner-card-radius: 10px;
-  --loading-spinner-color: oklch(91% 0.08 190);
-  --loading-text-color: oklch(90% 0.07 185);
-  --error-border-color: oklch(28% 0.03 205);
-  --error-bg-color: oklch(12% 0.01 205);
-  --error-icon-color: oklch(88% 0.15 355);
-  --error-text-color: oklch(95% 0.14 0);
-  --error-description-color: oklch(82% 0.06 350);
-  --error-button-bg: oklch(15% 0.02 210);
-  --error-button-hover-bg: oklch(20% 0.03 210);
-  --error-button-text: oklch(92% 0.12 196);
-  --contact-card-item-border: oklch(25% 0.1 210);
-  --contact-card-item-bg: oklch(10% 0.02 210);
-  --contact-card-item-radius: 12px;
+  --contact-card-border: oklch(92% 0.01 240);
+  --contact-card-bg: oklch(97% 0.01 250);
+  --contact-card-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --contact-card-radius: 16px;
+  --contact-title-color: oklch(92% 0.035 40);
+  --contact-description-color: oklch(88% 0.025 46);
+  --contact-inner-card-border: oklch(88% 0.03 210);
+  --contact-inner-card-bg: oklch(92% 0.01 210);
+  --contact-inner-card-radius: 15px;
+  --loading-spinner-color: oklch(9% 0.01 200);
+  --loading-text-color: oklch(7% 0.01 190);
+  --error-border-color: oklch(25% 0.04 210);
+  --error-bg-color: oklch(5% 0.02 210);
+  --error-icon-color: oklch(95% 0.18 10);
+  --error-text-color: oklch(95% 0.09 10);
+  --error-description-color: oklch(87% 0.04 360);
+  --error-button-bg: oklch(13% 0.02 215);
+  --error-button-hover-bg: oklch(18% 0.03 215);
+  --error-button-text: oklch(90% 0.1 198);
+  --contact-card-item-border: oklch(85% 0.1 210);
+  --contact-card-item-bg: oklch(97% 0.01 210);
+  --contact-card-item-radius: 15px;
   --contact-icon-bg: oklch(10% 0.02 210);
-  --contact-icon-color: oklch(85% 0.13 198);
+  --contact-icon-color: oklch(95% 0.07 15);
   --contact-item-title: oklch(92% 0.12 196);
   --contact-item-text: oklch(85% 0.03 196);
   --contact-link-hover: oklch(60% 0.3 175);
@@ -2096,15 +2096,15 @@
   --product-category-label: oklch(95% 0.03 198);
   --product-category-link: oklch(8% 0.02 80);
   --product-category-link-hover: oklch(70% 0.07 190);
-  --add-cart-btn-bg: oklch(18% 0.04 220);
-  --add-cart-btn-hover-bg: oklch(22% 0.06 220);
-  --add-cart-btn-text: oklch(95% 0.12 180);
+  --add-cart-btn-bg: oklch(16% 0.03 220);
+  --add-cart-btn-hover-bg: oklch(20% 0.05 220);
+  --add-cart-btn-text: oklch(90% 0.1 180);
   --auth-form-padding: 4rem;
   --auth-form-shadow: 0 8px 16px -2px oklch(15% 0.15 220), 0 4px 8px -2px oklch(13% 0.1 220);
   --auth-form-title-size: 2.5rem;
   --auth-form-title-weight: 700;
   --auth-form-gap: 1.5rem;
-  --auth-social-button-gap: 0.75rem;
+  --auth-social-button-gap: 1rem;
 
   /* Profile */
   --profile-sidebar-width: 260px;
@@ -2118,9 +2118,9 @@
   --profile-menu-item-active-text: oklch(92% 0.12 196);
   --profile-content-bg: oklch(8% 0.04 210);
   --profile-content-border: oklch(30% 0.08 210);
-  --profile-content-radius: 8px;
-  --profile-content-padding: 2.5rem;
-  --profile-content-shadow: 0 2px 4px 0 oklch(9% 0.07 220);
+  --profile-content-radius: 10px;
+  --profile-content-padding: 3rem;
+  --profile-content-shadow: 0 3px 5px 0 oklch(10% 0.07 230);
 
   /* Profile Card & Form Components */
   --profile-bg: oklch(8% 0.06 210);
@@ -2132,9 +2132,9 @@
   --profile-error: oklch(90% 0.2 15);
 
   /* Profile Buttons */
-  --profile-button-bg: oklch(0% 0% 255);
-  --profile-button-text: oklch(95% 0.12 180);
-  --profile-button-hover: oklch(60% 0.25 175);
+  --profile-button-bg: oklch(5% 0% 250);
+  --profile-button-text: oklch(92% 0.11 180);
+  --profile-button-hover: oklch(55% 0.2 177);
   --profile-cancel: oklch(70% 0.05 180);
   --profile-cancel-hover: oklch(90% 0.05 180);
 
@@ -2162,8 +2162,8 @@
   --navbar-link-active-border-color: oklch(60% 0.25 175);
   --navbar-button-icon-color: oklch(90% 0.15 0);
   --navbar-button-hover-bg: oklch(25% 0.18 180);
-  --location-icon-color: oklch(81% 0.04 135);
-  --location-text-color: oklch(85% 0.01 135);
+  --location-icon-color: oklch(78% 0.03 145);
+  --location-text-color: oklch(82% 0.005 145);
   --user-menu-dropdown-bg: oklch(10% 0.07 180);
   --user-menu-dropdown-text-color: oklch(91% 0.04 198);
   --cart-badge-bg: oklch(60% 0.3 190);
@@ -2175,10 +2175,10 @@
   --mobile-nav-active-text-color: oklch(95% 0.25 175);
   --mobile-nav-icon-color: oklch(85% 0.04 250);
   --mobile-nav-separator-color: oklch(20% 0.08 210);
-  --mobile-location-title-color: oklch(78% 0.05 30);
-  --mobile-location-btn-border: oklch(20% 0.01 180);
+  --mobile-location-title-color: oklch(87% 0.06 35);
+  --mobile-location-btn-border: oklch(22% 0.01 190);
   --mobile-location-btn-bg: transparent;
-  --mobile-location-btn-text-color: oklch(90% 0.15 0);
+  --mobile-location-btn-text-color: oklch(88% 0.14 0);
 
   /* Secondary Navigation Component */
   --secondary-nav-bg: oklch(17% 0.01 190);
@@ -2216,35 +2216,35 @@
   --category-menu-item-font-size: 1rem;
   --category-menu-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.4);
   --search-box-height: 3rem; /* h-10 */
-  --search-box-border-radius: 20px;
-  --search-box-border-color: oklch(57% 0.08 280);
+  --search-box-border-radius: 24px;
+  --search-box-border-color: oklch(94% 0.05 250);
   --search-box-bg: oklch(15% 0.02 180);
-  --search-box-padding-left: 3.5rem; /* for icon */
-  --search-box-padding-right: 2rem;
+  --search-box-padding-left: 4rem; /* for icon */
+  --search-box-padding-right: 2.5rem;
   --search-box-font-size: 1rem;
-  --search-box-text-color: oklch(85% 0.03 270);
+  --search-box-text-color: oklch(8% 0.01 270);
   --search-box-placeholder-color: oklch(40% 0.01 180);
   --search-box-focus-ring-color: oklch(24% 0.05 180);
-  --search-box-hover-border-color: oklch(62% 0.07 285);
+  --search-box-hover-border-color: oklch(96% 0.06 255);
   --search-box-icon-size: 1.2rem; /* 16px */
-  --search-box-icon-color: oklch(70% 0.15 45);
+  --search-box-icon-color: oklch(23% 0.12 215);
   --search-results-z-index: 100;
-  --search-results-border-radius: 6px;
-  --search-results-border-color: oklch(40% 0.03 200);
+  --search-results-border-radius: 8px;
+  --search-results-border-color: oklch(90% 0.03 240);
   --search-results-bg: oklch(10% 0.01 250);
-  --search-results-shadow: 0 10px 15px -4px oklch(15% 0 0 / 0.2), 0 4px 6px -3px oklch(15% 0 0 / 0.1);
+  --search-results-shadow: 0 12px 20px -5px oklch(15% 0.05 235 / 0.2), 0 6px 10px -4px oklch(15% 0.05 235 / 0.1);
   --search-results-max-height: 500px;
   --search-results-item-font-size: 1rem;
-  --search-results-item-padding-x: 2rem;
-  --search-results-item-padding-y: 1.5rem;
+  --search-results-item-padding-x: 2.5rem;
+  --search-results-item-padding-y: 2rem;
   --search-results-item-hover-bg: oklch(15% 0.05 210);
-  --search-results-item-hover-text-color: oklch(80% 0.05 260);
+  --search-results-item-hover-text-color: oklch(5% 0.01 265);
   --support-icon-bg: oklch(15% 0.05 190);
-  --support-icon-color: oklch(65% 0.12 40);
+  --support-icon-color: oklch(22% 0.15 230);
   --support-icon-size: 2rem; /* 24px */
-  --support-phone-color: oklch(80% 0.06 200);
+  --support-phone-color: oklch(6% 0.01 260);
   --support-phone-font-size: 1.125rem;
-  --support-text-color: oklch(75% 0.02 195);
+  --support-text-color: oklch(8% 0.01 260);
   --support-text-font-size: 0.875rem;
 
   /* Navbar Search Icon */
@@ -2362,8 +2362,8 @@
   --product-rating-badge-bg: oklch(84% 0.25 180);
   --product-rating-badge-text-color: oklch(10% 0.01 270);
   --cart-quantity-border: oklch(37% 0.04 30);
-  --cart-btn-hover-bg: oklch(90% 0.2 180);
-  --cart-btn-hover-text-color: oklch(90% 0.3 180);
+  --cart-btn-hover-bg: oklch(92% 0.2 160);
+  --cart-btn-hover-text-color: oklch(88% 0.27 180);
   --cart-quantity-text-color: oklch(96% 0.2 45);
   --add-to-cart-text-color: oklch(85% 0.15 210);
   --add-to-cart-icon-color: oklch(85% 0.15 210);
@@ -2381,11 +2381,11 @@
   --protected-layout-min-height: 75vh;
   --protected-layout-bg-from: oklch(5% 0 270); /* light gray */
   --protected-layout-bg-to: oklch(8% 0 270); /* white */
-  --protected-layout-card-max-width: 35rem; /* max-w-md */
-  --protected-layout-card-border-radius: 10px;
-  --protected-layout-card-border-color: oklch(20% 0.05 290);
-  --protected-layout-card-bg: oklch(14% 0.02 270);
-  --protected-layout-card-shadow: 0px 8px 24px oklch(0% 0 200 / 0.5);
+  --protected-layout-card-max-width: 40rem; /* max-w-md */
+  --protected-layout-card-border-radius: 15px;
+  --protected-layout-card-border-color: oklch(92% 0.02 300);
+  --protected-layout-card-bg: oklch(96% 0.01 270);
+  --protected-layout-card-shadow: 0px 8px 24px oklch(0% 0 50 / 0.05);
 
   --protected-layout-header-bg-from: oklch(84% 0.25 180);
   --protected-layout-header-bg-to: oklch(86% 0.2 170); /* emerald-600 */
@@ -2398,20 +2398,20 @@
   --protected-layout-title-size: 1.25rem; /* text-xl */
   --protected-layout-title-weight: 700;
   --protected-layout-subtitle-size: 0.875rem; /* text-sm */
-  --protected-layout-subtitle-color: oklch(95% 0.05 0 / 0.9);
+  --protected-layout-subtitle-color: oklch(5% 0.01 15 / 0.9);
 
-  --protected-layout-content-padding: 2.5rem; /* p-6 */
+  --protected-layout-content-padding: 3rem; /* p-6 */
 
   --protected-layout-alert-bg: oklch(0% 0.04 70); /* amber-50 */
-  --protected-layout-alert-icon-color: oklch(48% 0.20 183); /* amber-500 */
+  --protected-layout-alert-icon-color: oklch(30% 0.18 190); /* amber-500 */
   --protected-layout-alert-icon-size: 3rem; /* h-8 w-8 */
 
   --protected-layout-message-title-size: 1.75rem; /* text-lg */
   --protected-layout-message-title-weight: 700;
-  --protected-layout-message-title-color: oklch(95% 0.08 195);
+  --protected-layout-message-title-color: oklch(95% 0.04 200);
 
   --protected-layout-message-text-size: 1.25rem; /* text-base */
-  --protected-layout-message-text-color: oklch(88% 0.07 200);
+  --protected-layout-message-text-color: oklch(90% 0.05 205);
 
   /* Category Card Component */
   --category-card-transition-duration: 450ms;
