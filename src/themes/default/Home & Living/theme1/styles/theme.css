@@ -39,9 +39,9 @@
   /* Base Colors with direct OKLCH values */
 
   /* Main Theme Colors */
-  --background: oklch(98% 0.02 30);
+  --background: oklch(90% 0.2 20);
   --on-background: oklch(15% 0.02 240);
-  --foreground: oklch(10% 0.03 240);
+  --foreground: oklch(10% 0.02 250);
 
   /* Card Colors */
   --card: oklch(95% 0.01 75);
@@ -66,48 +66,48 @@
   --out-of-stock-border: oklch(15% 0.18 360);
 
   /* Popover Colors */
-  --popover: oklch(95% 0.01 75);
+  --popover: oklch(98% 0.05 350);
   --on-popover: oklch(15% 0.02 240);
-  --popover-foreground: oklch(10% 0.03 240);
+  --popover-foreground: oklch(10% 0.02 250);
 
   /* Primary Colors - Grocery Green */
-  --primary: oklch(58% 0.19 240);
-  --primary-hover: oklch(55% 0.20 240);
-  --primary-active: oklch(52% 0.21 240);
+  --primary: oklch(50% 0.13 300);
+  --primary-hover: oklch(50% 0.15 315);
+  --primary-active: oklch(48% 0.15 325);
   --on-primary: oklch(98% 0.02 30);
-  --primary-foreground: oklch(10% 0.03 240);
+  --primary-foreground: oklch(100% 0.0 0);
 
   /* Secondary Colors */
-  --secondary: oklch(90% 0.05 250);
-  --secondary-hover: oklch(87% 0.06 250);
-  --secondary-active: oklch(84% 0.07 250);
+  --secondary: oklch(80% 0.1 200);
+  --secondary-hover: oklch(82% 0.1 210);
+  --secondary-active: oklch(78% 0.1 220);
   --on-secondary: oklch(10% 0.03 240);
-  --secondary-foreground: oklch(10% 0.03 240);
+  --secondary-foreground: oklch(9% 0.02 250);
 
   /* Muted Colors */
-  --muted: oklch(85% 0.02 30);
+  --muted: oklch(95% 0.03 30);
   --on-muted: oklch(30% 0.05 150);
-  --muted-foreground: oklch(15% 0.02 240);
+  --muted-foreground: oklch(10% 0.01 250);
 
   /* Accent Colors */
-  --accent: oklch(70% 0.25 300);
-  --accent-hover: oklch(68% 0.26 300);
-  --accent-active: oklch(66% 0.27 300);
-  --accent-foreground: oklch(98% 0.02 30);
+  --accent: oklch(70% 0.18 100);
+  --accent-hover: oklch(72% 0.2 110);
+  --accent-active: oklch(68% 0.18 120);
+  --accent-foreground: oklch(90% 0.05 10);
 
   /* Destructive Colors */
-  --destructive: oklch(55% 0.20 10);
-  --destructive-hover: oklch(52% 0.22 10);
-  --destructive-active: oklch(50% 0.25 10);
+  --destructive: oklch(60% 0.25 30);
+  --destructive-hover: oklch(62% 0.3 30);
+  --destructive-active: oklch(58% 0.25 30);
   --on-destructive: oklch(98% 0.02 30);
-  --destructive-foreground: oklch(10% 0.03 240);
+  --destructive-foreground: oklch(95% 0.02 0);
 
   /* UI Element Colors */
-  --border: oklch(85% 0.01 30);
+  --border: oklch(88% 0.02 60);
   --on-border: oklch(15% 0.02 240);
   --input: oklch(98% 0.01 60);
   --on-input: oklch(15% 0.02 240);
-  --ring: oklch(90% 0.05 250);
+  --ring: oklch(70% 0.1 330);
   --shadow-color: oklch(15% 0.05 240);
 
   /* Sidebar Colors - direct OKLCH values */
@@ -121,16 +121,16 @@
   --sidebar-ring: oklch(90% 0.05 250);
 
   /* Semantic Colors - direct OKLCH values */
-  --success: oklch(70% 0.15 120);
-  --success-hover: oklch(68% 0.16 120);
-  --success-active: oklch(66% 0.17 120);
-  --success-light: oklch(85% 0.15 60);
+  --success: oklch(65% 0.18 140);
+  --success-hover: oklch(67% 0.2 140);
+  --success-active: oklch(63% 0.18 140);
+  --success-light: oklch(80% 0.08 140);
   --on-success: oklch(15% 0.02 240);
 
-  --warning: oklch(60% 0.2 50);
-  --warning-hover: oklch(65% 0.2 50);
-  --warning-active: oklch(55% 0.2 50);
-  --warning-light: oklch(90% 0.1 50);
+  --warning: oklch(70% 0.25 80);
+  --warning-hover: oklch(72% 0.27 80);
+  --warning-active: oklch(68% 0.25 80);
+  --warning-light: oklch(85% 0.12 80);
   --on-warning: oklch(5% 0.02 360);
 
   --error: oklch(55% 0.25 12);
@@ -223,9 +223,9 @@
   /* Banner error */
   --banner-error-padding-y: 8px;
   --banner-error-bg: oklch(20% 0.15 10);
-  --banner-error-icon-color: oklch(90% 0.2 10);
-  --banner-error-title-color: oklch(95% 0.02 360);
-  --banner-error-text-color: oklch(85% 0.02 360);
+  --banner-error-icon-color: oklch(60% 0.3 20);
+  --banner-error-title-color: oklch(10% 0.02 250);
+  --banner-error-text-color: oklch(60% 0.3 20);
   --banner-error-button-bg: oklch(80% 0.15 30);
   --banner-error-button-hover-bg: oklch(85% 0.2 30);
   --banner-error-button-text: oklch(5% 0.02 30);
@@ -234,9 +234,9 @@
   --banner-gradient-start: oklch(90% 0.05 300);
   --banner-gradient-middle: oklch(85% 0.1 30);
   --banner-gradient-end: oklch(98% 0.05 300);
-  --banner-text-color: oklch(10% 0.01 240);
-  --banner-title-color: oklch(20% 0.15 40);
-  --banner-description-color: oklch(25% 0.1 50);
+  --banner-text-color: oklch(10% 0.02 250);
+  --banner-title-color: oklch(15% 0.02 260);
+  --banner-description-color: oklch(12% 0.02 270);
   --banner-text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 
   /* Banner tag */
@@ -270,9 +270,9 @@
   --banner-empty-bg: oklch(99% 0.02 210);
   --banner-empty-border: oklch(90% 0.0 20);
   --banner-empty-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  --banner-empty-icon-color: oklch(25% 0.15 240);
-  --banner-empty-title-color: oklch(30% 0.02 30);
-  --banner-empty-text-color: oklch(40% 0.01 60);
+  --banner-empty-icon-color: oklch(75% 0.15 150);
+  --banner-empty-title-color: oklch(10% 0.02 250);
+  --banner-empty-text-color: oklch(15% 0.02 260);
 
   /* ===== PRODUCT VARIANT SELECTOR ===== */
   --variant-select-trigger-bg: oklch(98% 0.05 110);
@@ -407,11 +407,11 @@
   --navbar-search-empty-subtext-color: oklch(50% 0.02 270);
 
   /* Location Selector */
-  --location-icon-color: oklch(20% 0.04 240);
-  --location-text-color: oklch(25% 0.03 250);
+  --location-icon-color: oklch(20% 0.15 130);
+  --location-text-color: oklch(10% 0.02 250);
   --location-text-size: 14px;
   --location-text-weight: 500;
-  --location-dropdown-icon-color: oklch(32% 0.03 260);
+  --location-dropdown-icon-color: oklch(20% 0.2 130);
   --location-dropdown-icon-size: 14px;
   --location-button-gap: 8px;
   --location-button-padding-x: 1rem;
@@ -421,7 +421,7 @@
   --location-popup-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   --location-popup-border-radius: 12px;
   --location-popup-width: 400px;
-  --location-popup-border-color: oklch(85% 0.02 120);
+  --location-popup-border-color: oklch(80% 0.05 110);
   --location-popup-border-width: 2px;
 
   /* User Menu */
@@ -543,8 +543,8 @@
   /* Card Header */
   --contact-header-bg: oklch(50% 0.2 250); /* Header background, e.g., a primary color band */
   --contact-header-text-color: oklch(98% 0.02 60); /* Text color on header background */
-  --contact-title-color: oklch(20% 0.15 30); /* Title text color in header */
-  --contact-description-color: oklch(40% 0.15 60); /* Description text color with slight transparency */
+  --contact-title-color: oklch(10% 0.02 250); /* Title text color in header */
+  --contact-description-color: oklch(15% 0.02 260); /* Description text color with slight transparency */
 
   /* Card Content Area */
   --contact-content-bg: oklch(98% 0.05 70); /* Background for the content area within the main card */
@@ -556,18 +556,18 @@
   --contact-item-hover-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Hover shadow for item cards */
   --contact-item-radius: 8px; /* Border radius for item cards */
   --contact-item-icon-bg: oklch(15% 0.2 30); /* Background for the icon circle */
-  --contact-item-icon-color: oklch(95% 0.05 60); /* Color of the icon itself */
-  --contact-item-title-color: oklch(20% 0.1 350); /* Title color (e.g., "Our Address") */
-  --contact-item-text-color: oklch(40% 0.08 30); /* Text color for details (address lines, phone numbers) */
-  --contact-item-link-hover-color: oklch(60% 0.1 250); /* Hover color for links (phone/email) */
+  --contact-item-icon-color: oklch(70% 0.18 100); /* Color of the icon itself */
+  --contact-item-title-color: oklch(10% 0.02 250); /* Title color (e.g., "Our Address") */
+  --contact-item-text-color: oklch(15% 0.02 260); /* Text color for details (address lines, phone numbers) */
+  --contact-item-link-hover-color: oklch(75% 0.18 100); /* Hover color for links (phone/email) */
 
   /* Store Information Section */
-  --contact-store-info-title-color: oklch(10% 0.15 60);
-  --contact-store-info-text-color: oklch(50% 0.12 30);
-  --contact-store-info-highlight-color: oklch(95% 0.2 30);
+  --contact-store-info-title-color: oklch(10% 0.02 250);
+  --contact-store-info-text-color: oklch(15% 0.02 260);
+  --contact-store-info-highlight-color: oklch(70% 0.18 100);
 
   /* Separators */
-  --contact-separator-color: oklch(85% 0.05 60);
+  --contact-separator-color: oklch(88% 0.02 60);
 
   /* Footer in Card */
   --contact-card-footer-bg: oklch(90% 0.04 300);
@@ -575,25 +575,25 @@
   --contact-card-footer-border: oklch(80% 0.06 250);
 
   /* Loading State */
-  --contact-loading-spinner-color: oklch(30% 0.2 250);
-  --contact-loading-text-color: oklch(20% 0.08 60);
-  --contact-loading-subtext-color: oklch(45% 0.07 250);
+  --contact-loading-spinner-color: oklch(70% 0.2 300);
+  --contact-loading-text-color: oklch(10% 0.02 250);
+  --contact-loading-subtext-color: oklch(15% 0.02 260);
   --contact-loading-bg: oklch(95% 0.04 60); /* Background for loading state container */
 
   /* Error State */
   --contact-error-bg: oklch(95% 0.05 300); /* Background for error state container */
   --contact-error-card-bg: oklch(95% 0.08 30); /* Inner card background for error */
   --contact-error-card-border: oklch(80% 0.1 250);
-  --contact-error-icon-color: oklch(15% 0.2 0);
-  --contact-error-title-color: oklch(20% 0.12 350);
-  --contact-error-text-color: oklch(50% 0.15 300);
+  --contact-error-icon-color: oklch(60% 0.3 20);
+  --contact-error-title-color: oklch(10% 0.02 250);
+  --contact-error-text-color: oklch(60% 0.3 20);
   --contact-error-button-bg: oklch(15% 0.15 29);
   --contact-error-button-hover-bg: oklch(20% 0.18 29);
   --contact-error-button-text-color: oklch(95% 0.02 60);
 
   /* Fallback Info (within Error State) */
-  --contact-fallback-title-color: oklch(20% 0.12 335);
-  --contact-fallback-separator-color: oklch(75% 0.06 30);
+  --contact-fallback-title-color: oklch(10% 0.02 250);
+  --contact-fallback-separator-color: oklch(88% 0.02 60);
 
   /* Cart Popup Content */
   --cart-popup-header-padding: 16px;
@@ -667,7 +667,7 @@
   /* Social Icons */
   --social-icon-radius: 50%;
   --social-icon-hover-bg: oklch(92% 0.08 200);
-  --social-icon-hover-color: oklch(10% 0.04 0);
+  --social-icon-hover-color: oklch(72% 0.3 330);
   --social-icon-hover-scale: 1.1;
 
   /* Product Description */
@@ -778,12 +778,12 @@
   --about-header-padding-x: 1rem;
   --about-heading-margin: 1.5rem;
   --about-heading-weight: 600;
-  --about-heading-color: oklch(18% 0.1 245);
+  --about-heading-color: oklch(10% 0.02 250);
   --about-heading-shadow: 0 2px 4px rgba(0,0,0,0.1);
   --about-header-overlay: oklch(15% 0.02 240);
   --about-content-padding-x: 1rem;
   --about-content-padding-y: 1rem;
-  --about-description-color: oklch(65% 0.07 243);
+  --about-description-color: oklch(12% 0.02 260);
   --about-description-bg: oklch(95% 0.02 20);
   --about-description-padding: 1rem;
   --about-description-radius: 8px;
@@ -929,7 +929,7 @@
   --featured-categories-mobile-link-hover-color: oklch(70% 0.04 320);
 
   /* Order History */
-  --order-history-title-color: oklch(85% 0.04 270);
+  --order-history-title-color: oklch(10% 0.02 250);
   --order-history-title-weight: 600;
   --order-history-title-size: 1.5rem;
   --order-history-card-border: 1px;
@@ -952,18 +952,18 @@
   --contact-form-button-color: oklch(98% 0.01 60);
 
   /* FAQ Section */
-  --faq-title-color: oklch(85% 0.04 270);
+  --faq-title-color: oklch(10% 0.02 250);
   --faq-title-weight: 600;
   --faq-title-size: 1.5rem;
-  --faq-question-color: oklch(70% 0.04 320);
+  --faq-question-color: oklch(10% 0.02 250);
   --faq-question-weight: 500;
   --faq-question-size: 1rem;
-  --faq-answer-color: oklch(60% 0.02 270);
+  --faq-answer-color: oklch(15% 0.02 260);
   --faq-answer-weight: 400;
   --faq-answer-size: 1rem;
 
   /* Checkout */
-  --checkout-title-color: oklch(80% 0.05 270);
+  --checkout-title-color: oklch(10% 0.02 250);
   --checkout-title-weight: 700;
   --checkout-title-size: 2rem;
   --checkout-section-title-color: oklch(75% 0.04 220);
@@ -982,17 +982,17 @@
   --checkout-card-shadow: 0 2px 4px rgba(0,0,0,0.1);
   --checkout-card-hover-shadow: 0 4px 8px rgba(0,0,0,0.15);
   --checkout-card-selected-border: 2px;
-  --checkout-address-title-color: oklch(85% 0.04 270);
+  --checkout-address-title-color: oklch(10% 0.02 250);
   --checkout-address-title-weight: 500;
-  --checkout-address-text-color: oklch(65% 0.02 270);
-  --checkout-payment-option-color: oklch(70% 0.04 320);
+  --checkout-address-text-color: oklch(15% 0.02 260);
+  --checkout-payment-option-color: oklch(70% 0.15 100);
   --checkout-payment-option-weight: 600;
-  --checkout-payment-description-color: oklch(60% 0.02 270);
-  --checkout-summary-title-color: oklch(85% 0.04 270);
+  --checkout-payment-description-color: oklch(15% 0.02 260);
+  --checkout-summary-title-color: oklch(10% 0.02 250);
   --checkout-summary-title-weight: 700;
   --checkout-summary-label-color: oklch(70% 0.03 320);
-  --checkout-summary-value-color: oklch(60% 0.04 240);
-  --checkout-summary-total-color: oklch(60% 0.09 240);
+  --checkout-summary-value-color: oklch(12% 0.02 260);
+  --checkout-summary-total-color: oklch(10% 0.02 250);
   --checkout-summary-total-weight: 700;
   --checkout-summary-total-size: 1.5rem;
   --checkout-button-bg: oklch(60% 0.1 240);
@@ -1008,8 +1008,8 @@
   --checkout-section-shadow: 0 2px 4px rgba(0,0,0,0.1);
   --checkout-form-label-color: oklch(70% 0.03 320);
   --checkout-form-label-weight: 500;
-  --checkout-total-color: oklch(60% 0.1 240);
-  --checkout-subtitle-color: oklch(70% 0.04 320);
+  --checkout-total-color: oklch(10% 0.02 250);
+  --checkout-subtitle-color: oklch(12% 0.02 260);
   --checkout-subtitle-weight: 500;
   --checkout-subtitle-size: 1rem;
   --checkout-section-bg: oklch(95% 0.01 60);
@@ -1254,11 +1254,11 @@
   --category-menu-shadow: 0 2px 4px rgba(0,0,0,0.1);
 
   /* Search Box Component */
-  --search-box-border-color: oklch(90% 0.04 260); /* primary/20 */
-  --search-box-hover-border-color: oklch(60% 0.08 260); /* primary/30 */
+  --search-box-border-color: oklch(85% 0.1 345); /* primary/20 */
+  --search-box-hover-border-color: oklch(90% 0.15 350); /* primary/30 */
   --search-box-focus-ring-color: oklch(70% 0.1 240); /* primary/20 */
   --search-box-bg: oklch(98% 0.01 60);
-  --search-box-text-color: oklch(5% 0.02 280);
+  --search-box-text-color: oklch(20% 0.04 250);
   --search-box-placeholder-color: oklch(65% 0.02 280);
   --search-box-height: 60px; /* h-10 */
   --search-box-border-radius: 8px; /* rounded-full */
@@ -1266,28 +1266,28 @@
   --search-box-padding-right: 16px;
   --search-box-font-size: 1rem;
   --search-box-icon-size: 16px;
-  --search-box-icon-color: oklch(60% 0.05 280);
+  --search-box-icon-color: oklch(60% 0.16 250);
 
   /* Search Results Dropdown */
   --search-results-bg: oklch(98% 0.01 60);
-  --search-results-border-color: oklch(90% 0.04 260); /* primary/20 */
+  --search-results-border-color: oklch(80% 0.1 345); /* primary/20 */
   --search-results-max-height: 100%;
   --search-results-border-radius: 8px; /* rounded-lg */
   --search-results-shadow: 0 2px 4px rgba(0,0,0,0.1);
   --search-results-item-padding-x: 1rem;
   --search-results-item-padding-y: 0.5rem;
   --search-results-item-hover-bg: oklch(95% 0.07 300); /* primary/10 */
-  --search-results-item-hover-text-color: oklch(10% 0.02 240);
+  --search-results-item-hover-text-color: oklch(35% 0.1 240);
   --search-results-item-font-size: 14px;
   --search-results-z-index: 1000;
 
   /* Support Section Component */
   --support-icon-bg: oklch(94% 0.2 210); /* primary/10 */
-  --support-icon-color: oklch(98% 0.01 60);
+  --support-icon-color: oklch(65% 0.18 50);
   --support-icon-size: 40px; /* 24px */
-  --support-phone-color: oklch(40% 0.1 280);
+  --support-phone-color: oklch(70% 0.2 40);
   --support-phone-font-size: 1rem;
-  --support-text-color: oklch(70% 0.02 320);
+  --support-text-color: oklch(20% 0.03 260);
   --support-text-font-size: 14px;
 
   /* Mobile Navigation */
@@ -1310,7 +1310,7 @@
   --mobile-nav-icon-color: oklch(40% 0.1 310);
   --mobile-nav-icon-size: 24px;
   --mobile-nav-separator: oklch(90% 0.04 260);
-  --mobile-location-title-color: oklch(20% 0.1 240);
+  --mobile-location-title-color: oklch(25% 0.05 245);
   --mobile-location-title-weight: 600;
   --mobile-location-btn-border: oklch(85% 0.06 260);
   --mobile-location-btn-bg: oklch(98% 0.01 60);
@@ -1360,7 +1360,7 @@
   --search-padding-x: 8px;
   --search-padding-y: 4px;
   --search-height: 60px;
-  --search-icon-color: oklch(40% 0.2 240);
+  --search-icon-color: oklch(62% 0.16 250);
   --search-button-bg: oklch(20% 0.25 240);
   --search-button-text: oklch(98% 0.01 240);
 
@@ -1462,7 +1462,7 @@
   --top-selling-card-bg: oklch(95% 0.02 60);
   --top-selling-card-shadow: 0 2px 8px rgba(0,0,0,0.08);
   --top-selling-card-radius: 12px;
-  --top-selling-title-color: oklch(10% 0.04 260);
+  --top-selling-title-color: oklch(30% 0.05 60);
   --top-selling-title-font: 'Playfair Display', serif;
   --top-selling-title-size: 2rem;
   --top-selling-title-weight: 700;
@@ -1534,15 +1534,15 @@
   --product-grid-gap: 1rem;
 
   /* Product Slider */
-  --slider-arrow-color: oklch(15% 0.03 250);
+  --slider-arrow-color: oklch(75% 0.12 320);
   --slider-arrow-bg: oklch(95% 0.15 250);
-  --slider-arrow-hover-color: oklch(5% 0.05 250);
+  --slider-arrow-hover-color: oklch(85% 0.15 325);
   --slider-arrow-hover-bg: oklch(85% 0.2 250);
   --slider-arrow-size: 16px;
   --slider-arrow-radius: 4px;
   --slider-arrow-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  --slider-pagination-color: oklch(15% 0.05 250);
-  --slider-pagination-inactive-color: oklch(70% 0.02 250);
+  --slider-pagination-color: oklch(78% 0.1 335);
+  --slider-pagination-inactive-color: oklch(85% 0.05 350);
   --slider-pagination-size: 12px;
   --slider-pagination-spacing: 8px;
 
@@ -1634,28 +1634,28 @@
   --hero-section-min-height: 80vh;
   --hero-section-max-height: 1200px;
   --hero-section-height: 100%;
-  --hero-overlay-bg: oklch(95% 0.02 10);
-  --hero-fade-from: oklch(96% 0.07 20);
-  --hero-fade-via: oklch(97% 0.07 30);
-  --hero-fade-to: oklch(98% 0.01 60);
-  --hero-fade-height: 400px;
-  --hero-title-color: oklch(20% 0.1 310);
+  --hero-overlay-bg: oklch(95% 0.1 350);
+  --hero-fade-from: oklch(90% 0.15 345);
+  --hero-fade-via: oklch(85% 0.18 340);
+  --hero-fade-to: oklch(75% 0.2 335);
+  --hero-fade-height: 100%;
+  --hero-title-color: oklch(10% 0.05 240);
   --hero-title-size: 2rem;
   --hero-title-weight: 700;
   --hero-title-line-height: 1.4;
   --hero-title-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  --hero-subtitle-color: oklch(35% 0.05 320);
+  --hero-subtitle-color: oklch(15% 0.04 250);
   --hero-subtitle-size: 1.5rem;
-  --hero-subtitle-line-height: 1.4;
+  --hero-subtitle-line-height: 1.5;
   --hero-subtitle-shadow: none;
-  --hero-button-bg: oklch(85% 0.2 22);
-  --hero-button-hover-bg: oklch(75% 0.2 22);
-  --hero-button-text: oklch(10% 0.02 0);
-  --hero-button-padding-x: 1.5rem;
-  --hero-button-padding-y: 1rem;
+  --hero-button-bg: oklch(70% 0.3 20);
+  --hero-button-hover-bg: oklch(80% 0.35 25);
+  --hero-button-text: oklch(8% 0.02 240);
+  --hero-button-padding-x: 16px;
+  --hero-button-padding-y: 8px;
   --hero-button-radius: 8px;
   --hero-button-font-size: 1rem;
-  --hero-button-font-weight: 500;
+  --hero-button-font-weight: 600;
   --hero-button-shadow: 0 2px 4px rgba(0,0,0,0.1);
 
   /* ===== Testimonials Section (TestimonialsView) ===== */
@@ -1853,7 +1853,7 @@
   --alert-info-text: oklch(20% 0.01 240);
 
   /* Loaders */
-  --loader-color: oklch(60% 0.2 270);
+  --loader-color: oklch(60% 0.15 240);
   --loader-size: 60px;
   --loader-width: 1px;
   --loader-bg: oklch(98% 0.01 60);
@@ -1910,9 +1910,9 @@
   --checkout-section-title-size: 1.5rem;
   --checkout-section-title-weight: 600;
   --checkout-form-gap: 16px;
-  --checkout-step-inactive-color: oklch(70% 0.1 170);
-  --checkout-step-active-color: oklch(80% 0.15 150);
-  --checkout-step-completed-color: oklch(60% 0.2 130);
+  --checkout-step-inactive-color: oklch(70% 0.05 0);
+  --checkout-step-active-color: oklch(85% 0.2 345);
+  --checkout-step-completed-color: oklch(65% 0.12 30);
 
   /* Order Success */
   --order-success-bg: oklch(85% 0.18 130);
@@ -1921,7 +1921,7 @@
   --order-success-padding: 1rem;
   --order-success-shadow: 0 2px 4px rgba(0,0,0,0.1);
   --order-success-icon-size: 60px;
-  --order-success-icon-color: oklch(60% 0.2 270);
+  --order-success-icon-color: oklch(50% 0.2 95);
   --order-success-title-size: 2rem;
   --order-success-title-weight: 700;
 
@@ -1942,7 +1942,7 @@
   --banner-title-weight: 600;
   --banner-subtitle-size: 1rem;
   --banner-button-size: 16px;
-  --banner-overlay-color: oklch(5% 0.01 240 / 0.5);
+  --banner-overlay-color: oklch(15% 0.1 320 / 0.3);
   --banner-text-shadow: 0 2px 4px rgba(0,0,0,0.1);
   --banner-content-gap: 16px;
 
@@ -1978,20 +1978,20 @@
   --order-success-header-bg: oklch(90% 0.1 220);
   --order-success-header-border: oklch(80% 0.04 220);
   --order-success-icon-bg: oklch(70% 0.15 360);
-  --order-success-icon-color: oklch(60% 0.2 270);
-  --order-success-title-color: oklch(10% 0.08 300);
-  --order-success-description-color: oklch(18% 0.1 300);
+  --order-success-icon-color: oklch(50% 0.2 95);
+  --order-success-title-color: oklch(52% 0.18 100);
+  --order-success-description-color: oklch(20% 0.03 260);
   --order-id-badge-border: oklch(75% 0.05 140);
   --order-id-badge-text: oklch(25% 0.13 140);
-  --stepper-active-color: oklch(10% 0.18 40);
-  --stepper-completed-color: oklch(12% 0.2 40);
-  --stepper-disabled-color: oklch(80% 0.05 240);
-  --stepper-active-bg-color: oklch(70% 0.12 250);
-  --stepper-completed-bg-color: oklch(60% 0.15 250);
-  --stepper-active-text-color: oklch(99% 0.04 40);
-  --stepper-completed-text-color: oklch(92% 0.02 40);
-  --stepper-inactive-bg-color: oklch(88% 0.02 240);
-  --stepper-inactive-text-color: oklch(30% 0.02 240);
+  --stepper-active-color: oklch(86% 0.2 340);
+  --stepper-completed-color: oklch(50% 0.1 260);
+  --stepper-disabled-color: oklch(75% 0.05 10);
+  --stepper-active-bg-color: oklch(90% 0.2 345);
+  --stepper-completed-bg-color: oklch(55% 0.1 230);
+  --stepper-active-text-color: oklch(10% 0.02 270);
+  --stepper-completed-text-color: oklch(20% 0.04 240);
+  --stepper-inactive-bg-color: oklch(80% 0.05 240);
+  --stepper-inactive-text-color: oklch(40% 0.05 80);
   --order-footer-bg: oklch(98% 0.01 250);
   --order-footer-border: oklch(90% 0.03 250);
   --continue-shopping-btn-bg: oklch(65% 0.06 260);
@@ -2010,15 +2010,15 @@
   --order-card-bg: oklch(95% 0.02 240);
   --order-card-radius: 8px;
   --order-header-bg: oklch(93% 0.01 220);
-  --order-title-color: oklch(15% 0.1 240);
+  --order-title-color: oklch(22% 0.05 250);
   --order-badge-bg: oklch(70% 0.1 360);
   --order-badge-text: oklch(96% 0.05 40);
   --order-badge-border: oklch(60% 0.1 360);
-  --order-date-color: oklch(35% 0.08 240);
+  --order-date-color: oklch(50% 0.08 70);
   --order-step-completed-bg: oklch(88% 0.08 340);
   --order-step-pending-bg: oklch(78% 0.02 220);
   --order-step-completed-icon: oklch(20% 0.18 40);
-  --order-step-text-color: oklch(26% 0.03 240);
+  --order-step-text-color: oklch(30% 0.06 250);
   --order-section-title: oklch(10% 0.15 240);
   --order-table-border: oklch(85% 0.01 40);
   --order-table-header-bg: oklch(95% 0.02 240);
@@ -2064,18 +2064,18 @@
   --contact-card-bg: oklch(98% 0.03 300);
   --contact-card-shadow: 0 2px 4px rgba(0,0,0,0.1);
   --contact-card-radius: 12px;
-  --contact-title-color: oklch(20% 0.15 30);
-  --contact-description-color: oklch(40% 0.15 60);
+  --contact-title-color: oklch(10% 0.02 250);
+  --contact-description-color: oklch(15% 0.02 260);
   --contact-inner-card-border: oklch(80% 0.03 240);
   --contact-inner-card-bg: oklch(97% 0.07 60);
   --contact-inner-card-radius: 8px;
-  --loading-spinner-color: oklch(70% 0.18 240);
-  --loading-text-color: oklch(50% 0.2 240);
-  --error-border-color: oklch(58% 0.24 12);
-  --error-bg-color: oklch(95% 0.12 5);
-  --error-icon-color: oklch(60% 0.25 350);
-  --error-text-color: oklch(55% 0.22 10);
-  --error-description-color: oklch(45% 0.21 30);
+  --loading-spinner-color: oklch(68% 0.15 100);
+  --loading-text-color: oklch(20% 0.04 240);
+  --error-border-color: oklch(90% 0.25 0);
+  --error-bg-color: oklch(97% 0.15 5);
+  --error-icon-color: oklch(60% 0.25 355);
+  --error-text-color: oklch(15% 0.02 360);
+  --error-description-color: oklch(20% 0.03 0);
   --error-button-bg: oklch(32% 0.3 5);
   --error-button-hover-bg: oklch(29% 0.32 5);
   --error-button-text: oklch(98% 0.02 60);
@@ -2083,7 +2083,7 @@
   --contact-card-item-bg: oklch(96% 0.06 80);
   --contact-card-item-radius: 8px;
   --contact-icon-bg: oklch(95% 0.1 60);
-  --contact-icon-color: oklch(20% 0.12 350);
+  --contact-icon-color: oklch(75% 0.18 30);
   --contact-item-title: oklch(68% 0.19 70);
   --contact-item-text: oklch(53% 0.17 60);
   --contact-link-hover: oklch(72% 0.26 145);
@@ -2162,8 +2162,8 @@
   --navbar-link-active-border-color: oklch(50% 0.15 280);
   --navbar-button-icon-color: oklch(95% 0.04 180);
   --navbar-button-hover-bg: oklch(92% 0.05 240);
-  --location-icon-color: oklch(20% 0.04 240);
-  --location-text-color: oklch(25% 0.03 250);
+  --location-icon-color: oklch(20% 0.15 130);
+  --location-text-color: oklch(10% 0.02 250);
   --user-menu-dropdown-bg: oklch(98% 0.01 60);
   --user-menu-dropdown-text-color: oklch(15% 0.03 340);
   --cart-badge-bg: oklch(95% 0.12 350);
@@ -2175,7 +2175,7 @@
   --mobile-nav-active-text-color: oklch(70% 0.22 250);
   --mobile-nav-icon-color: oklch(40% 0.1 310);
   --mobile-nav-separator-color: oklch(80% 0.01 0);
-  --mobile-location-title-color: oklch(20% 0.1 240);
+  --mobile-location-title-color: oklch(25% 0.05 245);
   --mobile-location-btn-border: oklch(85% 0.06 260);
   --mobile-location-btn-bg: oklch(98% 0.01 60);
   --mobile-location-btn-text-color: oklch(95% 0.02 60);
@@ -2217,20 +2217,20 @@
   --category-menu-shadow: 0 2px 4px rgba(0,0,0,0.1);
   --search-box-height: 60px; /* h-10 */
   --search-box-border-radius: 8px;
-  --search-box-border-color: oklch(90% 0.04 260);
+  --search-box-border-color: oklch(85% 0.1 345);
   --search-box-bg: oklch(98% 0.01 60);
   --search-box-padding-left: 16px; /* for icon */
   --search-box-padding-right: 16px;
   --search-box-font-size: 1rem;
-  --search-box-text-color: oklch(5% 0.02 280);
+  --search-box-text-color: oklch(20% 0.04 250);
   --search-box-placeholder-color: oklch(65% 0.02 280);
   --search-box-focus-ring-color: oklch(70% 0.1 240);
-  --search-box-hover-border-color: oklch(60% 0.08 260);
+  --search-box-hover-border-color: oklch(90% 0.15 350);
   --search-box-icon-size: 16px; /* 16px */
-  --search-box-icon-color: oklch(60% 0.05 280);
+  --search-box-icon-color: oklch(60% 0.16 250);
   --search-results-z-index: 1000;
   --search-results-border-radius: 8px;
-  --search-results-border-color: oklch(90% 0.04 260);
+  --search-results-border-color: oklch(80% 0.1 345);
   --search-results-bg: oklch(98% 0.01 60);
   --search-results-shadow: 0 2px 4px rgba(0,0,0,0.1);
   --search-results-max-height: 100%;
@@ -2238,13 +2238,13 @@
   --search-results-item-padding-x: 1rem;
   --search-results-item-padding-y: 0.5rem;
   --search-results-item-hover-bg: oklch(95% 0.07 300);
-  --search-results-item-hover-text-color: oklch(10% 0.02 240);
+  --search-results-item-hover-text-color: oklch(35% 0.1 240);
   --support-icon-bg: oklch(94% 0.2 210);
-  --support-icon-color: oklch(98% 0.01 60);
+  --support-icon-color: oklch(65% 0.18 50);
   --support-icon-size: 40px; /* 24px */
-  --support-phone-color: oklch(40% 0.1 280);
+  --support-phone-color: oklch(70% 0.2 40);
   --support-phone-font-size: 1rem;
-  --support-text-color: oklch(70% 0.02 320);
+  --support-text-color: oklch(20% 0.03 260);
   --support-text-font-size: 14px;
 
   /* Navbar Search Icon */
@@ -2398,20 +2398,20 @@
   --protected-layout-title-size: 2rem; /* text-xl */
   --protected-layout-title-weight: 600;
   --protected-layout-subtitle-size: 1.5rem; /* text-sm */
-  --protected-layout-subtitle-color: oklch(60% 0.18 270); /* white with opacity */
+  --protected-layout-subtitle-color: oklch(25% 0.04 240); /* white with opacity */
 
   --protected-layout-content-padding: 1.5rem; /* p-6 */
 
   --protected-layout-alert-bg: oklch(98% 0.15 15); /* amber-50 */
-  --protected-layout-alert-icon-color: oklch(25% 0.1 15); /* amber-500 */
+  --protected-layout-alert-icon-color: oklch(67% 0.22 10); /* amber-500 */
   --protected-layout-alert-icon-size: 1.5rem; /* h-8 w-8 */
 
   --protected-layout-message-title-size: 1.5rem; /* text-lg */
   --protected-layout-message-title-weight: 700;
-  --protected-layout-message-title-color: oklch(20% 0.1 240);
+  --protected-layout-message-title-color: oklch(30% 0.05 240);
 
   --protected-layout-message-text-size: 1rem; /* text-base */
-  --protected-layout-message-text-color: oklch(40% 0.08 240);
+  --protected-layout-message-text-color: oklch(20% 0.04 260);
 
   /* Category Card Component */
   --category-card-transition-duration: 300ms ease-in-out;
